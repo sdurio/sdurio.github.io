@@ -1,288 +1,108 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sparkle Durio • Executive Assistant Portfolio</title>
-  <meta name="description" content="Modern, responsive portfolio for showcasing projects and experience." />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    :root{ --ring: 0 0% 100%; }
-    html { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, 'Noto Sans', 'Apple Color Emoji','Segoe UI Emoji', 'Segoe UI Symbol'; }
-    .glass { backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
-    .card-hover { transition: transform .25s ease, box-shadow .25s ease; }
-    .card-hover:hover { transform: translateY(-4px); }
-  </style>
-</head>
-<body class="bg-neutral-950 text-neutral-100 selection:bg-#5c4033-500/30 selection:text-white">
-  <!-- Navigation -->
-  <header class="sticky top-0 z-40 bg-neutral-950/70 glass border-b border-neutral-800">
-    <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
-      <a href="#home" class="font-black tracking-tight text-lg">SD<span class="text-fuchsia-400">•</span></a>
-      <div class="flex items-center gap-2">
-        <a href="#projects" class="text-sm px-3 py-1.5 rounded-full hover:bg-neutral-800/60">Projects</a>
-        <a href="#about" class="text-sm px-3 py-1.5 rounded-full hover:bg-neutral-800/60">About</a>
-        <a href="#contact" class="text-sm px-3 py-1.5 rounded-full hover:bg-neutral-800/60">Contact</a>
-        <button id="themeToggle" class="ml-2 text-sm px-3 py-1.5 rounded-full border border-neutral-800 hover:bg-neutral-800/60" aria-label="Toggle dark mode">🌙</button>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sparkle Durio — Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        --coffee: #5c4033;
+        --golden: #b8860b;
+        --forest: #0a3a2a;
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white font-sans">
+    <!-- Navbar -->
+    <nav class="fixed w-full top-0 z-50 bg-black/80 backdrop-blur border-b border-[var(--forest)]">
+      <div class="max-w-6xl mx-auto px-6 py-3 flex justify-between items-center">
+        <h1 class="text-xl font-bold text-[var(--golden)]">Sparkle Durio</h1>
+        <div class="space-x-6">
+          <a href="#about" class="hover:text-[var(--golden)]">About</a>
+          <a href="#projects" class="hover:text-[var(--golden)]">Projects</a>
+          <a href="#contact" class="hover:text-[var(--golden)]">Contact</a>
+        </div>
       </div>
     </nav>
-  </header>
 
-  <!-- Hero -->
-  <section id="home" class="relative overflow-hidden">
-    <div class="absolute inset-0 -z-10 opacity-50">
-      <svg aria-hidden="true" class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1200 800">
-        <defs>
-          <linearGradient id="g" x1="0" x2="1">
-            <stop offset="0%" stop-color="#5c4033"/>
-            <stop offset="100%" stop-color="#b8860b"/>
-          </linearGradient>
-        </defs>
-        <circle cx="150" cy="100" r="200" fill="url(#g)" opacity="0.2"/>
-        <circle cx="1100" cy="700" r="300" fill="url(#g)" opacity="0.18"/>
-      </svg>
-    </div>
+    <!-- Hero -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6">
+      <h2 class="text-4xl md:text-6xl font-bold mb-6 text-[var(--golden)]">Streamlining operations and driving results through strategic support and effective communication.</h2>
+      <p class="max-w-2xl text-lg mb-8 text-gray-300">
+        I am a highly organized professional who thrives in creating processes that simplify workflows, enhance productivity, and foster strong collaboration. With expertise in problem solving, communication, and proactive support, I bring both structure and adaptability to dynamic work environments. Whether streamlining systems, managing complex tasks, or building trust with stakeholders, I excel in delivering seamless support that helps teams and leaders succeed.
+      </p>
+      <div class="space-x-4">
+        <a href="#projects" class="px-6 py-3 rounded-2xl bg-[var(--forest)] text-white hover:bg-[var(--golden)] transition">View Projects</a>
+        <a href="#contact" class="px-6 py-3 rounded-2xl border border-[var(--golden)] hover:bg-[var(--golden)] hover:text-black transition">Get in Touch</a>
+      </div>
+    </section>
 
-    <div class="max-w-6xl mx-auto px-4 py-20 lg:py-28">
-      <div class="grid lg:grid-cols-2 gap-10 items-center">
-        <div>
-          <p class="inline-block text-xs tracking-widest uppercase text-neutral-400 mb-3">Portfolio</p>
-          <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
-            Hi, I’m <span class="text-transparent bg-clip-text bg-gradient-to-r from-gray-brown-400 to-brown-300">Sparkle Durio</span>.
-          </h1>
-          <p class="mt-4 text-neutral-300 max-w-prose">I streamline operations, solve complex problems, and turn ideas into polished outcomes. Below is a curated collection of projects, systems, and experiments that showcase my focus on clarity, efficiency, and results.</p>
-          <div class="mt-6 flex flex-wrap gap-3">
-            <a href="#projects" class="px-4 py-2 rounded-xl bg-fuchsia-500 hover:bg-fuchsia-400 text-white font-medium">View Projects</a>
-            <a href="#contact" class="px-4 py-2 rounded-xl border border-neutral-700 hover:bg-neutral-800/60">Get in Touch</a>
-          </div>
-          <div class="mt-6 flex flex-wrap gap-2 text-xs text-neutral-400">
-            <span class="px-2 py-1 rounded-full bg-neutral-900 border border-neutral-800">Process Design</span>
-            <span class="px-2 py-1 rounded-full bg-neutral-900 border border-neutral-800">Data-Forward</span>
-            <span class="px-2 py-1 rounded-full bg-neutral-900 border border-neutral-800">Remote-Ready</span>
-          </div>
+    <!-- About -->
+    <section id="about" class="py-20 px-6 max-w-5xl mx-auto">
+      <h3 class="text-3xl font-bold mb-6 text-[var(--golden)]">About Me</h3>
+      <p class="text-gray-300 leading-relaxed">
+        I am motivated by solving problems and streamlining processes to help others succeed. My strengths lie in my soft skills, adaptability, and ability to transform challenges into opportunities. I value proficiency and efficiency, and I’m passionate about enhancing productivity while fostering collaborative environments.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+        <div class="bg-[var(--coffee)] p-6 rounded-2xl shadow-lg">
+          <h4 class="font-semibold text-[var(--golden)] mb-2">Core Strengths</h4>
+          <ul class="space-y-2 text-sm">
+            <li>Problem Solving</li>
+            <li>Process Optimization</li>
+            <li>Relationship Building</li>
+          </ul>
         </div>
-        <div class="relative">
-          <div class="aspect-[4/3] rounded-2xl border border-neutral-800 bg-neutral-900/50 grid place-items-center">
-            <div class="text-center p-6">
-              <div class="text-5xl">✨</div>
-              <p class="mt-3 text-sm text-neutral-400">Add a hero image, logo, or a subtle animation here.</p>
-            </div>
-          </div>
+        <div class="bg-[var(--coffee)] p-6 rounded-2xl shadow-lg">
+          <h4 class="font-semibold text-[var(--golden)] mb-2">Work Style</h4>
+          <ul class="space-y-2 text-sm">
+            <li>Pomodoro & Priority Matrix</li>
+            <li>Time-blocking</li>
+            <li>Cross-team Collaboration</li>
+          </ul>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Controls -->
-  <section class="border-y border-neutral-800 bg-neutral-950/60">
-    <div class="max-w-6xl mx-auto px-4 py-6 flex flex-col md:flex-row gap-4 items-center justify-between">
-      <div class="flex gap-2 w-full md:w-auto">
-        <input id="search" type="search" placeholder="Search projects…" class="w-full md:w-80 px-3 py-2 rounded-xl bg-neutral-900 border border-neutral-800 focus:outline-none focus:ring-2 focus:ring-fuchsia-500/50" />
-        <select id="sort" class="px-3 py-2 rounded-xl bg-neutral-900 border border-neutral-800 focus:outline-none">
-          <option value="newest">Newest</option>
-          <option value="oldest">Oldest</option>
-          <option value="az">A → Z</option>
-          <option value="za">Z → A</option>
-        </select>
-      </div>
-      <div class="flex flex-wrap gap-2 text-xs text-neutral-300">
-        <button class="tag px-3 py-1.5 rounded-full border border-neutral-800 hover:bg-neutral-800/60" data-tag="automation">Automation</button>
-        <button class="tag px-3 py-1.5 rounded-full border border-neutral-800 hover:bg-neutral-800/60" data-tag="analytics">Analytics</button>
-        <button class="tag px-3 py-1.5 rounded-full border border-neutral-800 hover:bg-neutral-800/60" data-tag="ops">Operations</button>
-        <button class="tag px-3 py-1.5 rounded-full border border-neutral-800 hover:bg-neutral-800/60" data-tag="templates">Templates</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects Grid -->
-  <section id="projects" class="max-w-6xl mx-auto px-4 py-14">
-    <div class="mb-8">
-      <h2 class="text-2xl font-bold">Projects</h2>
-      <p class="text-neutral-400">A living gallery—add, filter, and showcase your work easily.</p>
-    </div>
-
-    <div id="grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-
-    <!-- Empty State -->
-    <div id="empty" class="hidden mt-12 text-center text-neutral-400">No projects match your filters yet.</div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="border-t border-neutral-800 bg-neutral-950/60">
-    <div class="max-w-6xl mx-auto px-4 py-16 grid lg:grid-cols-3 gap-10 items-start">
-      <div class="lg:col-span-2">
-        <h2 class="text-2xl font-bold">About</h2>
-        <p class="mt-3 text-neutral-300">I’m Sparkle Durio, a results-focused professional who loves making complex things simple. I design systems, craft data-driven tools, and create calm in fast-moving environments. My work blends clear communication with thoughtful execution—so teams can move faster with confidence.</p>
-        <ul class="mt-6 grid sm:grid-cols-2 gap-3 text-sm text-neutral-300">
-          <li class="flex gap-2 items-start"><span>✅</span><span>Process optimization & documentation</span></li>
-          <li class="flex gap-2 items-start"><span>✅</span><span>Project coordination & stakeholder updates</span></li>
-          <li class="flex gap-2 items-start"><span>✅</span><span>Data dashboards & spreadsheet automations</span></li>
-          <li class="flex gap-2 items-start"><span>✅</span><span>Remote-first collaboration & tooling</span></li>
-        </ul>
-      </div>
-      <aside class="border border-neutral-800 rounded-2xl p-5 bg-neutral-900/50">
-        <h3 class="font-semibold">Quick Facts</h3>
-        <dl class="mt-3 space-y-2 text-sm text-neutral-300">
-          <div class="flex justify-between gap-4"><dt>Base</dt><dd>Sacramento, CA</dd></div>
-          <div class="flex justify-between gap-4"><dt>Focus</dt><dd>Operations, Systems, Data</dd></div>
-          <div class="flex justify-between gap-4"><dt>Toolkit</dt><dd>Microsoft 365, Canva, Adobe, Zoom</dd></div>
-          <div class="flex justify-between gap-4"><dt>Availability</dt><dd>Open to remote</dd></div>
-        </dl>
-      </aside>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="max-w-6xl mx-auto px-4 py-16">
-    <div class="grid lg:grid-cols-2 gap-10 items-start">
-      <div>
-        <h2 class="text-2xl font-bold">Let’s connect</h2>
-        <p class="mt-3 text-neutral-300">Have a project, collaboration, or role in mind? I’d love to hear about it.</p>
-        <div class="mt-6 flex gap-3">
-          <a href="mailto:youremail@example.com" class="px-4 py-2 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-neutral-900 font-medium">Email me</a>
-          <a href="#" class="px-4 py-2 rounded-xl border border-neutral-700 hover:bg-neutral-800/60">Download résumé</a>
+        <div class="bg-[var(--coffee)] p-6 rounded-2xl shadow-lg">
+          <h4 class="font-semibold text-[var(--golden)] mb-2">Tech Proficiency</h4>
+          <ul class="space-y-2 text-sm">
+            <li>Microsoft Office Suite</li>
+            <li>Adobe Acrobat & Canva</li>
+            <li>Zoom, Teams, Skype</li>
+          </ul>
         </div>
       </div>
-      <form class="border border-neutral-800 rounded-2xl p-5 bg-neutral-900/50 grid gap-3">
-        <input type="text" placeholder="Your name" class="px-3 py-2 rounded-xl bg-neutral-950 border border-neutral-800 focus:outline-none focus:ring-2 focus:ring-cyan-500/50">
-        <input type="email" placeholder="Your email" class="px-3 py-2 rounded-xl bg-neutral-950 border border-neutral-800 focus:outline-none focus:ring-2 focus:ring-cyan-500/50">
-        <textarea rows="4" placeholder="Tell me about your project" class="px-3 py-2 rounded-xl bg-neutral-950 border border-neutral-800 focus:outline-none focus:ring-2 focus:ring-cyan-500/50"></textarea>
-        <button type="button" class="px-4 py-2 rounded-xl bg-fuchsia-500 hover:bg-fuchsia-400 text-white font-medium">Send</button>
-      </form>
-    </div>
-  </section>
+    </section>
 
-  <footer class="border-t border-neutral-800 bg-neutral-950/60">
-    <div class="max-w-6xl mx-auto px-4 py-8 text-sm flex items-center justify-between text-neutral-400">
-      <p>© <span id="year"></span> Sparkle Durio. All rights reserved.</p>
-      <a href="#home" class="hover:text-neutral-200">Back to top ↑</a>
-    </div>
-  </footer>
+    <!-- Projects -->
+    <section id="projects" class="py-20 px-6 max-w-6xl mx-auto">
+      <h3 class="text-3xl font-bold mb-10 text-[var(--golden)]">Selected Projects</h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div class="bg-[var(--coffee)] p-6 rounded-2xl shadow-lg">
+          <h4 class="font-semibold text-xl mb-2 text-[var(--golden)]">Procurement Efficiency Tracker</h4>
+          <p class="text-gray-300 text-sm mb-4">Built a dynamic spreadsheet that evaluated bids, calculated preferential pricing, and streamlined procurement decisions, reducing review time by 30%.</p>
+        </div>
+        <!-- Project 2 -->
+        <div class="bg-[var(--coffee)] p-6 rounded-2xl shadow-lg">
+          <h4 class="font-semibold text-xl mb-2 text-[var(--golden)]">Board Engagement Process</h4>
+          <p class="text-gray-300 text-sm mb-4">Developed systems that improved board communication and streamlined engagement, ensuring timely responses and better decision-making.</p>
+        </div>
+        <!-- Project 3 -->
+        <div class="bg-[var(--coffee)] p-6 rounded-2xl shadow-lg">
+          <h4 class="font-semibold text-xl mb-2 text-[var(--golden)]">Hybrid Event Coordination</h4>
+          <p class="text-gray-300 text-sm mb-4">Coordinated virtual and hybrid events with multiple stakeholders, managing timelines, logistics, and follow-up communication seamlessly.</p>
+        </div>
+      </div>
+    </section>
 
-  <script>
-    // --- Theme toggle with localStorage ---
-    const themeToggle = document.getElementById('themeToggle');
-    const root = document.documentElement;
-    const storedTheme = localStorage.getItem('theme');
-    if (storedTheme === 'light') document.body.classList.add('bg-white','text-neutral-900');
-    function toggleTheme(){
-      const isDark = document.body.classList.contains('bg-neutral-950');
-      if(isDark){
-        document.body.classList.remove('bg-neutral-950','text-neutral-100');
-        document.body.classList.add('bg-white','text-neutral-900');
-        themeToggle.textContent = '☀️';
-        localStorage.setItem('theme','light');
-      } else {
-        document.body.classList.remove('bg-white','text-neutral-900');
-        document.body.classList.add('bg-neutral-950','text-neutral-100');
-        themeToggle.textContent = '🌙';
-        localStorage.setItem('theme','dark');
-      }
-    }
-    themeToggle.addEventListener('click', toggleTheme);
+    <!-- Contact -->
+    <section id="contact" class="py-20 px-6 max-w-4xl mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-6 text-[var(--golden)]">Let’s Connect</h3>
+      <p class="text-gray-300 mb-6">If you’d like to collaborate, discuss opportunities, or learn more about my work, feel free to reach out.</p>
+      <a href="mailto:sparkle@example.com" class="px-6 py-3 rounded-2xl bg-[var(--forest)] hover:bg-[var(--golden)] transition">Email Me</a>
+    </section>
 
-    // --- Project data (edit/add your projects here) ---
-    const projects = [
-      {
-        title: 'Bid Evaluation Dashboard',
-        date: '2025-07-01',
-        summary: 'Spreadsheet-driven tool to compare vendor bids and calculate preferential pricing with clear visuals.',
-        tags: ['analytics','automation','ops'],
-        link: '#',
-        image: '',
-      },
-      {
-        title: 'Executive Ops Toolkit',
-        date: '2025-05-15',
-        summary: 'Templates for intake, meeting notes, and status updates to standardize communication across teams.',
-        tags: ['templates','ops'],
-        link: '#',
-        image: '',
-      },
-      {
-        title: 'Remote Collaboration Playbook',
-        date: '2025-03-01',
-        summary: 'Lightweight guide to async updates, time-zone mapping, and stakeholder check-ins.',
-        tags: ['ops'],
-        link: '#',
-        image: '',
-      },
-    ];
-
-    // --- Render helpers ---
-    const grid = document.getElementById('grid');
-    const empty = document.getElementById('empty');
-    const search = document.getElementById('search');
-    const sort = document.getElementById('sort');
-    const tagButtons = Array.from(document.querySelectorAll('.tag'));
-    const state = { q:'', sort:'newest', tags:new Set() };
-
-    function render(){
-      let list = [...projects];
-
-      // Filter by search
-      if(state.q){
-        const q = state.q.toLowerCase();
-        list = list.filter(p => (p.title + ' ' + p.summary + ' ' + (p.tags||[]).join(' ')).toLowerCase().includes(q));
-      }
-      // Filter by tags
-      if(state.tags.size){
-        list = list.filter(p => p.tags && p.tags.some(t => state.tags.has(t)));
-      }
-      // Sort
-      list.sort((a,b)=>{
-        if(state.sort==='newest') return new Date(b.date)-new Date(a.date);
-        if(state.sort==='oldest') return new Date(a.date)-new Date(b.date);
-        if(state.sort==='az') return a.title.localeCompare(b.title);
-        if(state.sort==='za') return b.title.localeCompare(a.title);
-        return 0;
-      });
-
-      grid.innerHTML = '';
-      if(!list.length){ empty.classList.remove('hidden'); return; }
-      empty.classList.add('hidden');
-
-      for(const p of list){
-        const el = document.createElement('article');
-        el.className = 'card-hover rounded-2xl border border-neutral-800 overflow-hidden bg-neutral-900/50';
-        el.innerHTML = `
-          <a href="${p.link || '#'}" target="${p.link ? '_blank' : '_self'}" class="block">
-            <div class="aspect-[16/10] bg-neutral-900 grid place-items-center">
-              ${p.image ? `<img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover"/>` : `<div class='text-neutral-500 text-sm'>Add an image</div>`}
-            </div>
-            <div class="p-4">
-              <div class="flex items-center justify-between gap-3">
-                <h3 class="font-semibold leading-tight">${p.title}</h3>
-                <time class="text-xs text-neutral-400">${new Date(p.date).toLocaleDateString()}</time>
-              </div>
-              <p class="mt-2 text-sm text-neutral-300">${p.summary}</p>
-              <div class="mt-3 flex flex-wrap gap-2 text-xs text-neutral-400">
-                ${(p.tags||[]).map(t=>`<span class='px-2 py-1 rounded-full bg-neutral-950 border border-neutral-800'>${t}</span>`).join('')}
-              </div>
-            </div>
-          </a>`;
-        grid.appendChild(el);
-      }
-    }
-
-    // --- Events ---
-    search.addEventListener('input', (e)=>{ state.q = e.target.value.trim(); render(); });
-    sort.addEventListener('change', (e)=>{ state.sort = e.target.value; render(); });
-    tagButtons.forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        const tag = btn.dataset.tag;
-        if(state.tags.has(tag)){ state.tags.delete(tag); btn.classList.remove('bg-neutral-800/60'); }
-        else { state.tags.add(tag); btn.classList.add('bg-neutral-800/60'); }
-        render();
-      });
-    });
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    render();
-  </script>
-</body>
+    <footer class="py-6 text-center text-gray-500 border-t border-[var(--forest)]">
+      <p>© 2025 Sparkle Durio. All Rights Reserved.</p>
+    </footer>
+  </body>
 </html>
