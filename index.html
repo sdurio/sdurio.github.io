@@ -21,7 +21,7 @@
         .card-hover:hover { transform: translateY(-4px); }
     </style>
 </head>
-<body class="bg-[#000000] text-[#F2F0E6] selection:bg-[#B8860B]/30 selection:text-white">
+<body class="bg-[#000000] text-[#F2F0E6]">
 
     <!-- Navigation -->
     <header class="sticky top-0 z-40 bg-[#000000]/70 glass border-b border-[#0A3A2A]">
@@ -31,7 +31,6 @@
                 <a href="#Initiatives" class="text-sm px-3 py-1.5 rounded-full hover:bg-[#0A3A2A]/60">Initiatives</a>
                 <a href="#about" class="text-sm px-3 py-1.5 rounded-full hover:bg-[#0A3A2A]/60">About</a>
                 <a href="#contact" class="text-sm px-3 py-1.5 rounded-full hover:bg-[#0A3A2A]/60">Contact</a>
-                <button id="themeToggle" class="ml-2 text-sm px-3 py-1.5 rounded-full border border-[#0A3A2A] hover:bg-[#0A3A2A]/60" aria-label="Toggle dark mode">🌙</button>
             </div>
         </nav>
     </header>
@@ -73,7 +72,7 @@
                     <div class="aspect-[4/3] rounded-2xl border border-[#0A3A2A] bg-[#0A3A2A]/50 grid place-items-center">
                         <div class="text-center p-6">
                             <div class="text-5xl">✨</div>
-                            <p class="mt-3 text-[#B8860B]"><img width="288" height="288" alt="SDurio Monochrome Linktree Profile Image" src="https://github.com/user-attachments/assets/457447b8-015d-4409-8cc5-512688aaf531" /></p>
+                            <p class="mt-3 text-[#B8860B]"><img width="288" height="288" alt="SDurio Head Shot" src="https://github.com/sdurio/sdurio.github.io/blob/e6f41197018986dcbd828e7124539bbea5836cc5/assets/SDurio%20Monochrome%20Linktree%20Profile%20Image.png" /></p>
                         </div>
                     </div>
                 </div>
@@ -86,15 +85,7 @@
         <div class="max-w-6xl mx-auto px-4 py-16 grid lg:grid-cols-3 gap-10 items-start">
             <div class="lg:col-span-2">
                 <h2 class="text-2xl font-bold">About</h2>
-                <p class="mt-3 text-[#F2F0E6]">Hi, I’m Sparkle Durio, a highly organized and results-driven professional with over a decade of experience in supporting senior leadership and managing strategic projects. My expertise lies in anticipating needs, managing complex operations, and driving efficiency across diverse teams and initiatives.
-
-I thrive on solving problems and streamlining processes, whether it’s coordinating critical schedules, managing high-priority communications, or implementing systems that enhance organizational flow. My proactive approach ensures smooth operations, allowing leadership to focus on the bigger picture while I handle the details.
-
-In my previous roles, I’ve successfully negotiated key agreements, managed sensitive communications, and fostered lasting relationships with clients and stakeholders, always keeping a focus on delivering value and building trust. I excel in high-pressure environments and am adept at managing competing priorities to achieve optimal results.
-
-When working remotely, I rely on clear communication, structured timelines, and the use of productivity tools such as the Pomodoro method, priority matrices, and planner apps to ensure tasks are completed efficiently and deadlines are met. My ability to adapt to various time zones and work with global teams further enhances my flexibility and effectiveness in virtual settings.
-
-At the heart of my work is a commitment to continuous improvement, whether it’s refining processes, increasing productivity, or delivering high-quality outcomes. I’m eager to bring my skills and experience to an organization that values strategic thinking, operational excellence, and a results-oriented approach.</p>
+                <p class="mt-3 text-[#F2F0E6]">Hi, I’m Sparkle Durio, a highly organized and results-driven professional with over a decade of experience in supporting senior leadership and managing strategic projects. My expertise lies in anticipating needs, managing complex operations, and driving efficiency across diverse teams and initiatives.<br><br>I thrive on solving problems and streamlining processes, whether it’s coordinating critical schedules, managing high-priority communications, or implementing systems that enhance organizational flow. My proactive approach ensures smooth operations, allowing leadership to focus on the bigger picture while I handle the details.<br><br>In my previous roles, I’ve successfully negotiated key agreements, managed sensitive communications, and fostered lasting relationships with clients and stakeholders, always keeping a focus on delivering value and building trust. I excel in high-pressure environments and am adept at managing competing priorities to achieve optimal results.<br><br>When working remotely, I rely on clear communication, structured timelines, and the use of productivity tools such as the Pomodoro method, priority matrices, and planner apps to ensure tasks are completed efficiently and deadlines are met. My ability to adapt to various time zones and work with global teams further enhances my flexibility and effectiveness in virtual settings.<br><br>At the heart of my work is a commitment to continuous improvement, whether it’s refining processes, increasing productivity, or delivering high-quality outcomes. I’m eager to bring my skills and experience to an organization that values strategic thinking, operational excellence, and a results-oriented approach.</p>
                 <ul class="mt-6 grid sm:grid-cols-2 gap-3 text-sm text-[#F2F0E6]">
                     <li class="flex gap-2 items-start"><span>✅</span><span>Interpersonal Skills & Conflict Resolution</span></li>
                     <li class="flex gap-2 items-start"><span>✅</span><span>Organizational Excellence</span></li>
@@ -182,37 +173,6 @@ At the heart of my work is a commitment to continuous improvement, whether it’
     </footer>
 
     <script>
-        // --- Theme toggle with localStorage ---
-        const themeToggle = document.getElementById('themeToggle');
-        const root = document.documentElement;
-        const storedTheme = localStorage.getItem('theme');
-        if (storedTheme === 'light') document.body.classList.add('bg-white','text-neutral-900');
-        function toggleTheme(){
-            const isDark = document.body.classList.contains('bg-[#000000]');
-            if(isDark){
-                // Switch to light theme
-                document.body.classList.remove('bg-[#000000]','text-[#F2F0E6]');
-                document.body.classList.add('bg-[#F2F0E6]','text-[#000000]');
-                document.querySelectorAll('.bg-[#0A3A2A]').forEach(el => el.classList.replace('bg-[#0A3A2A]', 'bg-[#B8860B]'));
-                document.querySelectorAll('.text-[#F2F0E6]').forEach(el => el.classList.replace('text-[#F2F0E6]', 'text-[#000000]'));
-                document.querySelectorAll('.text-[#B8860B]').forEach(el => el.classList.replace('text-[#B8860B]', 'text-[#5C4033]'));
-                document.querySelectorAll('.bg-[#5C4033]').forEach(el => el.classList.replace('bg-[#5C4033]', 'bg-[#0A3A2A]'));
-                themeToggle.textContent = '☀️';
-                localStorage.setItem('theme','light');
-            } else {
-                // Switch to dark theme
-                document.body.classList.remove('bg-[#F2F0E6]','text-[#000000]');
-                document.body.classList.add('bg-[#000000]','text-[#F2F0E6]');
-                document.querySelectorAll('.bg-[#B8860B]').forEach(el => el.classList.replace('bg-[#B8860B]', 'bg-[#0A3A2A]'));
-                document.querySelectorAll('.text-[#000000]').forEach(el => el.classList.replace('text-[#000000]', 'text-[#F2F0E6]'));
-                document.querySelectorAll('.text-[#5C4033]').forEach(el => el.classList.replace('text-[#5C4033]', 'text-[#B8860B]'));
-                document.querySelectorAll('.bg-[#0A3A2A]').forEach(el => el.classList.replace('bg-[#0A3A2A]', 'bg-[#5C4033]'));
-                themeToggle.textContent = '🌙';
-                localStorage.setItem('theme','dark');
-            }
-        }
-        themeToggle.addEventListener('click', toggleTheme);
-
         // --- Project data (edit/add your Initiatives here) ---
         const Initiatives = [
             {
