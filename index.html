@@ -19,6 +19,46 @@
         .glass { backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
         .card-hover { transition: transform .25s ease, box-shadow .25s ease; }
         .card-hover:hover { transform: translateY(-4px); }
+        
+        /* New styles for the modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 50;
+        }
+        .modal.open {
+            display: flex;
+        }
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            color: #F2F0E6;
+            cursor: pointer;
+            z-index: 60;
+            transition: color 0.2s;
+        }
+        .modal-close:hover {
+            color: #B8860B;
+        }
+        .modal-image {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 1rem;
+        }
     </style>
 </head>
 <body class="bg-[#000000] text-[#F2F0E6]">
@@ -171,6 +211,14 @@
         </div>
     </footer>
 
+    <!-- New HTML for the Modal -->
+    <div id="image-modal" class="modal">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="modal-image-full" src="" alt="Expanded Image" class="modal-image" />
+        </div>
+    </div>
+
     <script>
         // --- Project data (edit/add your Initiatives here) ---
         const Initiatives = [
@@ -215,6 +263,27 @@
         const tagButtons = Array.from(document.querySelectorAll('.tag'));
         const state = { sort:'newest', tags:new Set() };
 
+        // New DOM elements for the modal
+        const modal = document.getElementById('image-modal');
+        const modalImage = document.getElementById('modal-image-full');
+
+        // Function to open the modal with the specified image
+        function openModal(imageUrl) {
+            if (imageUrl) {
+                modalImage.src = imageUrl;
+                modal.classList.add('open');
+                // Prevent scrolling on the body
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            modal.classList.remove('open');
+            // Re-enable scrolling on the body
+            document.body.style.overflow = '';
+        }
+
         function render(){
             let list = [...Initiatives];
 
@@ -238,10 +307,13 @@
             for(const p of list){
                 const el = document.createElement('article');
                 el.className = 'card-hover rounded-2xl border border-[#5C4033] overflow-hidden bg-[#5C4033]/50';
-                el.innerHTML = `
+                
+                // Construct the HTML for the card
+                const cardHtml = `
                     <a href="${p.link || '#'}" target="${p.link ? '_blank' : '_self'}" class="block">
                         <div class="aspect-[16/10] bg-[#5C4033] grid place-items-center">
-                            ${p.image ? `<img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover"/>` : `<div class='text-[#B8860B] text-sm'>Add an image</div>`}
+                            <!-- Add an onclick event to the image container to open the modal -->
+                            ${p.image ? `<div class="cursor-pointer" onclick="event.preventDefault(); openModal('${p.image}');"><img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover"/></div>` : `<div class='text-[#B8860B] text-sm'>Add an image</div>`}
                         </div>
                         <div class="p-4">
                             <div class="flex items-center justify-between gap-3">
@@ -254,6 +326,8 @@
                             </div>
                         </div>
                     </a>`;
+
+                el.innerHTML = cardHtml;
                 grid.appendChild(el);
             }
         }
@@ -263,14 +337,22 @@
         tagButtons.forEach(btn=>{
             btn.addEventListener('click', ()=>{
                 const tag = btn.dataset.tag;
-                if(state.tags.has(tag)){ state.tags.delete(tag); btn.classList.remove('bg-[#0A3A2A]/60'); }
-                else { state.tags.add(tag); btn.classList.add('bg-[#0A3A2A]/60'); }
+                if(state.tags.has(tag)){ btn.classList.remove('bg-[#0A3A2A]/60'); state.tags.delete(tag); }
+                else { btn.classList.add('bg-[#0A3A2A]/60'); state.tags.add(tag); }
                 render();
             });
         });
 
         document.getElementById('year').textContent = new Date().getFullYear();
 
+        // Add event listener to close the modal when clicking outside the image
+        modal.addEventListener('click', (e) => {
+            if (e.target.id === 'image-modal') {
+                closeModal();
+            }
+        });
+
+        // Initial render
         render();
     </script>
 </body>
