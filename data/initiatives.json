@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Digitized Grant Filing System",
+    "tags": ["Program Ops", "Compliance", "Automation"],
+    "summary": "Centralized digital records + audit-ready spreadsheets for statewide grantees.",
+    "outcome": "↓ admin processing time 40% • ↓ audit prep 35%",
+    "link": "case-studies/digitized-grant-filing.html"
+  },
+  {
+    "title": "Board & Executive Operations",
+    "tags": ["Executive Support", "Governance"],
+    "summary": "Standardized board packet workflow and comms cadence.",
+    "outcome": "100% board quorum • 130+ exec hours/year recovered",
+    "link": "case-studies/board-exec-ops.html"
+  },
+  {
+    "title": "Calendar Orchestration for CEO/COO",
+    "tags": ["EA Ops", "Time Management"],
+    "summary": "Rules-based calendar design, travel blocks, and briefing templates.",
+    "outcome": "Fewer conflicts • Higher focus time • Faster decisions",
+    "link": "case-studies/calendar-orchestration.html"
+  },
+  {
+    "title": "Procurement Workflow Revamp",
+    "tags": ["Procurement", "Process Design"],
+    "summary": "Rebuilt intake → PO → invoice flow and documentation standards.",
+    "outcome": "↓ cycle time 30% • More equitable vendor awards",
+    "link": "case-studies/procurement-workflow.html"
+  },
+  {
+    "title": "Spend Integrity Audits",
+    "tags": ["Risk", "Analytics"],
+    "summary": "Proactive reviews to catch high-risk purchasing errors.",
+    "outcome": "$75k+ in errors identified and corrected annually",
+    "link": "case-studies/spend-integrity-audits.html"
+  },
+  {
+    "title": "Program Transparency Platform",
+    "tags": ["Project Mgmt", "Change"],
+    "summary": "Implemented cloud PM + reporting to reduce project slippage.",
+    "outcome": "↑ task transparency • ↓ delays 35%",
+    "link": "case-studies/program-transparency.html"
+  }
+]
