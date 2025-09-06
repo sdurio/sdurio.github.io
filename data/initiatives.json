@@ -1,0 +1,63 @@
+[
+  {
+    "title": "Digitized Grant Filing System",
+    "tags": [
+      "Program Ops",
+      "Compliance",
+      "Automation"
+    ],
+    "summary": "Centralized digital records + audit-ready spreadsheets for statewide grantees.",
+    "outcome": "\u2193 admin processing time 40% \u2022 \u2193 audit prep 35%",
+    "link": "case-studies/digitized-grant-filing.html"
+  },
+  {
+    "title": "Board & Executive Operations",
+    "tags": [
+      "Executive Support",
+      "Governance"
+    ],
+    "summary": "Standardized board packet workflow and comms cadence.",
+    "outcome": "100% board quorum \u2022 130+ exec hours/year recovered",
+    "link": "case-studies/board-exec-ops.html"
+  },
+  {
+    "title": "Calendar Orchestration for CEO/COO",
+    "tags": [
+      "EA Ops",
+      "Time Management"
+    ],
+    "summary": "Rules-based calendar design, travel blocks, and briefing templates.",
+    "outcome": "Fewer conflicts \u2022 Higher focus time \u2022 Faster decisions",
+    "link": "case-studies/calendar-orchestration.html"
+  },
+  {
+    "title": "Procurement Workflow Revamp",
+    "tags": [
+      "Procurement",
+      "Process Design"
+    ],
+    "summary": "Rebuilt intake \u2192 PO \u2192 invoice flow and documentation standards.",
+    "outcome": "\u2193 cycle time 30% \u2022 More equitable vendor awards",
+    "link": "case-studies/procurement-workflow.html"
+  },
+  {
+    "title": "Spend Integrity Audits",
+    "tags": [
+      "Risk",
+      "Analytics"
+    ],
+    "summary": "Proactive reviews to catch high-risk purchasing errors.",
+    "outcome": "$75k+ in errors identified and corrected annually",
+    "link": "case-studies/spend-integrity-audits.html"
+  },
+  {
+    "title": "Program Transparency Platform",
+    "tags": [
+      "Project Mgmt",
+      "Change"
+    ],
+    "summary": "Implemented cloud PM + reporting to reduce project slippage.",
+    "outcome": "\u2191 task transparency \u2022 \u2193 delays 35%",
+    "link": "case-studies/program-transparency.html"
+  }
+]
