@@ -60,4 +60,22 @@
     "outcome": "\u2191 task transparency \u2022 \u2193 delays 35%",
     "link": "case-studies/program-transparency.html"
   }
+  - title: "Statewide Training Program Logistics"
+  tags: ["Operations"]      # was ["Program Ops","Training"]
+  summary: "Coordinated 5 statewide programs impacting 250+ providers."
+  outcome: "Cut prep time 40% with digitized systems"
+  link: "case-studies/training-programs.html"
+
+- title: "Executive Calendar Orchestration"
+  tags: ["Operations", "Automation"]
+  summary: "Managed CEO/COO calendars, travel & comms."
+  outcome: "Recovered 130+ executive hours annually"
+  link: "case-studies/executive-calendar.html"
+
+- title: "Procurement Audit & Recovery"
+  tags: ["Analytics", "Operations"]
+  summary: "Audited purchasing, preventing $75K in misallocations."
+  outcome: "↑ accuracy, ↑ vendor equity"
+  link: "case-studies/procurement-audit.html"
+
 ]
