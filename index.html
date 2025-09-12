@@ -99,6 +99,11 @@
   color: var(--darkNeutral);
   box-shadow: 0 0 0 4px rgba(255,223,106,.12);
 }
+/* Accessible focus styles */
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+#skillFilters .filter-btn:focus-visible,
+a:focus-visible,
+button:focus-visible { box-shadow: 0 0 0 3px rgba(255,223,106,.18); }
 
     @media (prefers-reduced-motion: reduce){
       .reveal{ opacity:1; transform:none; }
@@ -123,7 +128,7 @@
       <nav class="hidden md:flex gap-5 text-sm">
         <a href="#intro" class="hover:text-[var(--primary)] transition-colors">Introduction</a>
         <a href="#about" class="hover:text-[var(--primary)] transition-colors">About</a>
-        <a href="#expertise" class="hover:text-[var(--primary)] transition-colors">Areas of Expertisea>
+        <a href="#expertise" class="hover:text-[var(--primary)] transition-colors">Areas of Expertise</a>
         <a href="#tech" class="hover:text-[var(--primary)] transition-colors">Technical Proficiencies</a>
         <a href="#experience" class="hover:text-[var(--primary)] transition-colors">Work Experience</a>
         <a href="#education" class="hover:text-[var(--primary)] transition-colors">Education</a>
@@ -131,11 +136,15 @@
       </nav>
 
       <div class="flex items-center gap-3">
-  <a href="https://www.linkedin.com/in/sparkledurio/" target="_blank" rel="noopener"
-    class="p-2 rounded-xl border border-white/10 hover:bg-white/5"
-    aria-label="Sparkle Durio on LinkedIn">
-    <img src="linkedin-svgrepo-com.svg" alt="LinkedIn Logo" class="w-5 h-5" />
-  </a>
+<a href="https://www.linkedin.com/in/sparkledurio/" target="_blank" rel="noopener"
+  class="p-2 rounded-xl border border-white/10 hover:bg-white/5"
+  aria-label="Sparkle Durio on LinkedIn">
+  <!-- LinkedIn SVG (decorative) -->
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+       class="w-5 h-5 fill-[var(--lightNeutral)]" aria-hidden="true" focusable="false">
+    <path d="M100.28 448H7.4V148.9h92.88zm-46.44-341C24.3 107 0 82.7 0 53.6A53.61 53.61 0 0 1 53.84 0C82.93 0 107 24.3 107 53.6c0 29.1-24.07 53.4-53.16 53.4zM447.9 448h-92.7V302.4c0-34.7-.7-79.3-48.3-79.3-48.4 0-55.8 37.8-55.8 76.8V448h-92.7V148.9h89.1v40.8h1.3c12.4-23.5 42.6-48.3 87.6-48.3 93.7 0 111 61.7 111 141.9V448z"/>
+  </svg>
+</a>
   <button class="md:hidden rounded-xl border border-white/10 px-3 py-2 text-sm" id="menuBtn">Menu</button>
 </div>
 
@@ -157,11 +166,9 @@
     <section id="intro" class="py-12">
       <div class="grid md:grid-cols-[1.2fr_1fr] gap-8 items-center">
         <div class="reveal">
-          <p class="uppercase tracking-widest text-xs mb-3 text-[var(--secondary)]">Executive Assistant · Program &amp; Operations</p>
+          <p class="uppercase tracking-widest text-xs mb-3 text-[var(--secondary)]">Executive Assistant</p>
           <h1 class="text-4xl md:text-5xl font-extrabold leading-tight shimmer">Sparkle Durio</h1>
-          <p class="mt-5 text-base md:text-lg text-white/85">
-            Strategic Executive Assistant who anticipates needs, orchestrates complex calendars, and builds systems that keep leaders focused on impact. Calm under pressure, detail-obsessed, and relentlessly resourceful.
-          </p>
+          <p class="mt-5 text-base md:text-lg text-white/85">Executive Assistant specializing in C‑suite support across technology, finance, consulting, legal, and biotech. I handle board/investor communications, multi‑time‑zone calendars, and NDA‑sensitive operations so leaders stay focused on outcomes.</p>
           <div class="mt-6 flex flex-wrap gap-3">
             <a href="#contact" class="btn btn-glow rounded-2xl px-5 py-2.5 bg-[var(--primary)] text-[var(--darkNeutral)] font-semibold transition">Contact Me</a>
             <a href="#experience" class="btn btn-glow rounded-2xl px-5 py-2.5 border border-white/10 hover:bg-white/5 transition">View Experience</a>
@@ -181,8 +188,9 @@
             <figure class="parallax relative rounded-[26px] p-2 bg-gradient-to-br from-[var(--primary)]/20 via-transparent to-[var(--secondary)]/20 border border-white/10 hover-highlight">
               <div>
                 <img src="PXL_20250116_194632440.jpg" alt="Portrait of Sparkle Durio"
-                     class="w-full h-[340px] object-cover rounded-2xl border border-white/10" />
-                <figcaption class="px-3 py-2 text-xs text-white/70">Executive Assistant • Program &amp; Operations</figcaption>
+     loading="lazy" decoding="async"
+     class="w-full h-[340px] object-cover rounded-2xl border border-white/10" />
+                <figcaption class="px-3 py-2 text-xs text-white/70">Executive Assistant</figcaption>
               </div>
             </figure>
           </div>
@@ -195,55 +203,149 @@
       <h2 class="section-title text-2xl font-bold mb-6 text-[var(--accent)]">About Me</h2>
       <div class="grid md:grid-cols-[1.6fr_1fr] gap-8">
         <p class="text-white/85 leading-relaxed">
-          I’m an Executive Assistant who loves designing processes that reduce chaos and increase velocity. I partner closely with executives to prioritize what matters, protect focus time, and keep cross-functional projects moving with clarity.
+          Hi, I’m Sparkle Durio, a highly organized and results-driven professional with over a decade of experience in supporting senior leadership and managing strategic projects. My expertise lies in anticipating needs, managing complex operations, and driving efficiency across diverse teams and initiatives.
+<br><br>
+I thrive on solving problems and streamlining processes, whether it’s coordinating critical schedules, managing high-priority communications, or implementing systems that enhance organizational flow. My proactive approach ensures smooth operations, allowing leadership to focus on the bigger picture while I handle the details.
+<br><br>
+In my previous roles, I’ve successfully negotiated key agreements, managed sensitive communications, and fostered lasting relationships with clients and stakeholders, always keeping a focus on delivering value and building trust. I excel in high-pressure environments and am adept at managing competing priorities to achieve optimal results.
+<br><br>
+When working remotely, I rely on clear communication, structured timelines, and the use of productivity tools such as the Pomodoro method, priority matrices, and planner apps to ensure tasks are completed efficiently and deadlines are met. My ability to adapt to various time zones and work with global teams further enhances my flexibility and effectiveness in virtual settings.
+<br><br>
+At the heart of my work is a commitment to continuous improvement, whether it’s refining processes, increasing productivity, or delivering high-quality outcomes. I’m eager to bring my skills and experience to an organization that values strategic thinking, operational excellence, and a results-oriented approach.
         </p>
-        <div class="hover-highlight rounded-2xl border border-white/10 p-5 bg-white/5 transition">
+       <div class="hover-highlight rounded-2xl border border-white/10 p-5 bg-white/5 transition">
           <h3 class="text-sm uppercase tracking-wider text-[var(--secondary)]">Quick Facts</h3>
-          <dl class="mt-3 grid grid-cols-2 gap-4 text-sm">
-            <div>
-              <dt class="text-white/60">Based</dt>
-              <dd class="font-medium">Sacramento, CA (Remote-first)</dd>
-            </div>
-            <div>
-              <dt class="text-white/60">Industries</dt>
-              <dd class="font-medium">Public Sector · Tech · Non-Profit</dd>
-            </div>
-            <div>
-              <dt class="text-white/60">Strengths</dt>
-              <dd class="font-medium">Anticipation · Prioritization · Discretion</dd>
-            </div>
-            <div>
-              <dt class="text-white/60">Ops</dt>
-              <dd class="font-medium">Procurement · Contracts · Events</dd>
-            </div>
-          </dl>
+          <dl class="mt-3 grid grid-cols-[8.5rem_1fr] gap-y-3 gap-x-4 text-sm">
+<div class="contents">
+    <dt class="text-white/60 text-right flex items-center justify-end gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4 opacity-70" fill="currentColor">
+        <path d="M12 22s7-7 7-11a7 7 0 1 0-14 0c0 4 7 11 7 11Zm0-9a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z"/>
+      </svg>
+      <span>Based</span>
+    </dt>
+    <dd class="font-medium">Sacramento, CA</dd>
+  </div>
+
+  <div class="contents">
+    <dt class="text-white/60 text-right flex items-center justify-end gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="7" width="18" height="11" rx="2"/><path d="M8 7V5h8v2"/>
+      </svg>
+      <span>Industries</span>
+    </dt>
+    <dd class="font-medium">Technology (Big Tech & SaaS) · Finance (IB/PE/VC/HF) · Management Consulting (MBB/Big 4) · Legal (AmLaw & Corporate) · Healthcare & Biotech</dd>
+  </div>
+
+  <div class="contents">
+    <dt class="text-white/60 text-right flex items-center justify-end gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4 opacity-70" fill="currentColor">
+        <path d="M12 2 14.2 8h6.3l-5.1 3.7 1.9 6.1L12 15.5 6.7 17.8l1.9-6.1L3.5 8h6.3L12 2z"/>
+      </svg>
+      <span>Strengths</span>
+    </dt>
+    <dd class="font-medium">Executive Gatekeeping · Board/Investor Comms · NDA-Level Discretion · Crisis-Ready Execution</dd>
+  </div>
+
+  <div class="contents">
+    <dt class="text-white/60 text-right flex items-center justify-end gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="4" y1="6" x2="20" y2="6"/><circle cx="8" cy="6" r="2"/>
+        <line x1="4" y1="12" x2="20" y2="12"/><circle cx="14" cy="12" r="2"/>
+        <line x1="4" y1="18" x2="20" y2="18"/><circle cx="10" cy="18" r="2"/>
+      </svg>
+      <span>Ops</span>
+    </dt>
+    <dd class="font-medium">Board/Investor Support · Multi-timezone Calendars · NDA/Compliance Docs · Executive Travel & Offsites</dd>
+  </div>
+
+  <!-- Logistics & Availability -->
+  <div class="contents">
+    <dt class="text-white/60 text-right flex items-center justify-end gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/>
+      </svg>
+      <span>Time Zone</span>
+    </dt>
+    <dd class="font-medium">Pacific (PST/PDT) · US-wide support</dd>
+  </div>
+
+  <div class="contents">
+    <dt class="text-white/60 text-right flex items-center justify-end gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="6" width="18" height="12" rx="2"/><path d="M9 18h6"/>
+      </svg>
+      <span>Work Setup</span>
+    </dt>
+    <dd class="font-medium">Remote-first; open to hybrid (Sacramento)</dd>
+  </div>
+
+  <div class="contents">
+    <dt class="text-white/60 text-right flex items-center justify-end gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="5" y="8" width="14" height="10" rx="2"/><path d="M9 8V6h6v2"/>
+      </svg>
+      <span>Travel</span>
+    </dt>
+    <dd class="font-medium">Up to 25% for offsites & events</dd>
+  </div>
+
+  <div class="contents">
+    <dt class="text-white/60 text-right flex items-center justify-end gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="16" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
+      </svg>
+      <span>Availability</span>
+    </dt>
+    <dd class="font-medium">Business hours + limited after-hours for executive needs</dd>
+  </div>
+
+  <!-- Collaboration Style -->
+  <div class="contents">
+    <dt class="text-white/60 text-right flex items-center justify-end gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 11.5a7.5 7.5 0 0 1-10 7L5 20l1.5-4.5a7.5 7.5 0 1 1 14.5-4z"/>
+      </svg>
+      <span>Collab Style</span>
+    </dt>
+    <dd class="font-medium">Proactive, async-friendly, documentation-first</dd>
+  </div>
+
+  <!-- Pronunciation -->
+  <div class="contents">
+    <dt class="text-white/60 text-right flex items-center justify-end gap-2">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 9v6h4l5 4V5l-5 4H5z"/><path d="M16 9a5 5 0 0 1 0 6"/>
+      </svg>
+      <span>Pronunciation</span>
+    </dt>
+    <dd class="font-medium">“Sparkle” (like the verb) ✨</dd>
+  </div>
+</dl>
         </div>
       </div>
     </section>
 
     <!-- Areas of Expertise -->
     <section id="expertise" class="py-12 border-t border-white/5 reveal">
-      <h2 class="section-title text-2xl font-bold mb-6 text-[var(--accent)]">Areas of Expertise<h2>
+      <h2 class="section-title text-2xl font-bold mb-6 text-[var(--accent)]">Areas of Expertise</h2>
 
       <!-- Top Skills -->
       <h3 class="text-sm uppercase tracking-wider text-[var(--secondary)] mb-3">Top Skills</h3>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-        <div class="hover-highlight rounded-xl border border-white/10 px-4 py-3 bg-black/40 text-sm">Interpersonal Skills</div>
-        <div class="hover-highlight rounded-xl border border-white/10 px-4 py-3 bg-black/40 text-sm">Conflict Resolution</div>
-        <div class="hover-highlight rounded-xl border border-white/10 px-4 py-3 bg-black/40 text-sm">Grant Administration</div>
-      </div>
+  <div class="hover-highlight rounded-xl border border-white/10 px-4 py-3 bg-black/40 text-sm">Executive Gatekeeping</div>
+  <div class="hover-highlight rounded-xl border border-white/10 px-4 py-3 bg-black/40 text-sm">Board & Investor Communications</div>
+  <div class="hover-highlight rounded-xl border border-white/10 px-4 py-3 bg-black/40 text-sm">Multi‑Time‑Zone Scheduling</div>
+</div>
 
       <!-- Core Skills -->
       <h3 class="text-sm uppercase tracking-wider text-[var(--secondary)] mb-3">Core Skills</h3>
       <div class="flex flex-wrap gap-3 mb-8 text-sm">
-        <span class="hover-highlight rounded-xl border border-white/10 px-4 py-2 bg-black/40">Strategic Support</span>
-        <span class="hover-highlight rounded-xl border border-white/10 px-4 py-2 bg-black/40">Project Management</span>
-        <span class="hover-highlight rounded-xl border border-white/10 px-4 py-2 bg-black/40">Calendar &amp; Appointment Management</span>
+        <span class="hover-highlight rounded-xl border border-white/10 px-4 py-2 bg-black/40">Calendar & Appointment Management</span>
         <span class="hover-highlight rounded-xl border border-white/10 px-4 py-2 bg-black/40">Travel Planning</span>
-        <span class="hover-highlight rounded-xl border border-white/10 px-4 py-2 bg-black/40">Meeting &amp; Event Coordination</span>
-        <span class="hover-highlight rounded-xl border border-white/10 px-4 py-2 bg-black/40">Communication &amp; Relationship Management</span>
-        <span class="hover-highlight rounded-xl border border-white/10 px-4 py-2 bg-black/40">AI, Technology &amp; Document Support</span>
-        <span class="hover-highlight rounded-xl border border-white/10 px-4 py-2 bg-black/40">Confidentiality &amp; Discretion</span>
+        <span class="hover-highlight rounded-xl border border-white/10 px-4 py-2 bg-black/40">Meeting & Event Coordination</span>
+        <span class="hover-highlight rounded-xl border border-white/10 px-4 py-2 bg-black/40">Communication & Relationship Management</span>
+        <span class="hover-highlight rounded-xl border border-white/10 px-4 py-2 bg-black/40">Confidentiality & Discretion</span>
+        <span class="hover-highlight rounded-xl border border-white/10 px-4 py-2 bg-black/40">Project Management</span>
       </div>
 
       <!-- Complete List of Skills (categorized) -->
@@ -437,23 +539,23 @@
       </div>
     </section>
 
-    <!-- Contact (email removed) -->
+    <!-- Contact -->
     <section id="contact" class="py-12 border-t border-white/5 reveal">
       <h2 class="section-title text-2xl font-bold mb-6 text-[var(--accent)]">Contact Me</h2>
       <div class="grid md:grid-cols-2 gap-8">
-        <form id="contactForm" class="hover-highlight rounded-2xl border border-white/10 p-6 bg-white/5">
-          <div class="grid grid-cols-1 gap-4">
-            <label class="text-sm">
-              <span class="block mb-1 text-white/70">Name</span>
-              <input class="w-full rounded-xl bg-black/60 border border-white/10 px-3 py-2 outline-none focus:border-[var(--secondary)]" required />
-            </label>
-            <label class="text-sm">
-              <span class="block mb-1 text-white/70">Message</span>
-              <textarea rows="5" class="w-full rounded-xl bg-black/60 border border-white/10 px-3 py-2 outline-none focus:border-[var(--secondary)]" required></textarea>
-            </label>
-            <button class="btn btn-glow mt-2 rounded-2xl px-5 py-2.5 bg-[var(--primary)] text-[var(--darkNeutral)] font-semibold transition">Send</button>
-          </div>
-        </form>
+<form id="contactForm" class="hover-highlight rounded-2xl border border-white/10 p-6 bg-white/5" action="https://formspree.io/f/meoldloj" method="POST">
+  <div class="grid grid-cols-1 gap-4">
+    <label class="text-sm">
+      <span class="block mb-1 text-white/70">Name</span>
+      <input class="w-full rounded-xl bg-black/60 border border-white/10 px-3 py-2 outline-none focus:border-[var(--secondary)]" type="text" name="name" required />
+    </label>
+    <label class="text-sm">
+      <span class="block mb-1 text-white/70">Message</span>
+      <textarea rows="5" class="w-full rounded-xl bg-black/60 border border-white/10 px-3 py-2 outline-none focus:border-[var(--secondary)]" name="message" required></textarea>
+    </label>
+    <button class="btn btn-glow mt-2 rounded-2xl px-5 py-2.5 bg-[var(--primary)] text-[var(--darkNeutral)] font-semibold transition" type="submit">Send</button>
+  </div>
+</form>
 
         <div class="hover-highlight rounded-2xl border border-white/10 p-6 bg-gradient-to-br from-[var(--secondary)]/12 to-[var(--primary)]/12">
           <h3 class="text-white font-semibold">Connect</h3>
@@ -461,8 +563,11 @@
           <div class="mt-4 text-sm flex items-center gap-2">
   <a href="https://www.linkedin.com/in/sparkledurio/" target="_blank" rel="noopener"
     class="btn inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/10 hover:bg-white/5">
-    <img src="linkedin-svgrepo-com.svg" alt="LinkedIn Logo" class="w-4 h-4" />
-    LinkedIn /sparkledurio
+  <!-- LinkedIn SVG (decorative) -->
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
+       class="w-5 h-5 fill-[var(--lightNeutral)]" aria-hidden="true" focusable="false">
+    <path d="M100.28 448H7.4V148.9h92.88zm-46.44-341C24.3 107 0 82.7 0 53.6A53.61 53.61 0 0 1 53.84 0C82.93 0 107 24.3 107 53.6c0 29.1-24.07 53.4-53.16 53.4zM447.9 448h-92.7V302.4c0-34.7-.7-79.3-48.3-79.3-48.4 0-55.8 37.8-55.8 76.8V448h-92.7V148.9h89.1v40.8h1.3c12.4-23.5 42.6-48.3 87.6-48.3 93.7 0 111 61.7 111 141.9V448z"/>
+  </svg>
   </a>
 </div>
           <div class="mt-6">
