@@ -86,6 +86,20 @@
     .section-title::after{ content:""; position:absolute; left:0; bottom:-6px; height:3px; width:100%;
       background: linear-gradient(90deg, var(--primary), transparent 60%); border-radius:999px; opacity:.8; }
 
+    
+/* Skills filter buttons: default vs selected */
+#skillFilters .filter-btn{
+  background: var(--darkNeutral);
+  color: var(--lightNeutral);
+  transition: filter .2s ease, transform .15s ease, background-color .2s ease, color .2s ease;
+}
+#skillFilters .filter-btn:hover{ filter: brightness(1.1); }
+#skillFilters .filter-btn[aria-selected="true"]{
+  background: var(--primary);
+  color: var(--darkNeutral);
+  box-shadow: 0 0 0 4px rgba(255,223,106,.12);
+}
+
     @media (prefers-reduced-motion: reduce){
       .reveal{ opacity:1; transform:none; }
       .shimmer, body::before{ animation:none; }
@@ -109,7 +123,7 @@
       <nav class="hidden md:flex gap-5 text-sm">
         <a href="#intro" class="hover:text-[var(--primary)] transition-colors">Introduction</a>
         <a href="#about" class="hover:text-[var(--primary)] transition-colors">About</a>
-        <a href="#expertise" class="hover:text-[var(--primary)] transition-colors">Areas of Expertise</a>
+        <a href="#expertise" class="hover:text-[var(--primary)] transition-colors">Areas of Expertisea>
         <a href="#tech" class="hover:text-[var(--primary)] transition-colors">Technical Proficiencies</a>
         <a href="#experience" class="hover:text-[var(--primary)] transition-colors">Work Experience</a>
         <a href="#education" class="hover:text-[var(--primary)] transition-colors">Education</a>
@@ -123,13 +137,13 @@
     <img src="linkedin-svgrepo-com.svg" alt="LinkedIn Logo" class="w-5 h-5" />
   </a>
   <button class="md:hidden rounded-xl border border-white/10 px-3 py-2 text-sm" id="menuBtn">Menu</button>
-</div>>
+</div>
 
     <div id="mobileNav" class="md:hidden hidden border-t border-white/10 bg-black/70">
       <div class="max-w-6xl mx-auto px-4 py-3 grid grid-cols-2 gap-3 text-sm">
         <a href="#intro" class="p-2 rounded-lg hover:bg-white/5">Introduction</a>
         <a href="#about" class="p-2 rounded-lg hover:bg-white/5">About</a>
-        <a href="#expertise" class="p-2 rounded-lg hover:bg-white/5">Areas of Expertise</</a>
+        <a href="#expertise" class="p-2 rounded-lg hover:bg-white/5">Areas of Expertise</a>
         <a href="#tech" class="p-2 rounded-lg hover:bg-white/5">Technical Proficiencies</a>
         <a href="#experience" class="p-2 rounded-lg hover:bg-white/5">Work Experience</a>
         <a href="#education" class="p-2 rounded-lg hover:bg-white/5">Education</a>
@@ -209,7 +223,7 @@
 
     <!-- Areas of Expertise -->
     <section id="expertise" class="py-12 border-t border-white/5 reveal">
-      <h2 class="section-title text-2xl font-bold mb-6 text-[var(--accent)]">Areas of Expertise</h2>
+      <h2 class="section-title text-2xl font-bold mb-6 text-[var(--accent)]">Areas of Expertiseh2>
 
       <!-- Top Skills -->
       <h3 class="text-sm uppercase tracking-wider text-[var(--secondary)] mb-3">Top Skills</h3>
@@ -236,12 +250,12 @@
     <div class="mb-8" id="skillsCategorized">
   <h3 class="text-sm uppercase tracking-wider text-[var(--secondary)] mb-3">Complete List of Skills</h3>
   <div class="flex flex-wrap gap-2 mb-4 text-xs" id="skillFilters" role="tablist" aria-label="Filter skills by category">
-    <button data-filter="all" class="filter-btn rounded-xl border border-white/10 px-3 py-2 bg-[var(--primary)] text-[var(--darkNeutral)] hover:brightness-110" aria-selected="true" role="tab">All</button>
-    <button data-filter="admin" class="filter-btn rounded-xl border border-white/10 px-3 py-2 bg-[var(--darkNeutral)] text-[var(--lightNeutral)] hover:brightness-110" role="tab">Administration &amp; Records</button>
-    <button data-filter="procurement" class="filter-btn rounded-xl border border-white/10 px-3 py-2 bg-[var(--darkNeutral)] text-[var(--lightNeutral)] hover:brightness-110" role="tab">Procurement &amp; Contracts</button>
-    <button data-filter="comms" class="filter-btn rounded-xl border border-white/10 px-3 py-2 bg-[var(--darkNeutral)] text-[var(--lightNeutral)] hover:brightness-110" role="tab">Communication &amp; People</button>
-    <button data-filter="workflow" class="filter-btn rounded-xl border border-white/10 px-3 py-2 bg-[var(--darkNeutral)] text-[var(--lightNeutral)] hover:brightness-110" role="tab">Operations &amp; Workflow</button>
-    <button data-filter="travel" class="filter-btn rounded-xl border border-white/10 px-3 py-2 bg-[var(--darkNeutral)] text-[var(--lightNeutral)] hover:brightness-110" role="tab">Travel &amp; Logistics</button>
+    <button data-filter="all" class="filter-btn rounded-xl border border-white/10 px-3 py-2 hover:brightness-110" aria-selected="true" role="tab" aria-selected="true">All</button>
+    <button data-filter="admin" class="filter-btn rounded-xl border border-white/10 px-3 py-2 hover:brightness-110" role="tab">Administration &amp; Records</button>
+    <button data-filter="procurement" class="filter-btn rounded-xl border border-white/10 px-3 py-2 hover:brightness-110" role="tab">Procurement &amp; Contracts</button>
+    <button data-filter="comms" class="filter-btn rounded-xl border border-white/10 px-3 py-2 hover:brightness-110" role="tab">Communication &amp; People</button>
+    <button data-filter="workflow" class="filter-btn rounded-xl border border-white/10 px-3 py-2 hover:brightness-110" role="tab">Operations &amp; Workflow</button>
+    <button data-filter="travel" class="filter-btn rounded-xl border border-white/10 px-3 py-2 hover:brightness-110" role="tab">Travel &amp; Logistics</button>
   </div>
 </div>
 
