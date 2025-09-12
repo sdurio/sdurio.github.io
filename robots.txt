@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sdurio.github.io/sitemap.xml
