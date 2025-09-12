@@ -117,16 +117,13 @@
       </nav>
 
       <div class="flex items-center gap-3">
-        <a href="https://www.linkedin.com/in/sparkledurio/" target="_blank" rel="noopener"
-           class="p-2 rounded-xl border border-white/10 hover:bg-white/5"
-           aria-label="Sparkle Durio on LinkedIn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-5 h-5 fill-[var(--lightNeutral)]">
-            <path d="M100.28 448H7.4V148.9h92.88zm-46.44-341C24.3 107 0 82.7 0 53.6A53.61 53.61 0 0 1 53.84 0C82.93 0 107 24.3 107 53.6c0 29.1-24.07 53.4-53.16 53.4zM447.9 448h-92.7V302.4c0-34.7-.7-79.3-48.3-79.3-48.4 0-55.8 37.8-55.8 76.8V448z"/>
-          </svg>
-        </a>
-        <button class="md:hidden rounded-xl border border-white/10 px-3 py-2 text-sm" id="menuBtn">Menu</button>
-      </div>
-    </div>
+  <a href="https://www.linkedin.com/in/sparkledurio/" target="_blank" rel="noopener"
+    class="p-2 rounded-xl border border-white/10 hover:bg-white/5"
+    aria-label="Sparkle Durio on LinkedIn">
+    <img src="linkedin-svgrepo-com.svg" alt="LinkedIn Logo" class="w-5 h-5" />
+  </a>
+  <button class="md:hidden rounded-xl border border-white/10 px-3 py-2 text-sm" id="menuBtn">Menu</button>
+</div>>
 
     <div id="mobileNav" class="md:hidden hidden border-t border-white/10 bg-black/70">
       <div class="max-w-6xl mx-auto px-4 py-3 grid grid-cols-2 gap-3 text-sm">
@@ -236,16 +233,18 @@
       </div>
 
       <!-- Complete List of Skills (categorized) -->
-      <div class="mb-8" id="skillsCategorized">
-        <h3 class="text-sm uppercase tracking-wider text-[var(--secondary)] mb-3">Complete List of Skills</h3>
-        <div class="flex flex-wrap gap-2 mb-4 text-xs" id="skillFilters" role="tablist" aria-label="Filter skills by category">
-          <button data-filter="all" class="filter-btn rounded-xl border border-white/10 px-3 py-2 bg-[var(--primary)] text-[var(--darkNeutral)] hover:brightness-110" aria-selected="true" role="tab">All</button>
-          <button data-filter="admin" class="filter-btn rounded-xl border border-white/10 px-3 py-2 bg-[var(--primary)] text-[var(--darkNeutral)] hover:brightness-110" role="tab">Administration &amp; Records</button>
-          <button data-filter="procurement" class="filter-btn rounded-xl border border-white/10 px-3 py-2 bg-[var(--primary)] text-[var(--darkNeutral)] hover:brightness-110" role="tab">Procurement &amp; Contracts</button>
-          <button data-filter="comms" class="filter-btn rounded-xl border border-white/10 px-3 py-2 bg-[var(--primary)] text-[var(--darkNeutral)] hover:brightness-110" role="tab">Communication &amp; People</button>
-          <button data-filter="workflow" class="filter-btn rounded-xl border border-white/10 px-3 py-2 bg-[var(--primary)] text-[var(--darkNeutral)] hover:brightness-110" role="tab">Operations &amp; Workflow</button>
-          <button data-filter="travel" class="filter-btn rounded-xl border border-white/10 px-3 py-2 bg-[var(--primary)] text-[var(--darkNeutral)] hover:brightness-110" role="tab">Travel &amp; Logistics</button>
-        </div>
+    <div class="mb-8" id="skillsCategorized">
+  <h3 class="text-sm uppercase tracking-wider text-[var(--secondary)] mb-3">Complete List of Skills</h3>
+        <p class="mt-3 text-xs text-white/60">Tip: Use the filters above to focus on a category. Click “All” to reset.</p>
+  <div class="flex flex-wrap gap-2 mb-4 text-xs" id="skillFilters" role="tablist" aria-label="Filter skills by category">
+    <button data-filter="all" class="filter-btn rounded-xl border border-white/10 px-3 py-2 bg-[var(--primary)] text-[var(--darkNeutral)] hover:brightness-110" aria-selected="true" role="tab">All</button>
+    <button data-filter="admin" class="filter-btn rounded-xl border border-white/10 px-3 py-2 bg-[var(--darkNeutral)] text-[var(--lightNeutral)] hover:brightness-110" role="tab">Administration &amp; Records</button>
+    <button data-filter="procurement" class="filter-btn rounded-xl border border-white/10 px-3 py-2 bg-[var(--darkNeutral)] text-[var(--lightNeutral)] hover:brightness-110" role="tab">Procurement &amp; Contracts</button>
+    <button data-filter="comms" class="filter-btn rounded-xl border border-white/10 px-3 py-2 bg-[var(--darkNeutral)] text-[var(--lightNeutral)] hover:brightness-110" role="tab">Communication &amp; People</button>
+    <button data-filter="workflow" class="filter-btn rounded-xl border border-white/10 px-3 py-2 bg-[var(--darkNeutral)] text-[var(--lightNeutral)] hover:brightness-110" role="tab">Operations &amp; Workflow</button>
+    <button data-filter="travel" class="filter-btn rounded-xl border border-white/10 px-3 py-2 bg-[var(--darkNeutral)] text-[var(--lightNeutral)] hover:brightness-110" role="tab">Travel &amp; Logistics</button>
+  </div>
+</div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3" id="skillGrid">
           <!-- Administration & Records -->
@@ -281,8 +280,6 @@
           <span class="skill rounded-xl border border-white/10 px-3 py-2 bg-black/40 text-sm" data-cat="travel">Travel Arrangements</span>
           <span class="skill rounded-xl border border-white/10 px-3 py-2 bg-black/40 text-sm" data-cat="travel">Travel Planning</span>
         </div>
-
-        <p class="mt-3 text-xs text-white/60">Tip: Use the filters above to focus on a category. Click “All” to reset.</p>
       </div>
     </section>
 
@@ -449,14 +446,12 @@
           <h3 class="text-white font-semibold">Connect</h3>
           <p class="text-white/80 text-sm mt-2">Reach out via LinkedIn. I typically reply within one business day.</p>
           <div class="mt-4 text-sm flex items-center gap-2">
-            <a href="https://www.linkedin.com/in/sparkledurio/" target="_blank" rel="noopener"
-               class="btn inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/10 hover:bg-white/5">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-[var(--lightNeutral)]">
-                <path d="M100.28 448H7.4V148.9h92.88zm-46.44-341C24.3 107 0 82.7 0 53.6A53.61 53.61 0 0 1 53.84 0C82.93 0 107 24.3 107 53.6c0 29.1-24.07 53.4-53.16 53.4zM447.9 448h-92.7V302.4c0-34.7-.7-79.3-48.3-79.3-48.4 0-55.8 37.8-55.8 76.8V448z"/>
-              </svg>
-              LinkedIn /sparkledurio
-            </a>
-          </div>
+  <a href="https://www.linkedin.com/in/sparkledurio/" target="_blank" rel="noopener"
+    class="btn inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/10 hover:bg-white/5">
+    <img src="linkedin-svgrepo-com.svg" alt="LinkedIn Logo" class="w-4 h-4" />
+    LinkedIn /sparkledurio
+  </a>
+</div>
           <div class="mt-6">
             <a id="downloadBottom"
                class="btn btn-glow inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm font-medium border border-white/10 bg-[var(--primary)] text-[var(--darkNeutral)] transition"
