@@ -1,378 +1,551 @@
 <!DOCTYPE html>
-
-<html class="scroll-smooth" lang="en">
+<html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Sparkle Durio | Executive Support &amp; Operations Portfolio</title>
-<meta content="Executive Assistant &amp; Program Ops Specialist. Proven results in board ops, procurement, compliance, and workflow design." name="description"/>
-<meta content="Sparkle Durio | Operations Portfolio" property="og:title"/>
-<meta content="Executive support &amp; program ops with measurable impact." property="og:description"/>
-<meta content="assets/headshot.png" property="og:image"/>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #000000;
-            color: #F2F0E6;
-        }
-        .glass { backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
-        .card-hover { transition: transform .25s ease, box-shadow .25s ease; }
-        .card-hover:hover { transform: translateY(-4px); }
-        
-        /* New styles for the modal */
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 50;
-        }
-        .modal.open {
-            display: flex;
-        }
-        .modal-content {
-            position: relative;
-            max-width: 90%;
-            max-height: 90%;
-        }
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            font-size: 2rem;
-            color: #F2F0E6;
-            cursor: pointer;
-            z-index: 60;
-            transition: color 0.2s;
-        }
-        .modal-close:hover {
-            color: #B8860B;
-        }
-        .modal-image {
-            max-width: 100%;
-            max-height: 100%;
-            border-radius: 1rem;
-        }
-    </style>
-<!-- Basic SEO -->
-<title>Sparkle Durio | Executive Support &amp; Program Operations Portfolio</title>
-<meta content="Senior Executive Assistant &amp; Program Operations Specialist with 5+ years of experience. Streamlining board communication, compliance, and operations across non-profit and government sectors." name="description"/>
-<!-- Open Graph -->
-<meta content="Sparkle Durio | Executive Support &amp; Program Operations Portfolio" property="og:title"/>
-<meta content="Proven results: 40% faster processing, 100% board quorum, $75k+ savings annually." property="og:description"/>
-<meta content="website" property="og:type"/>
-<meta content="https://sdurio.github.io/" property="og:url"/>
-<meta content="https://sdurio.github.io/assets/headshot.png" property="og:image"/>
-<!-- Twitter --><link href="/assets/favicon.ico" rel="icon" type="image/x-icon"/>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Sparkle Durio",
-  "url": "https://sdurio.github.io/",
-  "image": "https://sdurio.github.io/assets/headshot.png",
-  "jobTitle": "Senior Executive Assistant & Program Operations Specialist",
-  "email": "sdurio5652@gmail.com",
-  "sameAs": [
-    "https://www.linkedin.com/in/sparkledurio",
-    "https://github.com/sdurio"
-  ]
-}
-</script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SD • Sparkle Durio — Executive Assistant</title>
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- Tailwind (no build step) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Favicon: SD • (SVG data URL) -->
+  <link rel="icon" href='data:image/svg+xml;utf8,
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+    <rect width="64" height="64" rx="12" fill="%230C0A09"/>
+    <text x="14" y="38" font-family="Arial, Helvetica, sans-serif" font-weight="700"
+          font-size="20" fill="%23F5EDE3">SD &#8226;</text>
+  </svg>' />
+
+  <style>
+    :root{
+      --darkNeutral: #0C0A09;   /* background */
+      --primary:     #FFDF6A;   /* ★ feature color */
+      --secondary:   #F2A36B;   /* complement */
+      --accent:      #E76F51;   /* pop */
+      --lightNeutral:#F5EDE3;   /* warm text */
+      color-scheme: dark;
+    }
+    html{ scroll-behavior:smooth; }
+    body{ font-family: "Plus Jakarta Sans", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; }
+    ::selection{ background: var(--primary); color:#1a1a1a; }
+
+    /* Ambient background */
+    body::before{
+      content:""; position: fixed; inset:-40vmax; z-index:-2; pointer-events:none;
+      background:
+        conic-gradient(from 120deg at 30% 40%, rgba(255,223,106,.18), transparent 40%),
+        conic-gradient(from -40deg at 70% 60%, rgba(242,163,107,.18), transparent 45%),
+        radial-gradient(60vmax 60vmax at -10% 120%, rgba(231,111,81,.16), transparent 60%),
+        radial-gradient(60vmax 60vmax at 110% -20%, rgba(255,223,106,.14), transparent 60%),
+        #0C0A09;
+      filter: blur(0.5px);
+      animation: slowSpin 60s linear infinite;
+      transform: translateZ(0);
+    }
+    @keyframes slowSpin { to { transform: rotate(360deg); } }
+
+    /* Film grain */
+    .noise::before{ content:""; position: fixed; inset:0; z-index:-1; opacity:.06; pointer-events:none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
+      mix-blend-mode: overlay; }
+
+    /* Scroll progress */
+    #scrollProgress{ position: fixed; top:0; left:0; height:3px; width:0%;
+      background: linear-gradient(90deg, var(--primary), var(--secondary)); z-index:60;
+      box-shadow: 0 0 16px rgba(255,223,106,.35); transition: width .15s linear; }
+
+    /* Reveal on scroll */
+    .reveal{ opacity:0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.show{ opacity:1; transform: none; }
+
+    /* Shimmer headline */
+    .shimmer{ background: linear-gradient(90deg, #fff 0%, var(--lightNeutral) 20%, #fff 40%);
+      background-size: 200% 100%; -webkit-background-clip: text; background-clip:text; color: transparent;
+      animation: shimmer 6s ease-in-out infinite; }
+    @keyframes shimmer{ 0%{background-position: 200% 0} 50%{background-position: 0% 0} 100%{background-position: -200% 0} }
+
+    /* Parallax */
+    .parallax{ will-change: transform; transition: transform .2s ease-out; }
+
+    /* Magnetic buttons & glow */
+    .btn{ position: relative; overflow: hidden; }
+    .btn::after{ content:""; position:absolute; inset:0; background:
+      radial-gradient(200px 80px at var(--mx,50%) var(--my,50%), rgba(255,255,255,.18), transparent 60%);
+      opacity: .0; transition: opacity .2s ease; }
+    .btn:hover::after{ opacity:.9; }
+    .btn-glow:hover{ box-shadow: 0 0 0 6px rgba(255,223,106,.12), 0 10px 36px rgba(0,0,0,.35); }
+
+    /* Hover highlight cards (replaces tilt) */
+    .hover-highlight{ transform: translateZ(0); transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease, border-color .2s ease; will-change: transform; }
+    .hover-highlight:hover{ transform: translateY(-3px); box-shadow: 0 18px 48px rgba(0,0,0,.35); background-color: rgba(255,255,255,.06); border-color: rgba(255,223,106,.35); }
+
+    /* Section title underline */
+    .section-title{ position: relative; display:inline-block; }
+    .section-title::after{ content:""; position:absolute; left:0; bottom:-6px; height:3px; width:100%;
+      background: linear-gradient(90deg, var(--primary), transparent 60%); border-radius:999px; opacity:.8; }
+
+    @media (prefers-reduced-motion: reduce){
+      .reveal{ opacity:1; transform:none; }
+      .shimmer, body::before{ animation:none; }
+      .btn::after{ display:none; }
+    }
+  </style>
 </head>
-<body class="bg-[#000000] text-[#F2F0E6]">
-<!-- Navigation -->
-<header class="sticky top-0 z-40 bg-[#000000]/70 glass border-b border-[#0A3A2A]">
-<nav class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
-<a class="font-black tracking-tight text-lg" href="#home">SD<span class="text-[#B8860B]">•</span></a>
-<div class="flex items-center gap-2">
-<a class="text-sm px-3 py-1.5 rounded-full hover:bg-[#0A3A2A]/60" href="#Initiatives">Initiatives</a>
-<a class="text-sm px-3 py-1.5 rounded-full hover:bg-[#0A3A2A]/60" href="#about">About</a>
-<a class="text-sm px-3 py-1.5 rounded-full hover:bg-[#0A3A2A]/60" href="#contact">Contact</a>
-</div>
-<a href="https://www.linkedin.com/in/sparkledurio" rel="me" target="_blank">LinkedIn</a>
-</nav>
-</header>
-<!-- Hero -->
-<section class="relative overflow-hidden" id="home">
-<div class="absolute inset-0 -z-10 opacity-50">
-<svg aria-hidden="true" class="w-full h-full" preserveaspectratio="none" viewbox="0 0 1200 800">
-<defs>
-<lineargradient id="g" x1="0" x2="1">
-<stop offset="0%" stop-color="#B8860B"></stop>
-<stop offset="100%" stop-color="#5C4033"></stop>
-</lineargradient>
-</defs>
-<circle cx="150" cy="100" fill="url(#g)" opacity="0.2" r="200"></circle>
-<circle cx="1100" cy="700" fill="url(#g)" opacity="0.18" r="300"></circle>
-</svg>
-</div>
-<div class="max-w-6xl mx-auto px-4 py-20 lg:py-28">
-<div class="grid lg:grid-cols-2 gap-10 items-center">
-<div>
-<p class="inline-block text-xs tracking-widest uppercase text-[#B8860B] mb-3">Portfolio</p>
-<h1 class="text-4xl sm:text-5xl font-extrabold leading-tight">
-                        Hi, I’m <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#B8860B] to-[#5C4033]">Sparkle Durio</span>.
-                    </h1>
-<p class="mt-4 text-[#F2F0E6] max-w-prose">A highly organized and results-driven professional with over a decade of experience supporting leadership and managing strategic Initiatives. I excel in streamlining processes, anticipating needs, and driving efficiency across teams. Whether coordinating schedules, managing communications, or negotiating key agreements, I focus on delivering value and fostering trust. I thrive in high-pressure environments and adapt easily to shifting priorities. Using productivity tools like the Pomodoro method and priority matrices, I ensure tasks are completed efficiently and deadlines are met. I’m passionate about continuous improvement and excited to contribute to an organization focused on results and operational excellence.</p>
-<div class="mt-6 flex flex-wrap gap-3">
-<a class="px-4 py-2 rounded-xl bg-[#B8860B] hover:bg-[#5C4033] text-[#F2F0E6] font-medium" href="#Initiatives">View Initiatives</a>
-<a class="px-4 py-2 rounded-xl border border-[#0A3A2A] hover:bg-[#0A3A2A]/60" href="#contact">Get in Touch</a>
-</div>
-<div class="mt-6 flex flex-wrap gap-2 text-xs text-[#B8860B]">
-<span class="px-2 py-1 rounded-full bg-[#0A3A2A] border border-[#5C4033]">Process Design</span>
-<span class="px-2 py-1 rounded-full bg-[#0A3A2A] border border-[#5C4033]">Data-Forward</span>
-<span class="px-2 py-1 rounded-full bg-[#0A3A2A] border border-[#5C4033]">Remote-Ready</span>
-</div>
-</div>
-<div class="relative">
-<div class="aspect-[4/3] rounded-2xl border border-[#0A3A2A] bg-[#0A3A2A]/50 grid place-items-center">
-<div class="text-center p-6">
-<div class="text-5xl">✨</div>
-<p class="mt-3 text-[#B8860B]"><img alt="SDurio Head Shot" height="288" src="https://raw.githubusercontent.com/sdurio/sdurio.github.io/3d561b7defd959acd1d3d38bf5136841e445cfc0/assets/SDurio%20Monochrome%20Linktree%20Profile%20Image.png" width="288"/></p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- About -->
-<section class="border-t border-[#0A3A2A] bg-[#000000]/60" id="about">
-<div class="max-w-6xl mx-auto px-4 py-16 grid lg:grid-cols-3 gap-10 items-start">
-<div class="lg:col-span-2">
-<h2 class="text-2xl font-bold">About</h2>
-<p class="mt-3 text-[#F2F0E6]">Hi, I’m Sparkle Durio, a highly organized and results-driven professional with over a decade of experience in supporting senior leadership and managing strategic projects. My expertise lies in anticipating needs, managing complex operations, and driving efficiency across diverse teams and initiatives.<br/><br/>I thrive on solving problems and streamlining processes, whether it’s coordinating critical schedules, managing high-priority communications, or implementing systems that enhance organizational flow. My proactive approach ensures smooth operations, allowing leadership to focus on the bigger picture while I handle the details.<br/><br/>In my previous roles, I’ve successfully negotiated key agreements, managed sensitive communications, and fostered lasting relationships with clients and stakeholders, always keeping a focus on delivering value and building trust. I excel in high-pressure environments and am adept at managing competing priorities to achieve optimal results.<br/><br/>When working remotely, I rely on clear communication, structured timelines, and the use of productivity tools such as the Pomodoro method, priority matrices, and planner apps to ensure tasks are completed efficiently and deadlines are met. My ability to adapt to various time zones and work with global teams further enhances my flexibility and effectiveness in virtual settings.<br/><br/>At the heart of my work is a commitment to continuous improvement, whether it’s refining processes, increasing productivity, or delivering high-quality outcomes. I’m eager to bring my skills and experience to an organization that values strategic thinking, operational excellence, and a results-oriented approach.</p>
-<ul class="mt-6 grid sm:grid-cols-2 gap-3 text-sm text-[#F2F0E6]">
-<li class="flex gap-2 items-start"><span>✅</span><span>Interpersonal Skills &amp; Conflict Resolution</span></li>
-<li class="flex gap-2 items-start"><span>✅</span><span>Organizational Excellence</span></li>
-<li class="flex gap-2 items-start"><span>✅</span><span>Discretion &amp; Confidentiality</span></li>
-<li class="flex gap-2 items-start"><span>✅</span><span>Communication Skills (Written &amp; Verbal)</span></li>
-<li class="flex gap-2 items-start"><span>✅</span><span>Adaptability</span></li>
-<li class="flex gap-2 items-start"><span>✅</span><span>Problem-Solving</span></li>
-<li class="flex gap-2 items-start"><span>✅</span><span>Strategic Thinking &amp; Anticipation</span></li>
-<li class="flex gap-2 items-start"><span>✅</span><span>Project Management</span></li>
-<li class="flex gap-2 items-start"><span>✅</span><span>Technological Proficiency</span></li>
-<li class="flex gap-2 items-start"><span>✅</span><span>Attention to Detail</span></li>
-</ul>
-</div>
-<aside class="border border-[#0A3A2A] rounded-2xl p-5 bg-[#0A3A2A]/50">
-<h3 class="font-semibold">Quick Facts</h3>
-<dl class="mt-3 space-y-2 text-sm text-[#F2F0E6]">
-<div class="flex justify-between gap-4"><dt>Base</dt><dd>Sacramento, CA</dd></div>
-<div class="flex justify-between gap-4"><dt>Focus</dt><dd>Operations, Optimization, Support</dd></div>
-<div class="flex justify-between gap-4"><dt>Toolkit</dt><dd>Microsoft 365, Canva, Adobe, Zoom</dd></div>
-<div class="flex justify-between gap-4"><dt>Availability</dt><dd>Open to remote</dd></div>
-</dl>
-</aside>
-</div>
-</section>
-<!-- Controls -->
-<section class="border-y border-[#0A3A2A] bg-[#000000]/60">
-<div class="max-w-6xl mx-auto px-4 py-6 flex flex-col md:flex-row gap-4 items-center justify-between">
-<div class="flex gap-2 w-full md:w-auto">
-<select class="px-3 py-2 rounded-xl bg-[#0A3A2A] border border-[#5C4033] focus:outline-none" id="sort">
-<option value="newest">Newest</option>
-<option value="oldest">Oldest</option>
-<option value="az">A → Z</option>
-<option value="za">Z → A</option>
-</select>
-</div>
-<div class="flex flex-wrap gap-2 text-xs text-[#F2F0E6]">
-<button class="tag px-3 py-1.5 rounded-full border border-[#0A3A2A] hover:bg-[#0A3A2A]/60" data-tag="automation">Automation</button>
-<button class="tag px-3 py-1.5 rounded-full border border-[#0A3A2A] hover:bg-[#0A3A2A]/60" data-tag="analytics">Analytics</button>
-<button class="tag px-3 py-1.5 rounded-full border border-[#0A3A2A] hover:bg-[#0A3A2A]/60" data-tag="ops">Operations</button>
-<button class="tag px-3 py-1.5 rounded-full border border-[#0A3A2A] hover:bg-[#0A3A2A]/60" data-tag="templates">Templates</button>
-</div>
-</div>
-</section>
-<!-- Initiatives Grid -->
-<section class="max-w-6xl mx-auto px-4 py-14" id="Initiatives">
-<div class="mb-8">
-<h2 class="text-2xl font-bold">Initiatives</h2>
-<p class="text-[#F2F0E6]">A living gallery—add, filter, and showcase your work easily.</p>
-</div>
-<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" id="grid"></div>
-<!-- Empty State -->
-<div class="hidden mt-12 text-center text-[#F2F0E6]" id="empty">No Initiatives match your filters yet.</div>
-</section>
-<!-- Contact -->
-<section class="max-w-6xl mx-auto px-4 py-16" id="contact">
-<div class="grid lg:grid-cols-2 gap-10 items-start">
-<div>
-<h2 class="text-2xl font-bold">Let’s connect</h2>
-<p class="mt-3 text-[#F2F0E6]">Have a project, collaboration, or role in mind? I’d love to hear about it.</p>
-<div class="mt-6 flex gap-3">
-<a class="px-4 py-2 rounded-xl bg-[#B8860B] hover:bg-[#5C4033] text-[#F2F0E6] font-medium" href="mailto:sdurio5652@gmail.com">Email me</a>
-<a class="px-4 py-2 rounded-xl border border-[#0A3A2A] hover:bg-[#0A3A2A]/60" href="#">Download résumé</a>
-</div>
-</div>
-<form class="border border-[#0A3A2A] rounded-2xl p-5 bg-[#0A3A2A]/50 grid gap-3">
-<input class="px-3 py-2 rounded-xl bg-[#000000] border border-[#5C4033] focus:outline-none focus:ring-2 focus:ring-[#B8860B]/50" placeholder="Your name" type="text"/>
-<input class="px-3 py-2 rounded-xl bg-[#000000] border border-[#5C4033] focus:outline-none focus:ring-2 focus:ring-[#B8860B]/50" placeholder="Your email" type="email"/>
-<textarea class="px-3 py-2 rounded-xl bg-[#000000] border border-[#5C4033] focus:outline-none focus:ring-2 focus:ring-[#B8860B]/50" placeholder="Tell me about your project" rows="4"></textarea>
-<button class="px-4 py-2 rounded-xl bg-[#B8860B] hover:bg-[#5C4033] text-[#F2F0E6] font-medium" type="button">Send</button>
-</form>
-</div>
-</section>
-<footer class="border-t border-[#0A3A2A] bg-[#000000]/60">
-<div class="max-w-6xl mx-auto px-4 py-8 text-sm flex items-center justify-between text-[#F2F0E6]">
-<p>© <span id="year"></span> Sparkle Durio. All rights reserved.</p>
-<a class="hover:text-[#B8860B]" href="#home">Back to top ↑</a>
-</div>
-</footer>
-<!-- New HTML for the Modal -->
-<div class="modal" id="image-modal">
-<span class="modal-close" onclick="closeModal()">×</span>
-<div class="modal-content">
-<img alt="Expanded Image" class="modal-image" id="modal-image-full" src=""/>
-</div>
-</div>
-<script>
-        // --- Project data (edit/add your Initiatives here) ---
-        const Initiatives = [
-            {
-                title: 'The Process Design Infographic',
-                date: '2025-08-27',
-                summary: 'An infographic visualizing the key stages of a data-forward process design lifecycle.',
-                tags: ['infographic', 'ops', 'process'],
-                link: '#',
-                image: 'https://raw.githubusercontent.com/sdurio/sdurio.github.io/7f0d0a5b08c01caeec907a2a193e99a723137454/assets/Optimizing%20Project%20Management%20Workflows.png',
-            },
-            {
-                title: 'Bid Evaluation Dashboard',
-                date: '2025-07-01',
-                summary: 'Spreadsheet-driven tool to compare vendor bids and calculate preferential pricing with clear visuals.',
-                tags: ['analytics','automation','ops'],
-                link: '#',
-                image: '',
-            },
-            {
-                title: 'Executive Ops Toolkit',
-                date: '2025-05-15',
-                summary: 'Templates for intake, meeting notes, and status updates to standardize communication across teams.',
-                tags: ['templates','ops'],
-                link: '#',
-                image: '',
-            },
-            {
-                title: 'Remote Collaboration Playbook',
-                date: '2025-03-01',
-                summary: 'Lightweight guide to async updates, time-zone mapping, and stakeholder check-ins.',
-                tags: ['ops'],
-                link: '#',
-                image: '',
-            },
-        ];
+<body class="noise min-h-screen bg-[var(--darkNeutral)] text-[var(--lightNeutral)]">
 
-        // --- Render helpers ---
-        const grid = document.getElementById('grid');
-        const empty = document.getElementById('empty');
-        const sort = document.getElementById('sort');
-        const tagButtons = Array.from(document.querySelectorAll('.tag'));
-        const state = { sort:'newest', tags:new Set() };
+  <!-- Scroll progress -->
+  <div id="scrollProgress"></div>
 
-        // New DOM elements for the modal
-        const modal = document.getElementById('image-modal');
-        const modalImage = document.getElementById('modal-image-full');
+  <!-- Header / Nav -->
+  <header class="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-black/40 bg-black/60 border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#intro" class="flex items-center gap-2 font-semibold tracking-wide">
+        <span class="inline-flex items-center justify-center rounded-lg px-2 py-1 bg-[var(--primary)] text-[var(--darkNeutral)]">SD •</span>
+        <span class="hidden sm:inline">Sparkle Durio</span>
+      </a>
 
-        // Function to open the modal with the specified image
-        function openModal(imageUrl) {
-            if (imageUrl) {
-                modalImage.src = imageUrl;
-                modal.classList.add('open');
-                // Prevent scrolling on the body
-                document.body.style.overflow = 'hidden';
-            }
-        }
+      <nav class="hidden md:flex gap-5 text-sm">
+        <a href="#intro" class="hover:text-[var(--primary)] transition-colors">Introduction</a>
+        <a href="#about" class="hover:text-[var(--primary)] transition-colors">About</a>
+        <a href="#expertise" class="hover:text-[var(--primary)] transition-colors">Areas of Expertise</a>
+        <a href="#tech" class="hover:text-[var(--primary)] transition-colors">Technical Proficiencies</a>
+        <a href="#experience" class="hover:text-[var(--primary)] transition-colors">Work Experience</a>
+        <a href="#education" class="hover:text-[var(--primary)] transition-colors">Education</a>
+        <a href="#contact" class="hover:text-[var(--primary)] transition-colors">Contact</a>
+      </nav>
 
-        // Function to close the modal
-        function closeModal() {
-            modal.classList.remove('open');
-            // Re-enable scrolling on the body
-            document.body.style.overflow = '';
-        }
+      <div class="flex items-center gap-3">
+        <a href="https://www.linkedin.com/in/sparkledurio/" target="_blank" rel="noopener"
+           class="p-2 rounded-xl border border-white/10 hover:bg-white/5"
+           aria-label="Sparkle Durio on LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-5 h-5 fill-[var(--lightNeutral)]">
+            <path d="M100.28 448H7.4V148.9h92.88zm-46.44-341C24.3 107 0 82.7 0 53.6A53.61 53.61 0 0 1 53.84 0C82.93 0 107 24.3 107 53.6c0 29.1-24.07 53.4-53.16 53.4zM447.9 448h-92.7V302.4c0-34.7-.7-79.3-48.3-79.3-48.4 0-55.8 37.8-55.8 76.8V448z"/>
+          </svg>
+        </a>
+        <button class="md:hidden rounded-xl border border-white/10 px-3 py-2 text-sm" id="menuBtn">Menu</button>
+      </div>
+    </div>
 
-        function render(){
-            let list = [...Initiatives];
+    <div id="mobileNav" class="md:hidden hidden border-t border-white/10 bg-black/70">
+      <div class="max-w-6xl mx-auto px-4 py-3 grid grid-cols-2 gap-3 text-sm">
+        <a href="#intro" class="p-2 rounded-lg hover:bg-white/5">Introduction</a>
+        <a href="#about" class="p-2 rounded-lg hover:bg-white/5">About</a>
+        <a href="#expertise" class="p-2 rounded-lg hover:bg-white/5">Areas of Expertise</</a>
+        <a href="#tech" class="p-2 rounded-lg hover:bg-white/5">Technical Proficiencies</a>
+        <a href="#experience" class="p-2 rounded-lg hover:bg-white/5">Work Experience</a>
+        <a href="#education" class="p-2 rounded-lg hover:bg-white/5">Education</a>
+        <a href="#contact" class="p-2 rounded-lg hover:bg-white/5">Contact</a>
+      </div>
+    </div>
+  </header>
 
-            // Filter by tags
-            if(state.tags.size){
-                list = list.filter(p => p.tags && p.tags.some(t => state.tags.has(t)));
-            }
-            // Sort
-            list.sort((a,b)=>{
-                if(state.sort==='newest') return new Date(b.date)-new Date(a.date);
-                if(state.sort==='oldest') return new Date(a.date)-new Date(b.date);
-                if(state.sort==='az') return a.title.localeCompare(b.title);
-                if(state.sort==='za') return b.title.localeCompare(a.title);
-                return 0;
-            });
+  <main class="max-w-6xl mx-auto px-4 py-10">
+    <!-- Intro -->
+    <section id="intro" class="py-12">
+      <div class="grid md:grid-cols-[1.2fr_1fr] gap-8 items-center">
+        <div class="reveal">
+          <p class="uppercase tracking-widest text-xs mb-3 text-[var(--secondary)]">Executive Assistant · Program &amp; Operations</p>
+          <h1 class="text-4xl md:text-5xl font-extrabold leading-tight shimmer">Sparkle Durio</h1>
+          <p class="mt-5 text-base md:text-lg text-white/85">
+            Strategic Executive Assistant who anticipates needs, orchestrates complex calendars, and builds systems that keep leaders focused on impact. Calm under pressure, detail-obsessed, and relentlessly resourceful.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#contact" class="btn btn-glow rounded-2xl px-5 py-2.5 bg-[var(--primary)] text-[var(--darkNeutral)] font-semibold transition">Contact Me</a>
+            <a href="#experience" class="btn btn-glow rounded-2xl px-5 py-2.5 border border-white/10 hover:bg-white/5 transition">View Experience</a>
+            <a id="downloadIntro" class="btn btn-glow rounded-2xl px-5 py-2.5 bg-[var(--accent)] text-[var(--darkNeutral)] font-semibold transition" download>Download Resume</a>
+          </div>
 
-            grid.innerHTML = '';
-            if(!list.length){ empty.classList.remove('hidden'); return; }
-            empty.classList.add('hidden');
+          <div class="mt-6 flex flex-wrap gap-3 text-xs">
+            <span class="rounded-full px-3 py-1 bg-white/5 border border-white/10">130+ executive hours saved/yr</span>
+            <span class="rounded-full px-3 py-1 bg-white/5 border border-white/10">95% on-time meetings</span>
+            <span class="rounded-full px-3 py-1 bg-white/5 border border-white/10">$6K vendor savings</span>
+          </div>
+        </div>
 
-            for(const p of list){
-                const el = document.createElement('article');
-                el.className = 'card-hover rounded-2xl border border-[#5C4033] overflow-hidden bg-[#5C4033]/50';
-                
-                // Construct the HTML for the card
-                const cardHtml = `
-                    <a href="${p.link || '#'}" target="${p.link ? '_blank' : '_self'}" class="block">
-                        <div class="aspect-[16/10] bg-[#5C4033] grid place-items-center">
-                            <!-- Add an onclick event to the image container to open the modal -->
-                            ${p.image ? `<div class="cursor-pointer" onclick="event.preventDefault(); openModal('${p.image}');"><img src="${p.image}" alt="${p.title}" class="w-full h-full object-cover"/></div>` : `<div class='text-[#B8860B] text-sm'>Add an image</div>`}
-                        </div>
-                        <div class="p-4">
-                            <div class="flex items-center justify-between gap-3">
-                                <h3 class="font-semibold leading-tight text-[#F2F0E6]">${p.title}</h3>
-                                <time class="text-xs text-[#B8860B]">${new Date(p.date).toLocaleDateString()}</time>
-                            </div>
-                            <p class="mt-2 text-sm text-[#F2F0E6]">${p.summary}</p>
-                            <div class="mt-3 flex flex-wrap gap-2 text-xs text-[#B8860B]">
-                                ${(p.tags||[]).map(t=>`<span class='px-2 py-1 rounded-full bg-[#0A3A2A] border border-[#5C4033]'>${t}</span>`).join('')}
-                            </div>
-                        </div>
-                    </a>`;
+        <!-- Headshot with parallax -->
+        <aside class="reveal">
+          <div class="p-[2px] rounded-[28px] bg-gradient-to-r from-[var(--primary)]/60 via-[var(--accent)]/45 to-[var(--secondary)]/55">
+            <figure class="parallax relative rounded-[26px] p-2 bg-gradient-to-br from-[var(--primary)]/20 via-transparent to-[var(--secondary)]/20 border border-white/10 hover-highlight">
+              <div>
+                <img src="PXL_20250116_194632440.jpg" alt="Portrait of Sparkle Durio"
+                     class="w-full h-[340px] object-cover rounded-2xl border border-white/10" />
+                <figcaption class="px-3 py-2 text-xs text-white/70">Executive Assistant • Program &amp; Operations</figcaption>
+              </div>
+            </figure>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-                el.innerHTML = cardHtml;
-                grid.appendChild(el);
-            }
-        }
+    <!-- About -->
+    <section id="about" class="py-12 border-t border-white/5 reveal">
+      <h2 class="section-title text-2xl font-bold mb-6 text-[var(--accent)]">About Me</h2>
+      <div class="grid md:grid-cols-[1.6fr_1fr] gap-8">
+        <p class="text-white/85 leading-relaxed">
+          I’m an Executive Assistant who loves designing processes that reduce chaos and increase velocity. I partner closely with executives to prioritize what matters, protect focus time, and keep cross-functional projects moving with clarity.
+        </p>
+        <div class="hover-highlight rounded-2xl border border-white/10 p-5 bg-white/5 transition">
+          <h3 class="text-sm uppercase tracking-wider text-[var(--secondary)]">Quick Facts</h3>
+          <dl class="mt-3 grid grid-cols-2 gap-4 text-sm">
+            <div>
+              <dt class="text-white/60">Based</dt>
+              <dd class="font-medium">Sacramento, CA (Remote-first)</dd>
+            </div>
+            <div>
+              <dt class="text-white/60">Industries</dt>
+              <dd class="font-medium">Public Sector · Tech · Non-Profit</dd>
+            </div>
+            <div>
+              <dt class="text-white/60">Strengths</dt>
+              <dd class="font-medium">Anticipation · Prioritization · Discretion</dd>
+            </div>
+            <div>
+              <dt class="text-white/60">Ops</dt>
+              <dd class="font-medium">Procurement · Contracts · Events</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
 
-        // --- Events ---
-        sort.addEventListener('change', (e)=>{ state.sort = e.target.value; render(); });
-        tagButtons.forEach(btn=>{
-            btn.addEventListener('click', ()=>{
-                const tag = btn.dataset.tag;
-                if(state.tags.has(tag)){ btn.classList.remove('bg-[#0A3A2A]/60'); state.tags.delete(tag); }
-                else { btn.classList.add('bg-[#0A3A2A]/60'); state.tags.add(tag); }
-                render();
-            });
+    <!-- Areas of Expertise -->
+    <section id="expertise" class="py-12 border-t border-white/5 reveal">
+      <h2 class="section-title text-2xl font-bold mb-6 text-[var(--accent)]">Areas of Expertise</h2>
+
+      <!-- Top Skills -->
+      <h3 class="text-sm uppercase tracking-wider text-[var(--secondary)] mb-3">Top Skills</h3>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+        <div class="hover-highlight rounded-xl border border-white/10 px-4 py-3 bg-black/40 text-sm">Interpersonal Skills</div>
+        <div class="hover-highlight rounded-xl border border-white/10 px-4 py-3 bg-black/40 text-sm">Conflict Resolution</div>
+        <div class="hover-highlight rounded-xl border border-white/10 px-4 py-3 bg-black/40 text-sm">Grant Administration</div>
+      </div>
+
+      <!-- Core Skills -->
+      <h3 class="text-sm uppercase tracking-wider text-[var(--secondary)] mb-3">Core Skills</h3>
+      <div class="flex flex-wrap gap-3 mb-8 text-sm">
+        <span class="hover-highlight rounded-xl border border-white/10 px-4 py-2 bg-black/40">Strategic Support</span>
+        <span class="hover-highlight rounded-xl border border-white/10 px-4 py-2 bg-black/40">Project Management</span>
+        <span class="hover-highlight rounded-xl border border-white/10 px-4 py-2 bg-black/40">Calendar &amp; Appointment Management</span>
+        <span class="hover-highlight rounded-xl border border-white/10 px-4 py-2 bg-black/40">Travel Planning</span>
+        <span class="hover-highlight rounded-xl border border-white/10 px-4 py-2 bg-black/40">Meeting &amp; Event Coordination</span>
+        <span class="hover-highlight rounded-xl border border-white/10 px-4 py-2 bg-black/40">Communication &amp; Relationship Management</span>
+        <span class="hover-highlight rounded-xl border border-white/10 px-4 py-2 bg-black/40">AI, Technology &amp; Document Support</span>
+        <span class="hover-highlight rounded-xl border border-white/10 px-4 py-2 bg-black/40">Confidentiality &amp; Discretion</span>
+      </div>
+
+      <!-- Complete List of Skills (categorized) -->
+      <div class="mb-8" id="skillsCategorized">
+        <h3 class="text-sm uppercase tracking-wider text-[var(--secondary)] mb-3">Complete List of Skills</h3>
+        <div class="flex flex-wrap gap-2 mb-4 text-xs" id="skillFilters" role="tablist" aria-label="Filter skills by category">
+          <button data-filter="all" class="filter-btn rounded-xl border border-white/10 px-3 py-2 bg-[var(--primary)] text-[var(--darkNeutral)] hover:brightness-110" aria-selected="true" role="tab">All</button>
+          <button data-filter="admin" class="filter-btn rounded-xl border border-white/10 px-3 py-2 bg-[var(--primary)] text-[var(--darkNeutral)] hover:brightness-110" role="tab">Administration &amp; Records</button>
+          <button data-filter="procurement" class="filter-btn rounded-xl border border-white/10 px-3 py-2 bg-[var(--primary)] text-[var(--darkNeutral)] hover:brightness-110" role="tab">Procurement &amp; Contracts</button>
+          <button data-filter="comms" class="filter-btn rounded-xl border border-white/10 px-3 py-2 bg-[var(--primary)] text-[var(--darkNeutral)] hover:brightness-110" role="tab">Communication &amp; People</button>
+          <button data-filter="workflow" class="filter-btn rounded-xl border border-white/10 px-3 py-2 bg-[var(--primary)] text-[var(--darkNeutral)] hover:brightness-110" role="tab">Operations &amp; Workflow</button>
+          <button data-filter="travel" class="filter-btn rounded-xl border border-white/10 px-3 py-2 bg-[var(--primary)] text-[var(--darkNeutral)] hover:brightness-110" role="tab">Travel &amp; Logistics</button>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3" id="skillGrid">
+          <!-- Administration & Records -->
+          <span class="skill rounded-xl border border-white/10 px-3 py-2 bg-black/40 text-sm" data-cat="admin">Records Management</span>
+          <span class="skill rounded-xl border border-white/10 px-3 py-2 bg-black/40 text-sm" data-cat="admin">Records Retention Management</span>
+          <span class="skill rounded-xl border border-white/10 px-3 py-2 bg-black/40 text-sm" data-cat="admin">Calendaring</span>
+          <span class="skill rounded-xl border border-white/10 px-3 py-2 bg-black/40 text-sm" data-cat="admin">Data Entry</span>
+          <span class="skill rounded-xl border border-white/10 px-3 py-2 bg-black/40 text-sm" data-cat="admin">Report Preparation</span>
+
+          <!-- Procurement & Contracts -->
+          <span class="skill rounded-xl border border-white/10 px-3 py-2 bg-black/40 text-sm" data-cat="procurement">Government Procurement</span>
+          <span class="skill rounded-xl border border-white/10 px-3 py-2 bg-black/40 text-sm" data-cat="procurement">RFQ/RFP Administration</span>
+          <span class="skill rounded-xl border border-white/10 px-3 py-2 bg-black/40 text-sm" data-cat="procurement">State Contracting Manuals (SCM)</span>
+          <span class="skill rounded-xl border border-white/10 px-3 py-2 bg-black/40 text-sm" data-cat="procurement">Small Business &amp; DVBE Program Support</span>
+          <span class="skill rounded-xl border border-white/10 px-3 py-2 bg-black/40 text-sm" data-cat="procurement">Vendor Coordination</span>
+          <span class="skill rounded-xl border border-white/10 px-3 py-2 bg-black/40 text-sm" data-cat="procurement">Purchase Order Processing</span>
+          <span class="skill rounded-xl border border-white/10 px-3 py-2 bg-black/40 text-sm" data-cat="procurement">Requisitions</span>
+
+          <!-- Communication & People -->
+          <span class="skill rounded-xl border border-white/10 px-3 py-2 bg-black/40 text-sm" data-cat="comms">Board Communication</span>
+          <span class="skill rounded-xl border border-white/10 px-3 py-2 bg-black/40 text-sm" data-cat="comms">Board Governance</span>
+          <span class="skill rounded-xl border border-white/10 px-3 py-2 bg-black/40 text-sm" data-cat="comms">Stakeholder Engagement</span>
+          <span class="skill rounded-xl border border-white/10 px-3 py-2 bg-black/40 text-sm" data-cat="comms">Customer Service</span>
+          <span class="skill rounded-xl border border-white/10 px-3 py-2 bg-black/40 text-sm" data-cat="comms">Interpersonal Skills</span>
+          <span class="skill rounded-xl border border-white/10 px-3 py-2 bg-black/40 text-sm" data-cat="comms">Conflict Resolution</span>
+          <span class="skill rounded-xl border border-white/10 px-3 py-2 bg-black/40 text-sm" data-cat="comms">Social Media</span>
+          <span class="skill rounded-xl border border-white/10 px-3 py-2 bg-black/40 text-sm" data-cat="comms">Virtual Communication</span>
+
+          <!-- Operations & Workflow -->
+          <span class="skill rounded-xl border border-white/10 px-3 py-2 bg-black/40 text-sm" data-cat="workflow">Workflow Optimization</span>
+
+          <!-- Travel & Logistics -->
+          <span class="skill rounded-xl border border-white/10 px-3 py-2 bg-black/40 text-sm" data-cat="travel">Travel Arrangements</span>
+          <span class="skill rounded-xl border border-white/10 px-3 py-2 bg-black/40 text-sm" data-cat="travel">Travel Planning</span>
+        </div>
+
+        <p class="mt-3 text-xs text-white/60">Tip: Use the filters above to focus on a category. Click “All” to reset.</p>
+      </div>
+    </section>
+
+    <!-- Technical Proficiencies -->
+    <section id="tech" class="py-12 border-t border-white/5 reveal">
+      <h2 class="section-title text-2xl font-bold mb-6 text-[var(--accent)]">Technical Proficiencies</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="hover-highlight rounded-2xl border border-white/10 p-5 bg-gradient-to-br from-[var(--primary)]/12 via-transparent to-[var(--secondary)]/12">
+          <h3 class="font-semibold text-white mb-2">Productivity Suite</h3>
+          <ul class="text-sm text-white/85 space-y-1">
+            <li>• Microsoft Office Suite (Word, Excel, PowerPoint, Outlook)</li>
+            <li>• Google Workspace</li>
+          </ul>
+        </div>
+        <div class="hover-highlight rounded-2xl border border-white/10 p-5 bg-gradient-to-br from-[var(--primary)]/12 via-transparent to-[var(--secondary)]/12">
+          <h3 class="font-semibold text-white mb-2">Communication &amp; Collaboration</h3>
+          <ul class="text-sm text-white/85 space-y-1">
+            <li>• Zoom</li>
+            <li>• Slack</li>
+            <li>• Cloud Collaboration Tools</li>
+            <li>• Virtual Communication</li>
+          </ul>
+        </div>
+        <div class="hover-highlight rounded-2xl border border-white/10 p-5 bg-gradient-to-br from-[var(--primary)]/12 via-transparent to-[var(--secondary)]/12">
+          <h3 class="font-semibold text-white mb-2">eSign &amp; Documents</h3>
+          <ul class="text-sm text-white/85 space-y-1">
+            <li>• DocuSign</li>
+            <li>• Adobe Acrobat</li>
+            <li>• SharePoint</li>
+          </ul>
+        </div>
+        <div class="hover-highlight rounded-2xl border border-white/10 p-5 bg-gradient-to-br from-[var(--primary)]/12 via-transparent to-[var(--secondary)]/12">
+          <h3 class="font-semibold text-white mb-2">Project Management</h3>
+          <ul class="text-sm text-white/85 space-y-1">
+            <li>• Asana</li>
+            <li>• Trello</li>
+            <li>• Notion</li>
+          </ul>
+        </div>
+        <div class="hover-highlight rounded-2xl border border-white/10 p-5 bg-gradient-to-br from-[var(--primary)]/12 via-transparent to-[var(--secondary)]/12">
+          <h3 class="font-semibold text-white mb-2">Design &amp; Web</h3>
+          <ul class="text-sm text-white/85 space-y-1">
+            <li>• Canva</li>
+            <li>• WordPress</li>
+          </ul>
+        </div>
+        <div class="hover-highlight rounded-2xl border border-white/10 p-5 bg-gradient-to-br from-[var(--primary)]/12 via-transparent to-[var(--secondary)]/12">
+          <h3 class="font-semibold text-white mb-2">Data &amp; Admin</h3>
+          <ul class="text-sm text-white/85 space-y-1">
+            <li>• File Systems &amp; Records Management</li>
+            <li>• Data Entry &amp; Reporting</li>
+            <li>• Workflow Optimization</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Experience (timeline) -->
+    <section id="experience" class="py-12 border-t border-white/5 reveal">
+      <h2 class="section-title text-2xl font-bold mb-6 text-[var(--accent)]">Work Experience</h2>
+      <ol class="relative border-s border-white/10">
+        <li class="ms-6 pb-8">
+          <span class="absolute -left-[9px] top-2 h-4 w-4 rounded-full bg-[var(--primary)]" style="box-shadow:0 0 0 4px rgba(255,223,106,.15)"></span>
+          <div class="hover-highlight rounded-2xl border border-white/10 p-6 bg-white/5">
+            <header class="flex flex-wrap items-baseline justify-between gap-3">
+              <h3 class="text-white font-semibold">Grant Program Administrative Coordinator — Judicial Council of California</h3>
+              <span class="text-xs text-white/70">Apr 2025 – Present · Sacramento, CA</span>
+            </header>
+            <ul class="mt-3 text-sm text-white/85 space-y-2">
+              <li>• Facilitated logistics for 5 statewide training programs and grantee meetings, impacting 250+ constituents.</li>
+              <li>• Digitized filing systems and audit-ready spreadsheets, reducing admin processing time by 40%.</li>
+              <li>• Maintained 100% accurate records across 15+ MOUs and compliance reviews; improved audit readiness by 35%.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="ms-6 pb-8">
+          <span class="absolute -left-[9px] top-2 h-4 w-4 rounded-full bg-[var(--primary)]" style="box-shadow:0 0 0 4px rgba(255,223,106,.15)"></span>
+          <div class="hover-highlight rounded-2xl border border-white/10 p-6 bg-white/5">
+            <header class="flex flex-wrap items-baseline justify-between gap-3">
+              <h3 class="text-white font-semibold">Senior Executive Assistant to the CEO &amp; COO — NAMI California</h3>
+              <span class="text-xs text-white/70">Dec 2022 – Sep 2024 · Sacramento, CA</span>
+            </header>
+            <ul class="mt-3 text-sm text-white/85 space-y-2">
+              <li>• Served as primary liaison to the Board; achieved 100% quorum for all quarterly meetings via timely materials.</li>
+              <li>• Directed complex calendars, travel, and comms for CEO/COO, recovering 130+ executive hours annually.</li>
+              <li>• Planned high-profile retreats and VIP events, securing $6,000+ in vendor savings; safeguarded confidential communications.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="ms-6 pb-8">
+          <span class="absolute -left-[9px] top-2 h-4 w-4 rounded-full bg-[var(--primary)]" style="box-shadow:0 0 0 4px rgba(255,223,106,.15)"></span>
+          <div class="hover-highlight rounded-2xl border border-white/10 p-6 bg-white/5">
+            <header class="flex flex-wrap items-baseline justify-between gap-3">
+              <h3 class="text-white font-semibold">Executive &amp; Board Operations Associate — Umoja Community Education Foundation</h3>
+              <span class="text-xs text-white/70">Aug 2021 – Nov 2022 · Sacramento, CA</span>
+            </header>
+            <ul class="mt-3 text-sm text-white/85 space-y-2">
+              <li>• Optimized ED calendar/meeting logistics to sustain 95%+ on-time attendance and executive alignment.</li>
+              <li>• Implemented cloud PM platform; increased task transparency and reduced delays by 35%.</li>
+              <li>• Supported grant writing/reporting to maintain full funding across active programs.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="ms-6 pb-8">
+          <span class="absolute -left-[9px] top-2 h-4 w-4 rounded-full bg-[var(--primary)]" style="box-shadow:0 0 0 4px rgba(255,223,106,.15)"></span>
+          <div class="hover-highlight rounded-2xl border border-white/10 p-6 bg-white/5">
+            <header class="flex flex-wrap items-baseline justify-between gap-3">
+              <h3 class="text-white font-semibold">Program Operations Analyst — California Department of Corrections &amp; Rehabilitation</h3>
+              <span class="text-xs text-white/70">Oct 2015 – Jan 2021 · Sacramento, CA</span>
+            </header>
+            <ul class="mt-3 text-sm text-white/85 space-y-2">
+              <li>• Built Small Business discount calculator; improved contract processing time by 30% and equity in awards.</li>
+              <li>• Audited purchasing to recover $75,000+ in potential misallocations annually.</li>
+              <li>• Coordinated medical procurements to ensure zero delays in patient services.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="ms-6">
+          <span class="absolute -left-[9px] top-2 h-4 w-4 rounded-full bg-[var(--primary)]" style="box-shadow:0 0 0 4px rgba(255,223,106,.15)"></span>
+          <div class="hover-highlight rounded-2xl border border-white/10 p-6 bg-white/5">
+            <header class="flex flex-wrap items-baseline justify-between gap-3">
+              <h3 class="text-white font-semibold">Staff Analyst — Procurement &amp; Contracts — California Department of Corrections &amp; Rehabilitation</h3>
+              <span class="text-xs text-white/70">Oct 2013 – Oct 2015 · Elk Grove, CA</span>
+            </header>
+            <ul class="mt-3 text-sm text-white/85 space-y-2">
+              <li>• Communicated procurement updates to institutional buyers for workflow continuity.</li>
+              <li>• Logged/Filed purchase documentation per audit retention; supported transparency for $5M+ contract activity.</li>
+              <li>• Maintained documentation to improve accuracy and accelerate processing timelines by 22%.</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="py-12 border-t border-white/5 reveal">
+      <h2 class="section-title text-2xl font-bold mb-6 text-[var(--accent)]">Education</h2>
+      <div class="hover-highlight rounded-2xl border border-white/10 p-6 bg-white/5">
+        <ul class="text-sm text-white/85 space-y-2">
+          <li>• California State University Maritime Academy — B.S. Business Administration; International Business &amp; Logistics</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact (email removed) -->
+    <section id="contact" class="py-12 border-t border-white/5 reveal">
+      <h2 class="section-title text-2xl font-bold mb-6 text-[var(--accent)]">Contact Me</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <form id="contactForm" class="hover-highlight rounded-2xl border border-white/10 p-6 bg-white/5">
+          <div class="grid grid-cols-1 gap-4">
+            <label class="text-sm">
+              <span class="block mb-1 text-white/70">Name</span>
+              <input class="w-full rounded-xl bg-black/60 border border-white/10 px-3 py-2 outline-none focus:border-[var(--secondary)]" required />
+            </label>
+            <label class="text-sm">
+              <span class="block mb-1 text-white/70">Message</span>
+              <textarea rows="5" class="w-full rounded-xl bg-black/60 border border-white/10 px-3 py-2 outline-none focus:border-[var(--secondary)]" required></textarea>
+            </label>
+            <button class="btn btn-glow mt-2 rounded-2xl px-5 py-2.5 bg-[var(--primary)] text-[var(--darkNeutral)] font-semibold transition">Send</button>
+          </div>
+        </form>
+
+        <div class="hover-highlight rounded-2xl border border-white/10 p-6 bg-gradient-to-br from-[var(--secondary)]/12 to-[var(--primary)]/12">
+          <h3 class="text-white font-semibold">Connect</h3>
+          <p class="text-white/80 text-sm mt-2">Reach out via LinkedIn. I typically reply within one business day.</p>
+          <div class="mt-4 text-sm flex items-center gap-2">
+            <a href="https://www.linkedin.com/in/sparkledurio/" target="_blank" rel="noopener"
+               class="btn inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-white/10 hover:bg-white/5">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="w-4 h-4 fill-[var(--lightNeutral)]">
+                <path d="M100.28 448H7.4V148.9h92.88zm-46.44-341C24.3 107 0 82.7 0 53.6A53.61 53.61 0 0 1 53.84 0C82.93 0 107 24.3 107 53.6c0 29.1-24.07 53.4-53.16 53.4zM447.9 448h-92.7V302.4c0-34.7-.7-79.3-48.3-79.3-48.4 0-55.8 37.8-55.8 76.8V448z"/>
+              </svg>
+              LinkedIn /sparkledurio
+            </a>
+          </div>
+          <div class="mt-6">
+            <a id="downloadBottom"
+               class="btn btn-glow inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm font-medium border border-white/10 bg-[var(--primary)] text-[var(--darkNeutral)] transition"
+               download>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 16a1 1 0 0 1-.707-.293l-4-4a1 1 0 1 1 1.414-1.414L11 12.586V3a1 1 0 1 1 2 0v9.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-4 4A1 1 0 0 1 12 16Z"/>
+                <path d="M5 20a1 1 0 1 1 0-2h14a1 1 0 1 1 0 2H5Z"/>
+              </svg>
+              Download My Resume
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 py-8 text-center text-xs text-white/70">
+    © <span id="year"></span> Sparkle Durio · Executive Assistant
+  </footer>
+
+  <a href="#intro" id="backToTop"
+     class="hidden fixed bottom-6 right-6 rounded-full p-3 bg-[var(--accent)] hover:brightness-110 transition shadow-lg border border-white/10 text-[var(--darkNeutral)]"
+     aria-label="Back to top">↑</a>
+
+  <script>
+    const RESUME_URL = "Sparkle_Durio_Resume.pdf";
+
+    const downloadIntro = document.getElementById("downloadIntro");
+    const downloadBottom = document.getElementById("downloadBottom");
+    if (downloadIntro) downloadIntro.href = RESUME_URL;
+    if (downloadBottom) downloadBottom.href = RESUME_URL;
+
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileNav = document.getElementById("mobileNav");
+    if (menuBtn && mobileNav) menuBtn.addEventListener("click", () => mobileNav.classList.toggle("hidden"));
+
+    const backToTop = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      const y = window.scrollY;
+      backToTop.classList.toggle("hidden", y < 320);
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    const progress = document.getElementById('scrollProgress');
+    const setProgress = () => {
+      const h = document.documentElement;
+      const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight);
+      progress.style.width = (scrolled * 100) + '%';
+    };
+    document.addEventListener('scroll', setProgress, { passive:true });
+    setProgress();
+
+    const parallax = document.querySelector('.parallax');
+    if (parallax){
+      const onScroll = () => {
+        const rect = parallax.getBoundingClientRect();
+        const mid = window.innerHeight / 2;
+        const delta = (rect.top + rect.height/2 - mid) / mid;
+        parallax.style.transform = `translateY(${delta * -12}px)`;
+      };
+      document.addEventListener('scroll', onScroll, { passive:true });
+      onScroll();
+    }
+
+    // Skill filters (uniform fill; aria-selected only)
+    (function(){
+      const buttons = document.querySelectorAll('#skillFilters .filter-btn');
+      const chips = document.querySelectorAll('#skillGrid .skill');
+      function setActive(btn){
+        buttons.forEach(b=> b.setAttribute('aria-selected','false'));
+        btn.setAttribute('aria-selected','true');
+      }
+      buttons.forEach(btn=>{
+        btn.addEventListener('click',()=>{
+          const f = btn.dataset.filter;
+          setActive(btn);
+          chips.forEach(chip=>{
+            const show = (f==='all') || chip.dataset.cat.split(' ').includes(f);
+            chip.classList.toggle('hidden', !show);
+          });
         });
-
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Add event listener to close the modal when clicking outside the image
-        modal.addEventListener('click', (e) => {
-            if (e.target.id === 'image-modal') {
-                closeModal();
-            }
-        });
-
-        // Initial render
-        render();
-    </script>
-<script defer="" src="/assets/render-initiatives.js"></script>
-<section aria-labelledby="initiatives-title" id="initiatives"><h2 id="initiatives-title">Initiatives</h2><div class="card-grid" role="list"></div></section></body>
+      });
+    })();
+  </script>
+</body>
 </html>
