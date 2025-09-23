@@ -16,7 +16,1030 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Favicon: SD • (SVG data URL) -->
+  <link rel="icon" href='data:image/svg+xml;utf8,<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="google-site-verification" content="a1Z7MPcQsshUD2vLbyXgemcczkuZVZ8JQlKE-TFCr-E" />
+  <title>Sparkle Durio - Executive Assistant & Strategic Partner</title>
+  <meta name="description" content="Executive Assistant delivering 130+ hours saved annually, $75K+ cost recoveries, and seamless C-suite operations across tech, finance, and consulting.">
+  
+  <!-- Favicon: SD • (SVG data URL) -->
   <link rel="icon" href='data:image/svg+xml;utf8,
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+    <rect width="64" height="64" rx="12" fill="%230C0A09"/>
+    <text x="14" y="38" font-family="Arial, Helvetica, sans-serif" font-weight="700"
+    font-size="20" fill="%23F5EDE3">SD &#8226;</text>
+  </svg>' />    
+
+<style>
+    :root {
+    --darkNeutral: #0C0A09;    /* dark bg */
+    --primary: #FFDF6A;    /* gold accent */
+    --secondary: #F2A36B;    /* peach accent */
+    --accent: #E76F51;    /* coral highlight */
+    --lightNeutral: #F5EDE3;   /* warm text */
+    }
+    * {margin: 0; padding: 0; box-sizing: border-box;}
+    body {background: var(--darkNeutral); color: var(--lightNeutral); font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; margin: 0;}
+    .container {max-width: 1000px; margin: 0 auto; box-shadow: 0 0 30px rgba(0,0,0,0.3);}
+    
+    /* Navigation Bar */
+    .navbar {
+    background: var(--darkNeutral);
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #333;
+    }
+    
+    .nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    }
+    
+    .nav-logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+    }
+    
+    .nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    }
+    
+    .nav-links a {
+    color: var(--lightNeutral);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+    color: var(--primary);
+    }
+
+    /* Scroll progress */
+    #scrollProgress{ position: fixed; top:0; left:0; height:3px; width:0%;
+    background: linear-gradient(90deg, var(--primary), var(--secondary)); z-index:60;
+    box-shadow: 0 0 16px rgba(255,223,106,.35); transition: width .15s linear; }   
+    
+    /* Hero Section - Product Style */
+    .hero {
+    background: linear-gradient(135deg, var(--darkNeutral) 0%, var(--secondary) 100%);
+    color: var(--lightNeutral);
+    padding: 60px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    }
+    
+    .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 70%, rgba(255, 223, 106, 0.1) 0%, transparent 50%);
+    opacity: 0.6;
+    }
+    
+    .hero-content {
+    position: relative;
+    z-index: 2;
+    }
+    
+    .hero-name {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .hero-tagline {
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-bottom: 25px;
+    opacity: 0.95;
+    }
+    
+    .hero-value-props {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+    }
+    
+    .value-prop {
+    text-align: center;
+    }
+    
+    .value-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    display: block;
+    }
+    
+    .value-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-top: 3px;
+    }
+    
+    .hero-cta {
+    margin-top: 35px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    }
+    
+    .btn {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    }
+    
+    .btn-primary {
+    background: transparent;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    }
+    
+    .btn-primary:hover {
+    background: var(--accent);
+    color: var(--darkNeutral);
+    transform: translateY(-2px);
+    }
+    
+    .btn-secondary {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    }
+    
+    .btn-secondary:hover {
+    background: var(--primary);
+    color: var(--darkNeutral);
+    transform: translateY(-2px);
+    }
+    
+    /* Contact Bar */
+    .contact-bar {
+    background: var(--darkNeutral);
+    color: var(--lightNeutral);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    }
+    
+    .contact-item {
+    color: var(--lightNeutral);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+    }
+    
+    .contact-item:hover {
+    color: var(--primary);
+    }
+    
+    /* Section General */
+    .content {
+    padding:50px 30px;
+    background: var(--darkNeutral);
+    }
+    .section { margin-bottom:50px; }
+    .section-title {
+    font-size:1.5rem; font-weight:700;
+    color: var(--primary);
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom:8px; margin-bottom:20px;
+    }
+    
+    /* About Me & Quick Facts Side by Side */
+    .about-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    margin-bottom: 50px;
+    }
+    
+    .about-me {
+    background: #1a1816;
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary);
+    }
+    
+    .headshot-placeholder {
+    width: 120px;
+    height: 120px;
+    background: var(--secondary);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--darkNeutral);
+    }
+    
+    .quick-facts {
+    background: #1a1816;
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 4px solid var(--accent);
+    }
+    
+    .quick-facts h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    }
+    
+    /* Quick Facts Icons - Small and Reactive */
+    .quick-facts dl {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 12px 16px;
+        font-size: 0.9rem;
+    }
+    
+    .quick-facts dt {
+        color: rgba(245, 237, 227, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 8px;
+        text-align: right;
+        font-weight: 500;
+    }
+    
+    .quick-facts dd {
+        color: var(--lightNeutral);
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+    }
+    
+    .quick-facts svg {
+        width: 14px;
+        height: 14px;
+        opacity: 0.7;
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+    }
+    
+    .quick-facts dt:hover svg {
+        opacity: 1;
+        color: var(--primary);
+        transform: scale(1.1);
+    }
+    
+    /* Strategic Competencies */
+    .strategic-competencies {
+    margin-bottom: 50px;
+    }
+    
+    .top-skills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+    }
+    
+    .top-skill-card {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: var(--darkNeutral);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    }
+    
+    .core-skills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+    }
+    
+    .core-skill-item {
+    background: #1a1816;
+    padding: 20px;
+    border-radius: 10px;
+    border-top: 3px solid var(--accent);
+    text-align: center;
+    font-weight: 600;
+    color: var(--lightNeutral);
+    }
+    
+    .complete-skills {
+    background: #1a1816;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #333;
+    }
+    
+    .complete-skills h4 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    }
+    
+    /* Skills Filter Buttons */
+    .skill-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+    
+    .filter-btn {
+        background: #333;
+        color: var(--lightNeutral);
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 500;
+    }
+    
+    .filter-btn:hover {
+        background: var(--secondary);
+        color: var(--darkNeutral);
+        transform: translateY(-1px);
+    }
+    
+    .filter-btn.active {
+        background: var(--primary);
+        color: var(--darkNeutral);
+        font-weight: 600;
+    }
+    
+    .skill-tag {
+    background: #333;
+    color: var(--lightNeutral);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    display: inline-block;
+    margin: 3px;
+    transition: .3s;
+    }
+    
+    .skill-tag:hover {
+    background: var(--primary);
+    color: var(--darkNeutral);
+    }
+    
+    .skill-tag.hidden {
+        display: none;
+    }
+    
+    /* Technical Proficiencies */
+    .tech-proficiencies {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 50px;
+    }
+    
+    .tech-group {
+    background: #1a1816;
+    padding: 20px;
+    border-radius: 10px;
+    border-top: 3px solid var(--secondary);
+    }
+    
+    .tech-group-title {
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--primary);
+    }
+    
+    /* Features */
+    .features { display:grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
+    .feature-card {
+    background: #1a1816;
+    padding:25px; border-radius:12px;
+    border-left: 4px solid var(--accent);
+    transition:.3s;
+    }
+    .feature-card:hover { transform: translateY(-5px); }
+    .feature-title { color: var(--lightNeutral); font-weight:600; margin-bottom:8px; }
+    .feature-description { color:#ccc; }
+
+    /* Experience */
+    .experience-item {
+    background:#1a1816; padding:25px; border-radius:12px;
+    margin-bottom:20px; border:1px solid #333;
+    }
+    .job-title { font-size:1.2rem; font-weight:700; color: var(--primary); }
+    .company-name { color: var(--accent); font-weight:600; margin-bottom:3px; }
+    .job-period { font-size:0.85rem; color:#aaa; margin-bottom:10px; }
+    .outcome-list { list-style:none; padding:0; }
+    .outcome-list li {
+    margin-bottom:8px; padding-left:20px; color:#ddd; position:relative;
+    }
+    .outcome-list li:before {
+    content:"✓"; color: var(--secondary); position:absolute; left:0;
+    }
+    
+    /* Education */
+    .education-card {
+    background:#1a1816; padding:20px; border-radius:10px; border-left:4px solid var(--primary);
+    }
+    .degree { color: var(--primary); font-weight:600; }
+    .school { color: var(--accent); font-weight:500; }
+    
+    /* CTA section */
+    .cta-section {
+    background: linear-gradient(135deg, var(--secondary), var(--accent));
+    padding:40px 20px; text-align:center; color:white;
+    }
+    .btn-cta {
+    background:white; color: var(--accent); padding:12px 24px;
+    border-radius:30px; font-weight:600; text-decoration:none;
+    display:inline-block; margin:10px; transition:.3s;
+    }
+    .btn-cta:hover { transform:translateY(-3px); }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+    .navbar {
+    padding: 15px 20px;
+    }
+    
+    .nav-content {
+    flex-direction: column;
+    gap: 15px;
+    }
+    
+    .nav-links {
+    gap: 20px;
+    }
+    
+    .hero {
+    padding: 40px 20px;
+    }
+    
+    .content {
+    padding: 40px 20px;
+    }
+    
+    .contact-bar {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 10px;
+    }
+    
+    .hero-name {
+    font-size: 2.2rem;
+    }
+    
+    .hero-value-props {
+    flex-direction: column;
+    gap: 20px;
+    }
+    
+    .hero-cta {
+    flex-direction: column;
+    align-items: center;
+    }
+    
+    .about-section {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    }
+    
+    .quick-facts dl {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    
+    .quick-facts dt {
+        justify-content: flex-start;
+        text-align: left;
+    }
+    
+    .top-skills {
+    grid-template-columns: 1fr;
+    }
+    
+    .core-skills {
+    grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .tech-proficiencies {
+    grid-template-columns: 1fr;
+    }
+    
+    .features {
+    grid-template-columns: 1fr;
+    }
+    
+    .cta-section {
+    padding: 40px 20px;
+    }
+    
+    .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    }
+    }
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div id="scrollProgress"></div>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+    <div class="nav-content">
+    <a href="#hero" class="nav-logo">SD ✨</a>
+    <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    </ul>
+    </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+    <div class="hero-content">
+    <h1 class="hero-name">Sparkle Durio ✨</h1>
+    <p class="hero-tagline">Executive Assistant & Strategic Partner</p>
+    
+    <div class="hero-value-props">
+    <div class="value-prop">
+    <span class="value-number">130+</span>
+    <span class="value-label">Hours Saved/Year</span>
+    </div>
+    <div class="value-prop">
+    <span class="value-number">$75K+</span>
+    <span class="value-label">Cost Recoveries</span>
+    </div>
+    <div class="value-prop">
+    <span class="value-number">95%</span>
+    <span class="value-label">On-Time Meetings</span>
+    </div>
+    </div>
+    
+    <div class="hero-cta">
+    <a href="#experience" class="btn btn-primary">📋 View Experience</a>
+    <a href="Sparkle_Durio_Resume.pdf" class="btn btn-secondary">📄 Download Resume</a>
+    </div>
+    </div>
+    </section>
+
+    <!-- Contact Bar -->
+    <div class="contact-bar">
+    <a href="https://www.linkedin.com/in/sparkledurio/" class="contact-item">💼 LinkedIn Profile</a>
+    <span class="contact-item">📍 Sacramento, CA • Remote-First</span>
+    <span class="contact-item">🌍 PST/PDT • Up to 25% Travel</span>
+    </div>
+
+    <!-- Main Content -->
+    <main class="content">
+    <!-- What I Deliver -->
+    <section class="section">
+    <h2 class="section-title">What I Deliver</h2>
+    <div class="features">
+    <div class="feature-card">
+    <span class="feature-icon">🗂️</span>
+    <h3 class="feature-title">Complex Calendar Mastery</h3>
+    <p class="feature-description">Multi-timezone coordination, board meeting logistics, and executive travel management that saves 130+ hours annually while maintaining 95% on-time performance.</p>
+    </div>
+    <div class="feature-card">
+    <span class="feature-icon">💼</span>
+    <h3 class="feature-title">Board & Investor Relations</h3>
+    <p class="feature-description">Trusted with NDA-sensitive communications, quarterly board materials, and stakeholder coordination across technology, finance, and consulting sectors.</p>
+    </div>
+    <div class="feature-card">
+    <span class="feature-icon">⚡</span>
+    <h3 class="feature-title">Operational Excellence</h3>
+    <p class="feature-description">Process optimization and vendor management delivering $75K+ in cost recoveries, 40% efficiency gains, and audit-ready documentation systems.</p>
+    </div>
+    </div>
+    </section>
+   <!-- About Me & Quick Facts Side by Side -->
+    <section class="about-section" id="about">
+    <div class="about-me">
+    <div class="headshot-placeholder"><img src="PXL_20250116_194632440.jpg" alt="Portrait of Sparkle Durio"></div>
+    <h2 class="section-title">About Me</h2>
+    <p>Hi, I'm Sparkle Durio, a highly organized and results-driven professional with over a decade of experience in supporting senior leadership and managing strategic projects. My expertise lies in anticipating needs, managing complex operations, and driving efficiency across diverse teams and initiatives.</p>
+    <br>
+    <p>I thrive on solving problems and streamlining processes, whether it's coordinating critical schedules, managing high-priority communications, or implementing systems that enhance organizational flow. My proactive approach ensures smooth operations, allowing leadership to focus on the bigger picture while I handle the details.</p>
+    <br>
+    <p>In my previous roles, I've successfully negotiated key agreements, managed sensitive communications, and fostered lasting relationships with clients and stakeholders, always keeping a focus on delivering value and building trust. I excel in high-pressure environments and am adept at managing competing priorities to achieve optimal results.</p>
+    <br>
+    <p>At the heart of my work is a commitment to continuous improvement, whether it's refining processes, increasing productivity, or delivering high-quality outcomes. I'm eager to bring my skills and experience to an organization that values strategic thinking, operational excellence, and a results-oriented approach.</p>
+    </div>
+    
+    <div class="quick-facts">
+    <h3>Quick Facts</h3>
+    <dl>
+        <dt>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 22s7-7 7-11a7 7 0 1 0-14 0c0 4 7 11 7 11Zm0-9a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z"/>
+            </svg>
+            <span>Based</span>
+        </dt>
+        <dd>Sacramento, CA</dd>
+
+        <dt>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="7" width="18" height="11" rx="2"/><path d="M8 7V5h8v2"/>
+            </svg>
+            <span>Industries</span>
+        </dt>
+        <dd>Technology (Big Tech & SaaS) · Finance (IB/PE/VC/HF) · Management Consulting (MBB/Big 4) · Legal (AmLaw & Corporate) · Healthcare & Biotech</dd>
+
+        <dt>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2 14.2 8h6.3l-5.1 3.7 1.9 6.1L12 15.5 6.7 17.8l1.9-6.1L3.5 8h6.3L12 2z"/>
+            </svg>
+            <span>Strengths</span>
+        </dt>
+        <dd>Executive Gatekeeping · Board/Investor Comms · NDA-Level Discretion · Crisis-Ready Execution</dd>
+
+        <dt>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" y1="6" x2="20" y2="6"/><circle cx="8" cy="6" r="2"/>
+                <line x1="4" y1="12" x2="20" y2="12"/><circle cx="14" cy="12" r="2"/>
+                <line x1="4" y1="18" x2="20" y2="18"/><circle cx="10" cy="18" r="2"/>
+            </svg>
+            <span>Ops</span>
+        </dt>
+        <dd>Board/Investor Support · Multi-timezone Calendars · NDA/Compliance Docs · Executive Travel & Offsites</dd>
+
+        <dt>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/>
+            </svg>
+            <span>Time Zone</span>
+        </dt>
+        <dd>Pacific (PST/PDT) · US-wide support</dd>
+
+        <dt>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="6" width="18" height="12" rx="2"/><path d="M9 18h6"/>
+            </svg>
+            <span>Work Setup</span>
+        </dt>
+        <dd>Remote-first; open to hybrid (Sacramento)</dd>
+
+        <dt>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="8" width="14" height="10" rx="2"/><path d="M9 8V6h6v2"/>
+            </svg>
+            <span>Travel</span>
+        </dt>
+        <dd>Up to 25% for offsites & events</dd>
+
+        <dt>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="16" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
+            </svg>
+            <span>Availability</span>
+        </dt>
+        <dd>Business hours + limited after-hours for executive needs</dd>
+
+        <dt>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 11.5a7.5 7.5 0 0 1-10 7L5 20l1.5-4.5a7.5 7.5 0 1 1 14.5-4z"/>
+            </svg>
+            <span>Collab Style</span>
+        </dt>
+        <dd>Proactive, async-friendly, documentation-first</dd>
+
+        <dt>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 9v6h4l5 4V5l-5 4H5z"/><path d="M16 9a5 5 0 0 1 0 6"/>
+            </svg>
+            <span>Pronunciation</span>
+        </dt>
+        <dd>"Sparkle" (like the verb) ✨</dd>
+    </dl>
+    </div>
+    </section>
+    
+    <!-- Strategic Competencies -->
+    <section class="section strategic-competencies" id="skills">
+    <h2 class="section-title">Strategic Competencies</h2>
+    
+    <!-- Top 3 Skills -->
+    <div class="top-skills">
+    <div class="top-skill-card">Executive Calendar Management</div>
+    <div class="top-skill-card">Board & Stakeholder Relations</div>
+    <div class="top-skill-card">Process Optimization</div>
+    </div>
+    
+    <!-- Core 6 Skills -->
+    <div class="core-skills">
+    <div class="core-skill-item">Travel Coordination</div>
+    <div class="core-skill-item">Vendor Management</div>
+    <div class="core-skill-item">Grant Administration</div>
+    <div class="core-skill-item">Event Planning</div>
+    <div class="core-skill-item">Compliance Monitoring</div>
+    <div class="core-skill-item">Executive Gatekeeping</div>
+    </div>
+
+    <!-- Complete List of Skills (categorized) -->
+    <div class="complete-skills">
+        <h4>Complete Skills Portfolio</h4>
+        <div class="skill-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="leadership">Leadership & Partnership</button>
+            <button class="filter-btn" data-filter="operations">Operations & Project Management</button>
+            <button class="filter-btn" data-filter="communication">Communication & Coordination</button>
+            <button class="filter-btn" data-filter="organization">Organization & Logistics</button>
+            <button class="filter-btn" data-filter="confidentiality">Confidentiality & Risk Management</button>
+        </div>
+        
+        <div id="skillGrid">
+            <!-- Leadership & Partnership -->
+            <span class="skill-tag" data-cat="leadership">Executive Advisor</span>
+            <span class="skill-tag" data-cat="leadership">Stakeholder Engagement</span>
+            <span class="skill-tag" data-cat="leadership">Board Coordination</span>
+            <span class="skill-tag" data-cat="leadership">Committee Coordination</span>
+            <span class="skill-tag" data-cat="leadership">Interpersonal Effectiveness</span>
+
+            <!-- Operations & Project Management -->
+            <span class="skill-tag" data-cat="operations">Program Oversight</span>
+            <span class="skill-tag" data-cat="operations">Initiative Oversight</span>
+            <span class="skill-tag" data-cat="operations">Grant Administration</span>
+            <span class="skill-tag" data-cat="operations">Contract Administration</span>
+            <span class="skill-tag" data-cat="operations">Procurement Management</span>
+            <span class="skill-tag" data-cat="operations">Vendor Management</span>
+            <span class="skill-tag" data-cat="operations">Records Governance</span>
+            <span class="skill-tag" data-cat="operations">Information Governance</span>
+            <span class="skill-tag" data-cat="operations">Data Integrity</span>
+            <span class="skill-tag" data-cat="operations">Digital File Systems</span>
+
+            <!-- Communication & Coordination -->
+            <span class="skill-tag" data-cat="communication">Executive Correspondence</span>
+            <span class="skill-tag" data-cat="communication">Report Development</span>
+            <span class="skill-tag" data-cat="communication">Report Editing</span>
+            <span class="skill-tag" data-cat="communication">Presentation Design</span>
+            <span class="skill-tag" data-cat="communication">Presentation Delivery</span>
+            <span class="skill-tag" data-cat="communication">Conflict Resolution</span>
+            <span class="skill-tag" data-cat="communication">Negotiation</span>
+            <span class="skill-tag" data-cat="communication">Client Engagement</span>
+            <span class="skill-tag" data-cat="communication">Partner Engagement</span>
+
+            <!-- Organization & Logistics -->
+            <span class="skill-tag" data-cat="organization">Scheduling</span>
+            <span class="skill-tag" data-cat="organization">Travel Management</span>
+            <span class="skill-tag" data-cat="organization">Expense Tracking</span>
+            <span class="skill-tag" data-cat="organization">Budget Tracking</span>
+            <span class="skill-tag" data-cat="organization">Event Logistics</span>
+            <span class="skill-tag" data-cat="organization">Records Management</span>
+            <span class="skill-tag" data-cat="organization">Workflow Systems</span>
+            <span class="skill-tag" data-cat="organization">Multi-Tasking</span>
+            <span class="skill-tag" data-cat="organization">High-Demand Environment Management</span>
+
+            <!-- Confidentiality & Risk Management -->
+            <span class="skill-tag" data-cat="confidentiality">Confidential Information Stewardship</span>
+            <span class="skill-tag" data-cat="confidentiality">Compliance Monitoring</span>
+            <span class="skill-tag" data-cat="confidentiality">Compliance Reporting</span>
+            <span class="skill-tag" data-cat="confidentiality">Risk Assessment</span>
+            <span class="skill-tag" data-cat="confidentiality">Risk Mitigation</span>
+            <span class="skill-tag" data-cat="confidentiality">Problem-Solving</span>
+        </div>
+    </div>
+    </section>
+
+    <!-- Technical Proficiencies -->
+    <section class="section">
+    <h2 class="section-title">Technical Proficiencies</h2>
+    <div class="tech-proficiencies">
+    <div class="tech-group">
+    <h3 class="tech-group-title">Office Suites</h3>
+    <div class="skill-tags">
+    <span class="skill-tag">Microsoft Office 365</span>
+    <span class="skill-tag">Google Workspace</span>
+    <span class="skill-tag">Adobe Acrobat</span>
+    </div>
+    </div>
+    <div class="tech-group">
+    <h3 class="tech-group-title">Project Management</h3>
+    <div class="skill-tags">
+    <span class="skill-tag">Asana</span>
+    <span class="skill-tag">Notion</span>
+    <span class="skill-tag">Monday.com</span>
+    <span class="skill-tag">Trello</span>
+    </div>
+    </div>
+    <div class="tech-group">
+    <h3 class="tech-group-title">Communication</h3>
+    <div class="skill-tags">
+    <span class="skill-tag">Zoom</span>
+    <span class="skill-tag">Slack</span>
+    <span class="skill-tag">Microsoft Teams</span>
+    <span class="skill-tag">Calendly</span>
+    </div>
+    </div>
+    <div class="tech-group">
+    <h3 class="tech-group-title">Document Management</h3>
+    <div class="skill-tags">
+    <span class="skill-tag">DocuSign</span>
+    <span class="skill-tag">SharePoint</span>
+    <span class="skill-tag">Dropbox</span>
+    </div>
+    </div>
+    </div>
+    </section>
+
+    <!-- Professional Experiences -->
+    <section class="section" id="experience">
+    <h2 class="section-title">Professional Experiences</h2>
+    
+    <div class="experience-item">
+    <div class="case-study-header">
+    <div class="case-study-title">
+    <h3 class="job-title">Grant Program Administrative Coordinator</h3>
+    <div class="company-name">Judicial Council of California</div>
+    </div>
+    <div class="job-period">Apr 2025 – Present</div>
+    </div>
+    <div class="outcomes-delivered">
+    <h4 class="outcomes-title">Outcomes Delivered:</h4>
+    <ul class="outcome-list">
+    <li>Facilitated logistics for 5 statewide training programs impacting 250+ constituents</li>
+    <li>Reduced administrative processing time by 40% through digitized filing systems</li>
+    <li>Improved audit readiness by 35% with 100% accurate records across 15+ MOUs</li>
+    </ul>
+    </div>
+    </div>
+
+    <div class="experience-item">
+    <div class="case-study-header">
+    <div class="case-study-title">
+    <h3 class="job-title">Senior Executive Assistant to CEO & COO</h3>
+    <div class="company-name">NAMI California</div>
+    </div>
+    <div class="job-period">Dec 2022 – Sep 2024</div>
+    </div>
+    <div class="outcomes-delivered">
+    <h4 class="outcomes-title">Outcomes Delivered:</h4>
+    <ul class="outcome-list">
+    <li>Achieved 100% board meeting quorum through strategic materials coordination</li>
+    <li>Recovered 130+ executive hours annually via optimized calendar and travel management</li>
+    <li>Secured $6,000+ in vendor savings while planning high-profile retreats and VIP events</li>
+    </ul>
+    </div>
+    </div>
+
+    <div class="experience-item">
+    <div class="case-study-header">
+    <div class="case-study-title">
+    <h3 class="job-title">Executive & Board Operations Associate</h3>
+    <div class="company-name">Umoja Community Education Foundation</div>
+    </div>
+    <div class="job-period">Aug 2021 – Nov 2022</div>
+    </div>
+    <div class="outcomes-delivered">
+    <h4 class="outcomes-title">Outcomes Delivered:</h4>
+    <ul class="outcome-list">
+    <li>Sustained 95%+ executive meeting attendance through optimized logistics</li>
+    <li>Reduced project delays by 35% via cloud-based project management implementation</li>
+    <li>Maintained full program funding through grant writing and reporting support</li>
+    </ul>
+    </div>
+    </div>
+
+    <div class="experience-item">
+    <div class="case-study-header">
+    <div class="case-study-title">
+    <h3 class="job-title">Program Operations Analyst</h3>
+    <div class="company-name">California Department of Corrections & Rehabilitation</div>
+    </div>
+    <div class="job-period">Oct 2015 – Jan 2021</div>
+    </div>
+    <div class="outcomes-delivered">
+    <h4 class="outcomes-title">Outcomes Delivered:</h4>
+    <ul class="outcome-list">
+    <li>Improved contract processing efficiency by 30% through Small Business calculator development</li>
+    <li>Recovered $75,000+ annually in potential procurement misallocations</li>
+    <li>Ensured zero delays in patient services through coordinated medical procurement</li>
+    </ul>
+    </div>
+    </div>
+
+    <div class="experience-item">
+    <div class="case-study-header">
+    <div class="case-study-title">
+    <h3 class="job-title">Staff Analyst — Procurement & Contracts</h3>
+    <div class="company-name">California Department of Corrections & Rehabilitation</div>
+    </div>
+    <div class="job-period">Oct 2013 – Oct 2015</div>
+    </div>
+    <div class="outcomes-delivered">
+    <h4 class="outcomes-title">Outcomes Delivered:</h4>
+    <ul class="outcome-list">
+    <li>Communicated procurement updates to institutional buyers for workflow continuity</li>
+    <li>Logged/Filed purchase documentation per audit retention; supported transparency for $5M+ contract activity</li>
+    <li>Maintained documentation to improve accuracy and accelerate processing timelines by 22%</li>
+    </ul>
+    </div>
+    </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section" id="education">
+    <h2 class="section-title">Education</h2>
+    <div class="education-card">
+    <div class="degree">Bachelor of Science, Business Administration</div>
+    <div class="school">California State University Maritime Academy • International Business & Logistics</div>
+    </div>
+    </section>
+    </main>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+    <h2 class="cta-title">Ready to Save 130+ Hours for Your Executive Team?</h2>
+    <p class="cta-subtitle">Let's discuss how I can streamline your operations and drive results.</p>
+    <div class="cta-buttons">
+    <a href="https://www.linkedin.com/in/sparkledurio/" class="btn-cta">💼 Connect on LinkedIn</a>
+    </div>
+    </section>
+
+    <script>
+    // Scroll progress bar
+    window.addEventListener('scroll', function() {
+        const scrollProgress = document.getElementById('scrollProgress');
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.body.offsetHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        scrollProgress.style.width = scrollPercent + '%';
+    });
+
+    // Skills filter functionality
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Remove active class from all buttons
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            const filter = this.getAttribute('data-filter');
+            const skillTags = document.querySelectorAll('#skillGrid .skill-tag');
+            
+            skillTags.forEach(tag => {
+                if (filter === 'all' || tag.getAttribute('data-cat') === filter) {
+                    tag.classList.remove('hidden');
+                } else {
+                    tag.classList.add('hidden');
+                }
+            });
+        });
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    </script>
+</body>
+</html>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
     <rect width="64" height="64" rx="12" fill="%230C0A09"/>
     <text x="14" y="38" font-family="Arial, Helvetica, sans-serif" font-weight="700"
