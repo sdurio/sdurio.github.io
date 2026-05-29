@@ -2,4 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://sdurio.github.io/</loc></url>
   <url><loc>https://sdurio.github.io/Sparkle_Durio_Resume.pdf</loc></url>
+  <url>
+    <loc>https://sdurio.github.io/operating-cadence.html</loc>
+  </url>
+  <url>
+    <loc>https://sdurio.github.io/case-studies/workflow-automation-grant-compliance.html</loc>
+  </url>
+  <url>
+    <loc>https://sdurio.github.io/case-studies/executive-briefing-system.html</loc>
+  </url>
+  <url>
+    <loc>https://sdurio.github.io/case-studies/governance-board-operations.html</loc>
+  </url>
+  <url>
+    <loc>https://sdurio.github.io/case-studies/audit-readiness-procurement-controls.html</loc>
+  </url>
 </urlset>
