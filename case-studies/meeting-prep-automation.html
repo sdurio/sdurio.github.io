@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exec Meeting Prep Brief (Zapier Agent + AI) | Sparkle Durio</title>
+  <meta name="description" content="Case study: a Zapier Agent that turns tagged calendar meetings into one-page AI briefs from an Airtable stakeholder database, delivered to Slack 24 hours ahead." />
+  <link rel="canonical" href="https://sdurio.github.io/case-studies/meeting-prep-automation.html" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#0E1218" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Sparkle Durio" />
+  <meta property="og:title" content="Exec Meeting Prep Brief: Calendar to Airtable to AI to Slack" />
+  <meta property="og:description" content="Every external meeting gets a brief 24 hours ahead, with zero manual research." />
+  <meta property="og:url" content="https://sdurio.github.io/case-studies/meeting-prep-automation.html" />
+  <meta property="og:image" content="https://sdurio.github.io/images/social-share-1200x630.png" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">S<span>.</span>D</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#impact">Impact</a></li>
+        <li><a href="../index.html#capabilities">Capabilities</a></li>
+        <li><a href="../index.html#experience">Experience</a></li>
+        <li><a href="../index.html#projects">Case Studies</a></li>
+        <li><a href="../operating-cadence.html">Operating Cadence</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero" style="padding-bottom: 3rem;">
+    <div class="container">
+      <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1rem;">
+        <a href="../index.html" style="color: var(--accent);">Home</a> &rarr;
+        <a href="../index.html#projects" style="color: var(--accent);">Case Studies</a> &rarr;
+        Exec Meeting Prep Brief
+      </p>
+      <h1 class="hero-name" style="font-size: clamp(2rem, 5vw, 2.8rem);">Exec Meeting Prep Brief<br/>Calendar &rarr; Airtable &rarr; AI &rarr; Slack</h1>
+      <p class="hero-tagline">Every external meeting gets a one-page brief 24 hours ahead, with zero manual research.</p>
+      <div class="hero-stats" style="max-width: 640px;">
+        <div class="stat-card"><span class="stat-number">24h</span><span class="stat-label">Brief Lead Time</span></div>
+        <div class="stat-card"><span class="stat-number">0</span><span class="stat-label">Manual Lookups</span></div>
+        <div class="stat-card"><span class="stat-number" style="color: var(--ai);">~30m</span><span class="stat-label">Est. Prep Saved / Meeting</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">The Problem</span>
+        <h2 class="section-title">Challenge</h2>
+      </div>
+      <div class="about-content">
+        <ul class="job-bullets">
+          <li>Executives walk into external meetings without the context they need: who the person is, what's open, and what's at risk.</li>
+          <li>Pulling that context together by hand means digging through notes, trackers, and email for every meeting.</li>
+          <li>Prep happens late or not at all when the calendar is full, which is exactly when it matters most.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">What I Built</span>
+        <h2 class="section-title">How It Works</h2>
+      </div>
+      <div class="flow">
+        <div class="flow-step">
+          <span class="num">Step 1 &middot; Trigger</span>
+          <h4>Google Calendar</h4>
+          <p>Fires 24 hours before any meeting with <strong>[Prep]</strong> in the title, so only tagged meetings run.</p>
+        </div>
+        <div class="flow-step">
+          <span class="num">Step 2 &middot; Lookup</span>
+          <h4>Airtable</h4>
+          <p>Finds the attendee by email in a Stakeholders table: role, relationship, priority, last touchpoint, open items.</p>
+        </div>
+        <div class="flow-step ai">
+          <span class="num">Step 3 &middot; AI</span>
+          <h4>Brief Writer</h4>
+          <p>Writes a one-page brief using only the record on file. Missing details are marked "Not on file," never guessed.</p>
+        </div>
+        <div class="flow-step">
+          <span class="num">Step 4 &middot; Deliver</span>
+          <h4>Slack</h4>
+          <p>Posts the brief to <strong>#exec-briefs</strong>, ready to read the day before.</p>
+        </div>
+      </div>
+      <p class="disclaimer">Built as a Zapier Agent. All stakeholder records are fictional, with @example.com emails, so the build can be shared publicly.</p>
+    </div>
+  </section>
+
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">The Output</span>
+        <h2 class="section-title">What Lands in Slack</h2>
+      </div>
+      <div class="capabilities-grid">
+        <div class="cap-group">
+          <h3>Brief Format</h3>
+          <ul>
+            <li><strong>Who:</strong> one line on who they are and why they matter</li>
+            <li><strong>Open items:</strong> each item, flagged if at risk</li>
+            <li><strong>Talking points:</strong> 2 to 3 bullets</li>
+          </ul>
+        </div>
+        <div class="cap-group">
+          <h3>Judgment Built In</h3>
+          <ul>
+            <li><strong>Watch out for:</strong> one sensitivity or blind spot</li>
+            <li><strong>Ask these:</strong> 3 questions that show we did our homework</li>
+            <li><strong>Prep tasks:</strong> anything to send before the meeting</li>
+          </ul>
+        </div>
+        <div class="cap-group">
+          <h3>Guardrails</h3>
+          <ul>
+            <li>AI uses only the record on file</li>
+            <li>Under 200 words, plain text, skimmable</li>
+            <li>Only meetings tagged [Prep] fire, so nothing runs by surprise</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Why It Matters</span>
+        <h2 class="section-title">The EBP Skill Behind It</h2>
+      </div>
+      <div class="callout ai">
+        <strong>The automation is the easy part.</strong> Deciding what an executive needs to know before a meeting, and what the AI should never guess, is the judgment I bring. This build turns the pre-meeting agendas I used to prepare by hand into a repeatable system.
+      </div>
+      <div class="capabilities-grid" style="margin-top: 2.5rem;">
+        <div class="cap-group">
+          <h3>Next Iterations</h3>
+          <ul>
+            <li>Web research on the attendee's company</li>
+            <li>Pull the last email thread with the attendee</li>
+            <li>Friday digest of next week's [Prep] meetings</li>
+          </ul>
+        </div>
+        <div class="cap-group">
+          <h3>Tools</h3>
+          <div class="tool-tags">
+            <span>Zapier Agents</span><span>Google Calendar</span><span>Airtable</span><span>Slack</span><span class="ai">AI by Zapier</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">More Case Studies</span>
+        <h2 class="section-title">Related Work</h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>AI Ops Toolkit</h3>
+          <p>Meeting summary, board-prep brief, and procurement SOP, with the review process behind them.</p>
+          <a href="ai-ops-toolkit.html" class="result-tag ai">See the toolkit &rarr;</a>
+        </div>
+        <div class="project-card">
+          <h3>Executive Briefing System</h3>
+          <p>The manual system this automation grew from: briefs, decision memos, and calendar strategy.</p>
+          <a href="executive-briefing-system.html" class="result-tag">130+ Hours &rarr;</a>
+        </div>
+        <div class="project-card">
+          <h3>Operating Cadence</h3>
+          <p>The full framework behind how I build repeatable execution systems.</p>
+          <a href="../operating-cadence.html" class="result-tag">View Framework &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Sparkle Durio. <a href="../index.html" style="color: var(--accent);">Executive Operations &amp; Strategic Partnership.</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
