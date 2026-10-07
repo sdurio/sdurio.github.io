@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Ops Toolkit: Meeting Summary, Board-Prep Brief, SOP | Sparkle Durio</title>
+  <meta name="description" content="Case study: reusable AI prompts for an executive meeting summary, a CEO/CFO board-prep brief, and a procurement SOP, plus the human review process that caught what the AI missed." />
+  <link rel="canonical" href="https://sdurio.github.io/case-studies/ai-ops-toolkit.html" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#0E1218" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Sparkle Durio" />
+  <meta property="og:title" content="AI Ops Toolkit: AI drafts, I verify" />
+  <meta property="og:description" content="Three reusable AI prompts for executive operations, and the review step that makes them trustworthy." />
+  <meta property="og:url" content="https://sdurio.github.io/case-studies/ai-ops-toolkit.html" />
+  <meta property="og:image" content="https://sdurio.github.io/images/social-share-1200x630.png" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">S<span>.</span>D</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#impact">Impact</a></li>
+        <li><a href="../index.html#capabilities">Capabilities</a></li>
+        <li><a href="../index.html#experience">Experience</a></li>
+        <li><a href="../index.html#projects">Case Studies</a></li>
+        <li><a href="../operating-cadence.html">Operating Cadence</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero" style="padding-bottom: 3rem;">
+    <div class="container">
+      <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1rem;">
+        <a href="../index.html" style="color: var(--accent);">Home</a> &rarr;
+        <a href="../index.html#projects" style="color: var(--accent);">Case Studies</a> &rarr;
+        AI Ops Toolkit
+      </p>
+      <h1 class="hero-name" style="font-size: clamp(2rem, 5vw, 2.8rem);">AI Ops Toolkit<br/>AI Drafts. I Verify.</h1>
+      <p class="hero-tagline">Three reusable prompts for core EBP work. For each one: what I asked first, what I changed, and the final output.</p>
+      <div class="hero-stats" style="max-width: 640px;">
+        <div class="stat-card"><span class="stat-number">3</span><span class="stat-label">Reusable Prompts</span></div>
+        <div class="stat-card"><span class="stat-number" style="color: var(--ai);">2</span><span class="stat-label">Missed Tasks Caught</span></div>
+        <div class="stat-card"><span class="stat-number" style="color: var(--ai);">1</span><span class="stat-label">Date Error Caught</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">The Setup</span>
+        <h2 class="section-title">The Scenario</h2>
+      </div>
+      <div class="about-content">
+        <p class="lead-text">Northpine Labs is a fictional remote-first B2B SaaS company: Series B, 140 employees, about $9M in ARR, and 20 months of runway.</p>
+        <p>I worked as EBP to the CEO, starting from a messy, auto-generated transcript of a weekly exec staff meeting. It covered a $90K burn overage, a slipping AI feature that put a $180K deal at risk, a missing procurement process, and a disagreement about what to tell the company at the all-hands meeting.</p>
+        <p class="disclaimer">All company names, people, and figures are fictional, created for practice and portfolio use.</p>
+        <div class="inputs"><details class="reveal-box "><summary><i class="fa-solid fa-chevron-right"></i> Show the raw meeting transcript</summary><div class="details-body"><pre class="prompt-box">Dana: Ok let&#x27;s go, we&#x27;re tight on time. Marcus, numbers first.
+Marcus: So September close is done. Burn came in at 1.15 million, which is about 90K over plan, mostly the AWS overage and the two contractor invoices nobody told me about. Runway&#x27;s still around 20 months but I want it closer to 22 before the board meeting.
+Dana: Which contractors?
+Marcus: One design agency Priya&#x27;s team brought on, and a data enrichment tool Tom&#x27;s team signed up for on a credit card. Neither went through procurement. Honestly we don&#x27;t really have a procurement process, it&#x27;s just Slack DMs to me.
+Tom: That&#x27;s fair, the enrichment tool was urgent, we needed it for the Q4 outbound push. It&#x27;s like 2K a month.
+Dana: OK, we need an actual process for this. Renee, can People Ops own that or is that Finance?
+Renee: I think Finance should own approval but we can help with the onboarding side, like getting access set up and security review.
+Marcus: I&#x27;ll own it but I don&#x27;t have time to write it until after the board meeting.
+Dana: Let&#x27;s not wait. Can someone draft something by next week. [no one confirms]
+Priya: Moving on? Roadmap update. Sprint 41 shipped the e-signature integration, so that OKR is green. The AI clause review feature is slipping, probably two sprints, so it&#x27;ll land mid-November, not end of October. Engineering found a data privacy issue we need legal to look at.
+Tom: That hurts me. I told three enterprise prospects it&#x27;d be live by end of October. One of them, Halvorsen Group, is a 180K ARR deal.
+Dana: Tom, you need to stop committing roadmap dates. Priya, can you give Tom something he can say to Halvorsen?
+Priya: Yeah I&#x27;ll write a customer-facing note by Thursday.
+Tom: Pipeline otherwise is good. Q4 target is 1.4 million in new ARR, we&#x27;re at 38% with 10 weeks left. Win rate&#x27;s down a bit, 22% versus 26% last quarter.
+Dana: I want that in the board deck with the why. Marcus, who&#x27;s building the deck?
+Marcus: Me and Dana&#x27;s EBP like last time. I need everyone&#x27;s slides by the 12th.
+Renee: Quick People update. Two offers out for senior engineers. Engagement survey closes Friday, we&#x27;re at 61% response. Also the all-hands is next Wednesday and I need Dana&#x27;s talking points by Monday.
+Dana: Fine. Let&#x27;s also put the AI feature delay in the all-hands so people don&#x27;t hear it through rumors.
+Priya: I&#x27;d rather wait until legal weighs in.
+Dana: Let&#x27;s talk offline. OK we&#x27;re out of time. Thanks all.</pre></div></details><details class="reveal-box "><summary><i class="fa-solid fa-chevron-right"></i> Show the September dashboard</summary><div class="details-body"><div class="output-doc"><table>
+<tr><th>Metric</th><th>Plan</th><th>Actual</th></tr>
+<tr><td>Monthly burn</td><td>$1.06M</td><td>$1.15M</td></tr>
+<tr><td>Cash on hand</td><td></td><td>$23.1M</td></tr>
+<tr><td>ARR</td><td>$9.0M</td><td>$8.85M</td></tr>
+<tr><td>Net revenue retention</td><td>110%</td><td>112%</td></tr>
+<tr><td>Q4 new ARR</td><td>$1.4M target</td><td>38% closed</td></tr>
+<tr><td>Win rate</td><td>26%</td><td>22%</td></tr></table></div></div></details></div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" id="deliverable-1">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Deliverable 1</span>
+        <h2 class="section-title">Exec Meeting Summary</h2>
+        <p class="section-intro">A private 3-line TL;DR for the CEO, plus a Slack-ready recap for the exec team.</p>
+      </div>
+      <div class="evolution">
+        <div class="stage before">
+          <span class="stage-label">Version 1 prompt</span>
+          <h4>What I asked for first</h4>
+          <ul class="job-bullets"><li>Role: "elite Executive Assistant and Chief of Staff"</li><li>Named the exact risks to find (Halvorsen, burn, all-hands, procurement)</li><li>Put the CEO's private TL;DR inside the public Slack post</li><li>No meeting date, attendee list, or word limit</li></ul>
+          <h4 class="sub">What went wrong</h4>
+          <ul class="job-bullets miss"><li>Pre-loading the answers made the prompt useless for next week's meeting</li><li>Relative dates ("by Thursday") couldn't be converted</li><li>A later run missed my own task: the board deck assigned to "Dana's EBP"</li></ul>
+        </div>
+        <div class="stage-arrow" aria-hidden="true">&rarr;</div>
+        <div class="stage after">
+          <span class="stage-label">Final prompt</span>
+          <h4>What I changed</h4>
+          <ul class="job-bullets"><li>Wrote the role as me, Sparkle Durio, so "Dana's EBP" maps to a name</li><li>Added company context and a weekly metadata block: date, attendees, key dates</li><li>Date rule: convert relative dates and show the original wording</li><li>General rules instead of answers: flag any risk to revenue, budget, runway, deadlines, or customer commitments</li><li>"Prove the Decision": proposals go under Unresolved; "None this meeting" is allowed</li></ul>
+          <details class="reveal-box "><summary><i class="fa-solid fa-chevron-right"></i> Show the full final prompt</summary><div class="details-body"><pre class="prompt-box">Role:
+You are Sparkle Durio, the Executive Business Partner (EBP) to Dana Okafor, CEO of Northpine Labs. Your job is to draft high-signal, zero-fluff updates that keep the leadership team aligned and accountable.
+
+Context:
+Northpine Labs is a remote-first B2B SaaS company building a contract workflow tool for mid-size legal and finance teams. We are Series B, with 140 employees, roughly $9M ARR, and about 20 months of runway.
+This is the Weekly Executive Staff Meeting. The audience is the executive team, who need a highly scannable, accurate update to align on next steps without reading the full transcript.
+
+Meeting Metadata (Update weekly):
+- Meeting Date: Tuesday, October 6, 2026
+- Attendees: Dana Okafor (CEO), Marcus Lee (CFO), Priya Natarajan (VP Product), Tom Bell (VP Sales), Renee Castillo (Head of People), Sparkle Durio (EBP)
+- Key Upcoming Dates: Board deck due to directors on Thursday, October 15, 2026. Board meeting is Thursday, October 22, 2026.
+- Date Conversion Rule: Convert all relative dates (e.g., &quot;next week&quot;, &quot;Thursday&quot;, &quot;by the 12th&quot;) into actual calendar dates based on the meeting date above. Show the original wording in parentheses next to the converted date.
+
+Task:
+Analyze the provided meeting transcript and generate two distinct outputs:
+1. A private, 3-line TL;DR strictly for the CEO (Dana).
+2. A comprehensive meeting summary for the executive team Slack channel.
+
+The summary must clearly separate final decisions from ongoing discussions, highlight specific risks, flag unresolved items, and ensure every action item has a clear owner and due date.
+
+Format:
+Professional, clean, and Slack-ready. Use bolding and bullet points for maximum readability. Keep the main summary skimmable in under 60 seconds (approximately 150 to 200 words). Use the following exact structure:
+
+* Private TL;DR for Dana: Exactly 3 lines. Line 1: the biggest risk. Line 2: what Dana personally owes and when. Line 3: the conversation she needs to have offline.
+* Decisions Made: Bulleted list of final, approved agreements. If nothing qualifies, write &quot;None this meeting.&quot; Do not stretch items to fill this section.
+* Risks Surfaced: Flag anything discussed that threatens revenue, budget, runway, a deadline, or a customer commitment.
+* Unresolved Items: Flag any disagreement that ended without a decision, and any task nobody explicitly accepted.
+* Action Items: Format strictly as: [Task] - [Owner] - [Due Date].
+
+Rules:
+1. Zero Hallucinations: Do not invent dates, names, financial figures, or context that is not explicitly in the transcript.
+2. Prove the Decision: Only list items under &quot;Decisions Made&quot; if they were explicitly agreed upon by the group. Proposals, suggestions, or deferred items belong in &quot;Unresolved Items&quot;.
+3. Flag Missing Information: If an action item lacks an owner or due date in the transcript, you must explicitly tag it as [OWNER UNKNOWN] or [DATE MISSING].
+4. No Fluff: Strip out all small talk, pleasantries, and tangential banter.
+
+Transcript:
+[Weekly Exec Staff transcript, shown in &quot;The Scenario&quot; above]</pre></div></details>
+        </div>
+      </div>
+      <div class="result-block">
+        <div class="result-head"><span class="stage-label result">Final result</span><p>Caught the board deck task (owner: me), the unowned legal review, and the unowned procurement draft. Proposals stayed out of Decisions.</p></div>
+        <details class="reveal-box output"><summary><i class="fa-solid fa-chevron-right"></i> Show the final output</summary><div class="details-body"><div class="output-doc"><h5>Private TL;DR for Dana</h5>
+<ol>
+<li><strong>Biggest risk:</strong> Halvorsen's $180K deal is exposed. The AI clause review feature slips to mid-November after Tom promised end of October.</li>
+<li><strong>You owe:</strong> All-hands talking points to Renee by Mon, Oct 12 ("by Monday").</li>
+<li><strong>Offline:</strong> Align with Priya on whether to disclose the AI delay at the Wed, Oct 14 all-hands before Legal weighs in.</li>
+</ol>
+<hr>
+<h5>Weekly Exec Staff Summary | Tue, Oct 6</h5>
+<p><strong>Decisions Made</strong></p>
+<ul><li>None this meeting.</li></ul>
+<p><strong>Risks Surfaced</strong></p>
+<ul>
+<li><strong>Customer commitment:</strong> The AI clause review feature slips to mid-November due to a data privacy issue. Three enterprise prospects were promised end of October, including Halvorsen Group ($180K ARR).</li>
+<li><strong>Budget/runway:</strong> September burn was $1.15M, ~$90K over plan (AWS overage plus two contractors that skipped procurement). Runway is ~20 months against Marcus's goal of ~22 before the board meeting.</li>
+<li><strong>Revenue:</strong> Q4 is at 38% of the $1.4M new ARR target with 10 weeks left. Win rate is 22% vs. 26% last quarter.</li>
+</ul>
+<p><strong>Unresolved Items</strong></p>
+<ul>
+<li><strong>All-hands disclosure:</strong> Dana wants the AI delay announced; Priya prefers to wait for Legal. Moved offline.</li>
+<li><strong>Procurement process:</strong> Marcus will own it but can't write it until after the board meeting. The interim draft has no owner.</li>
+<li><strong>Legal review of the privacy issue:</strong> No owner named.</li>
+</ul>
+<p><strong>Action Items</strong></p>
+<ul>
+<li>Halvorsen customer-facing note - Priya Natarajan - Thu, Oct 8 ("by Thursday")</li>
+<li>Board deck slides - All execs - Mon, Oct 12 ("by the 12th")</li>
+<li>Win rate slide with explanation - [OWNER UNKNOWN] - Mon, Oct 12 ("by the 12th")</li>
+<li>All-hands talking points - Dana Okafor - Mon, Oct 12 ("by Monday")</li>
+<li>Build board deck - Marcus Lee, Sparkle Durio - Thu, Oct 15 (deck to directors)</li>
+<li>Procurement process draft - [OWNER UNKNOWN] - Week of Oct 12 ("by next week")</li>
+<li>Legal review of data privacy issue - [OWNER UNKNOWN] - [DATE MISSING]</li>
+</ul>
+</div></div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-alt" id="deliverable-2">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Deliverable 2</span>
+        <h2 class="section-title">CEO / CFO Board-Prep Brief</h2>
+        <p class="section-intro">A one-page brief for the CEO's Friday 1:1 with the CFO, built from the meeting transcript and the September dashboard.</p>
+      </div>
+      <div class="evolution">
+        <div class="stage before">
+          <span class="stage-label">Version 1 prompt</span>
+          <h4>What I asked for first</h4>
+          <ul class="job-bullets"><li>Role: "Executive Chief of Staff"</li><li>Fed the AI only the dashboard numbers</li><li>Goal: "align on the narrative," a topic rather than a decision</li><li>Rule: use ONLY the dashboard data</li></ul>
+          <h4 class="sub">What went wrong</h4>
+          <ul class="job-bullets miss"><li>The brief asked the CFO what caused the burn overage, which the CEO already heard on Tuesday</li><li>No deadlines, so nothing explained why the meeting mattered</li><li>A later version listed the wrong weekdays (Oct 12 as a Sunday)</li></ul>
+        </div>
+        <div class="stage-arrow" aria-hidden="true">&rarr;</div>
+        <div class="stage after">
+          <span class="stage-label">Final prompt</span>
+          <h4>What I changed</h4>
+          <ul class="job-bullets"><li>Fed in both inputs: the raw transcript and the dashboard</li><li>Required decisions up front: framing, runway number, slide owners</li><li>Rule: don't ask about anything the CEO already knows</li><li>Rule: capture implied tasks and never add unstated causes</li><li>Rule: flag conflicting dates or facts instead of picking one</li></ul>
+          <details class="reveal-box "><summary><i class="fa-solid fa-chevron-right"></i> Show the full final prompt</summary><div class="details-body"><pre class="prompt-box">Role:
+You are Sparkle Durio, Executive Business Partner to Dana Okafor, CEO of Northpine Labs. You synthesize messy executive discussions into clear, decision-ready briefs.
+
+Context:
+- Company: Northpine Labs, a remote-first B2B SaaS company. Product: a contract workflow tool for mid-size legal and finance teams. Stage: Series B, 140 employees, ~$9M ARR, ~20 months runway.
+- Exec Team: Dana Okafor (CEO), Marcus Lee (CFO), Priya Natarajan (VP Product), Tom Bell (VP Sales), Renee Castillo (Head of People).
+
+Timeline:
+- Tuesday, Oct 6: Weekly Exec Staff meeting (transcript below)
+- Friday, Oct 9: Dana&#x27;s 30-minute 1:1 with Marcus (CFO)
+- Monday, Oct 12: Exec slides due to Marcus
+- Thursday, Oct 15: Board deck due to directors
+- Thursday, Oct 22: Board meeting
+
+Input 1: Raw Transcript (Weekly Exec Staff, Oct 6)
+[Weekly Exec Staff transcript, shown in &quot;The Scenario&quot; above]
+
+Input 2: Marcus&#x27;s September Dashboard
+- Monthly burn: Plan $1.06M | Actual $1.15M
+- Cash on hand: Actual $23.1M
+- ARR: Plan $9.0M | Actual $8.85M
+- Net revenue retention: Plan 110% | Actual 112%
+- Q4 new ARR target: $1.4M | 38% closed
+- Win rate: Plan 26% | Actual 22%
+
+Task:
+Write a one-page preparation brief for Dana&#x27;s 1:1 with Marcus on Friday, October 9. The brief must drive decisions. Dana must leave the meeting with:
+(a) an agreed framing for the burn overage and the win rate drop,
+(b) the exact runway number we will commit to the board, and
+(c) a named owner for every slide due Monday, October 12.
+
+Format:
+- Length: One page (400 to 500 words).
+- Sections:
+  1. Meeting Objective &amp; Required Decisions
+  2. Timeline &amp; Deadlines
+  3. Financial &amp; Pipeline Snapshot (show any calculations)
+  4. Board Deck Alignment Points (3 to 4 topics, suggested framing for each)
+  5. Slide Ownership (Oct 12): owners stated in the transcript; others [OWNER TBD]
+  6. Action Items &amp; Deadlines: [Task] - [Owner] - [Date]
+  7. Open Risks / Offline Discussions
+  8. Targeted Questions for Marcus (5 to 7, forward-looking)
+- Style: Executive, crisp, bulleted, bold key numbers.
+
+Rules:
+1. Use ONLY the transcript, dashboard, and timeline above. Do not invent dates, names, figures, causes, or product details.
+2. Do not ask Marcus about things Dana already knows from the transcript. Questions must focus on forward-looking strategy and true unknowns.
+3. Capture every implied task, including requests phrased as statements (e.g., &quot;we need legal to look at this&quot;). If a task has no owner or date, tag it [OWNER UNKNOWN] or [DATE MISSING].
+4. Do not add cause-and-effect the transcript doesn&#x27;t state.
+5. Do not resolve the Dana/Priya all-hands disagreement. Flag it as an open item.
+6. If any dates or facts in the inputs conflict, flag the conflict at the top instead of choosing one.
+7. Do not write the board deck itself. This is the prep brief for the 1:1.</pre></div></details>
+        </div>
+      </div>
+      <div class="result-block">
+        <div class="result-head"><span class="stage-label result">Final result</span><p>The math surfaced a real tradeoff: a 22-month runway requires burn of about $1.05M/month, below plan. Slide owners not named in the meeting stayed [OWNER TBD] instead of being invented.</p></div>
+        <details class="reveal-box output"><summary><i class="fa-solid fa-chevron-right"></i> Show the final output</summary><div class="details-body"><div class="output-doc"><h5>Prep Brief: Dana / Marcus 1:1 | Friday, Oct 9 | 30 minutes</h5>
+<p><strong>1. Meeting Objective &amp; Required Decisions</strong><br>Align on the board deck before exec slides are due Monday, Oct 12. Dana leaves with:</p>
+<ul>
+<li><strong>(a)</strong> An agreed framing for the burn overage and the win rate drop</li>
+<li><strong>(b)</strong> The exact runway number we commit to the board</li>
+<li><strong>(c)</strong> A named owner for every slide due Oct 12</li>
+</ul>
+<p><strong>2. Timeline &amp; Deadlines</strong></p>
+<ul>
+<li><strong>Thu, Oct 8:</strong> Priya's customer-facing note for Halvorsen</li>
+<li><strong>Fri, Oct 9:</strong> This 1:1. Engagement survey closes.</li>
+<li><strong>Mon, Oct 12:</strong> Exec slides due to Marcus. Dana's all-hands talking points due to Renee.</li>
+<li><strong>Wed, Oct 14:</strong> All-hands</li>
+<li><strong>Thu, Oct 15:</strong> Deck to directors</li>
+<li><strong>Thu, Oct 22:</strong> Board meeting</li>
+</ul>
+<p><strong>3. Financial &amp; Pipeline Snapshot</strong></p>
+<ul>
+<li><strong>Burn:</strong> $1.15M vs. $1.06M plan (<strong>+$90K</strong>, ~8.5%). Stated drivers: AWS overage and two contractors outside procurement.</li>
+<li><strong>Runway:</strong> $23.1M &divide; $1.15M &asymp; <strong>20.1 months</strong>. At plan burn: $23.1M &divide; $1.06M &asymp; 21.8 months.</li>
+<li><strong>22 months requires</strong> $23.1M &divide; 22 &asymp; <strong>$1.05M/month</strong>, which is below plan.</li>
+<li><strong>ARR:</strong> $8.85M vs. $9.0M plan (&minus;$150K)</li>
+<li><strong>NRR:</strong> <strong>112%</strong> vs. 110% plan</li>
+<li><strong>Q4 new ARR:</strong> 38% of $1.4M &asymp; $532K closed, <strong>~$868K remaining</strong> with 10 weeks left</li>
+<li><strong>Win rate:</strong> 22% vs. 26% plan</li>
+</ul>
+<p><strong>4. Board Deck Alignment Points</strong></p>
+<ul>
+<li><strong>Burn:</strong> Frame as identified, fixable drivers, paired with the procurement fix now underway.</li>
+<li><strong>Runway:</strong> Choose between ~20 months (current burn) and 22 months (requires below-plan burn). Commit to 22 only with a cost plan behind it.</li>
+<li><strong>Win rate:</strong> Dana asked for "the why." No cause was stated in the meeting, so Tom's input is needed before Oct 12.</li>
+<li><strong>AI clause review delay:</strong> Slipping to mid-November pending legal review of a privacy issue. Three enterprise prospects, including Halvorsen ($180K ARR), were promised end of October. Decide whether it appears in the deck.</li>
+</ul>
+<p><strong>5. Slide Ownership (Oct 12)</strong></p>
+<table>
+<tr><th>Slide</th><th>Owner</th></tr>
+<tr><td>Deck build &amp; assembly</td><td>Marcus Lee, Sparkle Durio</td></tr>
+<tr><td>Financials, burn &amp; runway</td><td>[OWNER TBD]</td></tr>
+<tr><td>Pipeline, Q4 &amp; win rate (with "the why")</td><td>[OWNER TBD]</td></tr>
+<tr><td>Product roadmap &amp; AI feature status</td><td>[OWNER TBD]</td></tr>
+<tr><td>People update</td><td>[OWNER TBD]</td></tr>
+</table>
+<p><strong>6. Action Items &amp; Deadlines</strong></p>
+<ul>
+<li>Halvorsen customer note - Priya Natarajan - Thu, Oct 8</li>
+<li>Exec slides to Marcus - All execs - Mon, Oct 12</li>
+<li>All-hands talking points - Dana Okafor - Mon, Oct 12</li>
+<li>Build board deck - Marcus Lee, Sparkle Durio - Thu, Oct 15</li>
+<li>Procurement process draft - [OWNER UNKNOWN] - Week of Oct 12</li>
+<li>Legal review of data privacy issue - [OWNER UNKNOWN] - [DATE MISSING]</li>
+</ul>
+<p><strong>7. Open Risks / Offline Discussions</strong></p>
+<ul>
+<li><strong>All-hands messaging:</strong> Dana wants to disclose the AI delay; Priya prefers to wait for Legal. Moved offline, and talking points are due Monday.</li>
+<li><strong>Procurement ownership:</strong> Marcus will own it, but not until after the board meeting.</li>
+<li><strong>Roadmap commitments:</strong> Dana told Tom to stop committing roadmap dates to customers.</li>
+</ul>
+<p><strong>8. Targeted Questions for Marcus</strong></p>
+<ul>
+<li>Do we commit to ~20 or 22 months? If 22, where does ~$100K/month in savings come from?</li>
+<li>Is the AWS overage recurring or one-time?</li>
+<li>Do the two contractor costs continue into Q4?</li>
+<li>Who drafts an interim procurement process before the board meeting?</li>
+<li>Do we show the ~$868K Q4 gap as a single number or a range?</li>
+<li>Who owns the legal review, and does its timing change what we tell the board about the AI feature?</li>
+</ul>
+</div></div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="deliverable-3">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Deliverable 3</span>
+        <h2 class="section-title">Software &amp; Vendor Request SOP</h2>
+        <p class="section-intro">A procurement SOP drafted for CFO review, designed to close the gaps that let two purchases skip approval.</p>
+      </div>
+      <div class="evolution">
+        <div class="stage before">
+          <span class="stage-label">Version 1 prompt</span>
+          <h4>What I asked for first</h4>
+          <ul class="job-bullets"><li>Role: "Operations Manager and Certified Bookkeeper"</li><li>Approvals: "CEO for over $5K, CFO for the rest," with no unit (monthly? yearly?)</li><li>Security review triggered by data access, not cost (kept: the strongest idea)</li><li>Rule: no complex bureaucratic steps</li></ul>
+          <h4 class="sub">What went wrong</h4>
+          <ul class="job-bullets miss"><li>The AI read $5K as monthly, so a $60K/year tool would never reach the CEO</li><li>Invented a "Security" team and a $500 emergency limit too low for the real case</li><li>Added an off-topic sales policy and had no rule against card purchases</li></ul>
+        </div>
+        <div class="stage-arrow" aria-hidden="true">&rarr;</div>
+        <div class="stage after">
+          <span class="stage-label">Final prompt</span>
+          <h4>What I changed</h4>
+          <ul class="job-bullets"><li>Wrote the role as me, with my procurement and compliance background</li><li>Thresholds based on annual contract value, with three tiers so the CFO isn't a bottleneck</li><li>Required a card rule, a 24-hour fast track, renewals, and cleanup of past purchases</li><li>Unknowns marked [TO CONFIRM] instead of invented</li><li>Required a "Stress Test" walking both real incidents through the new process</li></ul>
+          <details class="reveal-box "><summary><i class="fa-solid fa-chevron-right"></i> Show the full final prompt</summary><div class="details-body"><pre class="prompt-box">Role:
+You are Sparkle Durio, Executive Business Partner to the CEO of Northpine Labs. You have a background in procurement, bookkeeping, and compliance, and you know how to build financial controls that people actually follow because they are faster than going around them.
+
+Context:
+- Company: Northpine Labs, a remote-first B2B SaaS company. 140 employees, ~$9M ARR, Series B.
+- People: Dana Okafor (CEO), Marcus Lee (CFO), Renee Castillo (Head of People), Priya Natarajan (VP Product), Tom Bell (VP Sales).
+- Problem: There is no formal procurement process. Requests happen through Slack DMs to the CFO. Last month, two purchases skipped review entirely:
+  1. A design agency brought on by the Product team.
+  2. A ~$2K/month data enrichment tool bought on a corporate credit card by the Sales team, described as &quot;urgent.&quot;
+- Ownership: Finance (Marcus) owns approval. People Ops (Renee) offered to own onboarding, access setup, and security review. There is no dedicated Security or IT team.
+- Marcus does not have time to write this process before the board meeting, so this draft is being prepared for his review.
+
+Task:
+Draft a Software and Vendor Request SOP that would have prevented both purchases above, without slowing down legitimate urgent needs. It must cover both software tools and service vendors (agencies, contractors).
+
+Required content:
+1. SOP Header: Owner (Marcus Lee, CFO), Drafted by (Sparkle Durio, pending CFO approval), Version (v0.1 Draft), Effective Date ([TBD on approval]), Review Cadence (quarterly).
+2. Purpose and Scope: Software tools AND service vendors/contractors.
+3. Approval Thresholds (based on annual contract value): Under $6K/year: budget owner (the requester&#x27;s VP). $6K to $60K/year: CFO. Over $60K/year: CEO.
+4. Security Review Trigger: Based strictly on data access, not cost. Required for any tool or vendor that touches customer data, PII, or integrates with core internal systems. Run by People Ops (Renee Castillo) with Finance.
+5. Step-by-Step Process: Numbered steps from request to access. Note where steps differ for software versus service vendors.
+6. Payment Controls: Corporate cards may not be used for software or vendors without an approved request. Define what happens when an unapproved charge appears.
+7. Expedited Path: A 24-hour fast track for urgent requests tied to active deals or operational blockers. Define what happens if retroactive approval is denied.
+8. Tracking: Where requests, approvals, contract terms, and renewal dates live, and who reviews upcoming renewals (30 days before renewal).
+9. One-Time Cleanup: Review tools and vendors already purchased outside the process, including the two recent purchases.
+
+Format:
+- Bold section headers, numbered steps, and bullet points.
+- Include a simple approval threshold table.
+- Professional, direct, and helpful. Readable by any employee in under 5 minutes.
+
+Rules:
+1. Do not invent teams, roles, or people beyond those listed above.
+2. Do not invent dollar amounts, timelines, or policies beyond those specified. If something is needed but not specified, mark it [TO CONFIRM] instead of making it up.
+3. Stay in scope: do not add policies unrelated to procurement.
+4. Keep it realistic for a 140-person company. No bureaucratic steps that would push people back to Slack DMs.
+5. Do not use em dashes.
+6. After the SOP, add a short &quot;Stress Test&quot; section: walk both recent purchases through the new process step by step and show where each would have been caught.</pre></div></details>
+        </div>
+      </div>
+      <div class="result-block">
+        <div class="result-head"><span class="stage-label result">Final result</span><p>Every gap from the incidents has a control. The [TO CONFIRM] tags became a ready-made agenda for the CFO review.</p></div>
+        <details class="reveal-box output"><summary><i class="fa-solid fa-chevron-right"></i> Show the final output</summary><div class="details-body"><div class="output-doc"><h5>Software and Vendor Request SOP</h5>
+<table>
+<tr><td><strong>Owner</strong></td><td>Marcus Lee, CFO</td></tr>
+<tr><td><strong>Drafted by</strong></td><td>Sparkle Durio, pending CFO approval</td></tr>
+<tr><td><strong>Version</strong></td><td>v0.1 Draft</td></tr>
+<tr><td><strong>Effective Date</strong></td><td>[TBD on approval]</td></tr>
+<tr><td><strong>Review Cadence</strong></td><td>Quarterly</td></tr>
+</table>
+<p><strong>1. Purpose and Scope</strong><br>Give every team a fast, clear way to get the tools and vendors they need, while protecting company spend and customer data. Covers all new purchases, trials that convert to paid, and renewals of software tools (SaaS, plugins, integrations, data services) and service vendors (agencies, contractors, consultants, freelancers), on every payment method, including corporate cards.</p>
+<p><strong>2. Approval Thresholds</strong> (annual contract value)</p>
+<table>
+<tr><th>Annual Contract Value</th><th>Approver</th></tr>
+<tr><td>Under $6K/year</td><td>Budget owner (requester's VP)</td></tr>
+<tr><td>$6K to $60K/year</td><td>CFO (Marcus Lee)</td></tr>
+<tr><td>Over $60K/year</td><td>CEO (Dana Okafor)</td></tr>
+</table>
+<ul><li>Backup approver when the assigned approver is unavailable: [TO CONFIRM]</li></ul>
+<p><strong>3. Security Review Trigger</strong><br>Based on <strong>data access, not cost</strong>. Required if the tool or vendor will touch customer data, access PII (including prospect or employee data), or integrate with core internal systems. Run by People Ops (Renee Castillo) with Finance. Standard turnaround: [TO CONFIRM]</p>
+<p><strong>4. Step-by-Step Process</strong></p>
+<ol>
+<li><strong>Submit a request</strong> in [TO CONFIRM: request tool]: name, cost and billing terms, business need, data accessed, software or service vendor.</li>
+<li><strong>Budget owner review:</strong> the requester's VP confirms need and budget.</li>
+<li><strong>Finance triage:</strong> checks for duplicates, confirms annual value, routes to the right approver.</li>
+<li><strong>Security review</strong> (if triggered): People Ops and Finance.</li>
+<li><strong>Final approval</strong> per the threshold table.</li>
+<li><strong>Setup.</strong> Software: People Ops sets up licenses and access; Finance sets up payment. Service vendors: Finance executes the contract and SOW and sets up invoicing; People Ops grants system access only if the SOW requires it.</li>
+<li><strong>Log it</strong> in the tracker (Section 7).</li>
+</ol>
+<p><strong>5. Payment Controls</strong></p>
+<ul>
+<li><strong>Corporate cards may not be used</strong> for software or vendors without an approved request.</li>
+<li>Unapproved charges are flagged by Finance at monthly close. The cardholder's VP submits a retroactive review within <strong>5 business days</strong>.</li>
+<li>Approved: logged and kept. Denied: cancelled; cost owner and cancellation deadline [TO CONFIRM].</li>
+</ul>
+<p><strong>6. Expedited Path (24 Hours)</strong><br>For requests tied to an active deal or operational blocker. Mark the request <strong>Urgent</strong>; the approver and any security reviewers respond within 24 hours. No response in 24 hours: [TO CONFIRM: escalation path]. An urgent purchase made before approval and later denied follows the "Denied" step in Section 5.</p>
+<p><strong>7. Tracking and Renewals</strong><br>System of record: [TO CONFIRM]. Tracks tool or vendor, owner, annual cost, approver, security status, contract terms, and renewal date. 30 days before each renewal, [TO CONFIRM: reviewer] decides to renew, renegotiate, or cancel.</p>
+<p><strong>8. One-Time Cleanup</strong><br>Within [TO CONFIRM] days of the effective date, Finance pulls all software and vendor charges from cards and accounts payable. Anything without an approved request goes through retroactive review. Priority: the Product team's design agency and the Sales team's data enrichment tool.</p>
+<hr>
+<h5>Stress Test</h5>
+<table>
+<tr><th></th><th>Data enrichment tool (Sales, ~$2K/mo, card)</th><th>Design agency (Product)</th></tr>
+<tr><td><strong>Annual value</strong></td><td>~$24K/yr: CFO approval</td><td>[TO CONFIRM]: VP or CFO</td></tr>
+<tr><td><strong>Security</strong></td><td>Prospect PII: review triggered</td><td>Only if it accesses customer data or systems [TO CONFIRM]</td></tr>
+<tr><td><strong>Path</strong></td><td>Qualifies for the 24-hour fast track</td><td>Service vendor path: contract, SOW, invoicing</td></tr>
+<tr><td><strong>Where it's caught</strong></td><td>Card charge flagged at monthly close. Approval in 24 hours makes the workaround unnecessary.</td><td>Invoice can't be paid without an approved request and contract on file.</td></tr>
+</table>
+</div></div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">How I Work With AI</span>
+        <h2 class="section-title">My Review Process</h2>
+      </div>
+      <div class="flow">
+        <div class="flow-step">
+          <span class="num">1 &middot; Frame</span>
+          <h4>Role, context, decision</h4>
+          <p>Start with who I am, who the audience is, and what decision the output must support.</p>
+        </div>
+        <div class="flow-step ai">
+          <span class="num">2 &middot; Draft</span>
+          <h4>AI writes v1</h4>
+          <p>Fast and clean, but it only catches what was said explicitly.</p>
+        </div>
+        <div class="flow-step">
+          <span class="num">3 &middot; Verify</span>
+          <h4>Check against the source</h4>
+          <p>Implied tasks, wrong owners, invented causes, and date math.</p>
+        </div>
+        <div class="flow-step">
+          <span class="num">4 &middot; Harden</span>
+          <h4>Turn fixes into rules</h4>
+          <p>Every miss becomes a rule, so the next run gets it right.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">More Case Studies</span>
+        <h2 class="section-title">Related Work</h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Exec Meeting Prep Brief</h3>
+          <p>Calendar to Airtable to AI to Slack: a brief for every external meeting, 24 hours ahead.</p>
+          <a href="meeting-prep-automation.html" class="result-tag ai">See the build &rarr;</a>
+        </div>
+        <div class="project-card">
+          <h3>Audit-Readiness &amp; Procurement Controls</h3>
+          <p>The real-world procurement experience behind the SOP's design.</p>
+          <a href="audit-readiness-procurement-controls.html" class="result-tag">$75K+ Prevented &rarr;</a>
+        </div>
+        <div class="project-card">
+          <h3>Governance + Board Ops</h3>
+          <p>Agendas, decision tracking, and materials cadence for reliable quorum.</p>
+          <a href="governance-board-operations.html" class="result-tag">100% Quorum &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Sparkle Durio. <a href="../index.html" style="color: var(--accent);">Executive Operations &amp; Strategic Partnership.</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
