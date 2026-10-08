@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CEO Command Center (Notion Exec Dashboard) | Sparkle Durio</title>
+  <meta name="description" content="Case study: a one-page Notion command center for a Series B CEO that surfaces what's at risk, what's due in the next two weeks, and which decisions are waiting on her." />
+  <link rel="canonical" href="https://sdurio.github.io/case-studies/ceo-command-center.html" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#0E1218" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Sparkle Durio" />
+  <meta property="og:title" content="CEO Command Center: one page, every answer by Monday morning" />
+  <meta property="og:description" content="A Notion exec dashboard that shows a CEO what's at risk, what's due, and what's waiting on her call, without asking anyone." />
+  <meta property="og:url" content="https://sdurio.github.io/case-studies/ceo-command-center.html" />
+  <meta property="og:image" content="https://sdurio.github.io/images/social-share-1200x630.png" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    .shot { max-width: 920px; margin: 0 auto; background: var(--bg-card); border: 1px solid var(--border-strong); border-radius: var(--radius); padding: 0.75rem; }
+    .shot-frame { max-height: 720px; overflow-y: auto; border-radius: 10px; border: 1px solid var(--border); }
+    .shot-frame img { display: block; width: 100%; height: auto; }
+    .shot-caption { font-size: 0.85rem; color: var(--text-secondary); margin: 0.75rem 0.25rem 0.25rem; }
+    .shot-caption a { color: var(--accent); font-weight: 700; }
+    .q-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+    .q-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem; }
+    .q-card .q { font-family: var(--font-heading); font-weight: 800; font-size: 1.05rem; color: var(--text-primary); margin-bottom: 0.25rem; }
+    .q-card .view { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; display: block; }
+    .q-card p { font-size: 0.92rem; color: var(--text-secondary); }
+    .q-card.flex { border-color: rgba(52, 211, 153, 0.4); background: linear-gradient(180deg, var(--accent-soft), transparent); }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">S<span>.</span>D</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#impact">Impact</a></li>
+        <li><a href="../index.html#capabilities">Capabilities</a></li>
+        <li><a href="../index.html#experience">Experience</a></li>
+        <li><a href="../index.html#projects">Case Studies</a></li>
+        <li><a href="../operating-cadence.html">Operating Cadence</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero" style="padding-bottom: 3rem;">
+    <div class="container">
+      <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1rem;">
+        <a href="../index.html" style="color: var(--accent);">Home</a> &rarr;
+        <a href="../index.html#projects" style="color: var(--accent);">Case Studies</a> &rarr;
+        CEO Command Center
+      </p>
+      <h1 class="hero-name" style="font-size: clamp(2rem, 5vw, 2.8rem);">CEO Command Center<br/>A One-Page Exec Dashboard in Notion</h1>
+      <p class="hero-tagline">She opens it Monday morning and sees what's at risk, what's due in the next two weeks, and which decisions are waiting on her, without asking anyone.</p>
+      <div class="hero-stats" style="max-width: 640px;">
+        <div class="stat-card"><span class="stat-number">1</span><span class="stat-label">Page, One Scroll</span></div>
+        <div class="stat-card"><span class="stat-number">6</span><span class="stat-label">Live Views, 3 Sources</span></div>
+        <div class="stat-card"><span class="stat-number">0</span><span class="stat-label">Tasks Without an Owner</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">The Problem</span>
+        <h2 class="section-title">Challenge</h2>
+      </div>
+      <div class="about-content">
+        <p class="lead-text">A weekly exec meeting ends with a dozen commitments, two open disagreements, and a board deck due in nine days.</p>
+        <ul class="job-bullets">
+          <li>The CEO of a Series B SaaS company (fictional Northpine Labs) had no single place to see where everything stood.</li>
+          <li>Action items lived in meeting notes, deadlines lived in calendars, and decisions lived in people's heads.</li>
+          <li>One task, a new procurement process, was assigned to "someone." In a real company, that's the one that quietly never gets done.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">What I Built</span>
+        <h2 class="section-title">How It's Built</h2>
+      </div>
+      <div class="flow">
+        <div class="flow-step">
+          <span class="num">Step 1 &middot; Capture</span>
+          <h4>Meeting to Data</h4>
+          <p>Turned the exec staff transcript into structured records: every priority gets a DRI, status, due date, and area.</p>
+        </div>
+        <div class="flow-step">
+          <span class="num">Step 2 &middot; Store</span>
+          <h4>3 Source Databases</h4>
+          <p><strong>Priorities</strong>, a <strong>Decision Log</strong>, and <strong>Key Dates</strong>, kept on a separate data page so the CEO never edits the source by accident.</p>
+        </div>
+        <div class="flow-step">
+          <span class="num">Step 3 &middot; Surface</span>
+          <h4>Filtered Linked Views</h4>
+          <p>Each dashboard section is a live, filtered view of the source data. Update a row once and every view updates.</p>
+        </div>
+        <div class="flow-step">
+          <span class="num">Step 4 &middot; Check</span>
+          <h4>The DRI Check</h4>
+          <p>A view that shows only tasks with no owner. When it's empty, nothing is floating.</p>
+        </div>
+      </div>
+      <p class="disclaimer">Northpine Labs is a fictional company. All people, numbers, and deadlines are mock data so the build can be shared publicly.</p>
+    </div>
+  </section>
+
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">The Output</span>
+        <h2 class="section-title">The Dashboard</h2>
+      </div>
+      <div class="shot">
+        <div class="shot-frame">
+          <img src="../images/northpine-exec-dashboard.png" alt="Northpine Exec Dashboard in Notion: KPI callouts for burn, runway, ARR, and win rate; a risk board grouped by status; a 14-day deadline table; open decisions; a key dates calendar; and an empty Missing an Owner view." loading="lazy" />
+        </div>
+        <p class="shot-caption">Scroll to see the full page. <a href="../images/northpine-exec-dashboard.png" target="_blank" rel="noopener">Open full size &rarr;</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Designed Around Her Questions</span>
+        <h2 class="section-title">What the CEO Sees</h2>
+        <p class="section-intro">Every section is named for the question it answers, in the CEO's own words.</p>
+      </div>
+      <div class="q-grid">
+        <div class="q-card">
+          <span class="view">KPI Snapshot</span>
+          <div class="q">How are we tracking?</div>
+          <p>Burn, runway, ARR, and win rate against plan. Off-plan numbers are colored red, because execs read color before numbers.</p>
+        </div>
+        <div class="q-card">
+          <span class="view">Board View by Status</span>
+          <div class="q">What's at risk?</div>
+          <p>Every open priority grouped by status, including high-priority work that hasn't started yet, so nothing risky hides.</p>
+        </div>
+        <div class="q-card">
+          <span class="view">Table, Sorted by Due Date</span>
+          <div class="q">What's due in the next two weeks?</div>
+          <p>Only name, owner, status, and due date. Skimmable beats complete.</p>
+        </div>
+        <div class="q-card">
+          <span class="view">Decision Log, Filtered</span>
+          <div class="q">What's waiting on my call?</div>
+          <p>Only the open decisions she owns, with the context of each so she can decide without digging.</p>
+        </div>
+        <div class="q-card">
+          <span class="view">Calendar</span>
+          <div class="q">What's on the horizon?</div>
+          <p>The 1:1, slide deadline, all-hands, board deck send, and board meeting on one calendar, with prep flagged.</p>
+        </div>
+        <div class="q-card flex">
+          <span class="view">Unassigned Filter</span>
+          <div class="q">Who owns this?</div>
+          <p>The procurement SOP had no owner in the meeting. I claimed it as the EBP, so this view is empty. That's the point.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Why It Matters</span>
+        <h2 class="section-title">The EBP Skill Behind It</h2>
+      </div>
+      <div class="callout">
+        <strong>The dashboard is the easy part.</strong> Knowing which three questions a CEO asks on Monday morning, catching the task nobody owns, and noticing when a "decision waiting on her" actually belongs to someone else is the judgment I bring. In review, I also moved not-started, high-priority work onto the risk board, because work that hasn't started is often the real risk.
+      </div>
+      <div class="capabilities-grid" style="margin-top: 2.5rem;">
+        <div class="cap-group">
+          <h3>Design Choices</h3>
+          <ul>
+            <li>Source data and dashboard kept on separate pages</li>
+            <li>Every view filtered to one question</li>
+            <li>Red only where numbers are off plan</li>
+          </ul>
+        </div>
+        <div class="cap-group">
+          <h3>Next Iterations</h3>
+          <ul>
+            <li>Relations linking each key date to its prep priorities</li>
+            <li>Feed my <a href="meeting-prep-automation.html" style="color: var(--accent);">meeting-prep automation</a> from the Key Dates database</li>
+            <li>Weekly digest of new risks and open decisions</li>
+          </ul>
+        </div>
+        <div class="cap-group">
+          <h3>Tools</h3>
+          <div class="tool-tags">
+            <span>Notion Databases</span><span>Linked Views</span><span>Board &amp; Calendar Layouts</span><span>Filters &amp; Sorts</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">More Case Studies</span>
+        <h2 class="section-title">Related Work</h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>AI Ops Toolkit</h3>
+          <p>The meeting summary, board-prep brief, and SOP built from the same exec meeting.</p>
+          <a href="ai-ops-toolkit.html" class="result-tag ai">See the toolkit &rarr;</a>
+        </div>
+        <div class="project-card">
+          <h3>Exec Meeting Prep Brief</h3>
+          <p>Calendar to Airtable to AI to Slack: a brief for every external meeting, 24 hours ahead.</p>
+          <a href="meeting-prep-automation.html" class="result-tag ai">See the build &rarr;</a>
+        </div>
+        <div class="project-card">
+          <h3>Governance + Board Ops</h3>
+          <p>The real-world agendas, decision tracking, and materials cadence behind this dashboard.</p>
+          <a href="governance-board-operations.html" class="result-tag">100% Quorum &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Sparkle Durio. <a href="../index.html" style="color: var(--accent);">Executive Operations &amp; Strategic Partnership.</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
