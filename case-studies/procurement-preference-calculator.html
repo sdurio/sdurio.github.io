@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Procurement Preference Calculator | Sparkle Durio</title>
+  <meta name="description" content="Case study and live demo: a bid evaluation calculator that applies a 5% small business / DVBE preference, picks the winner, and produces an audit-ready award record." />
+  <link rel="canonical" href="https://sdurio.github.io/case-studies/procurement-preference-calculator.html" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#0E1218" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Sparkle Durio" />
+  <meta property="og:title" content="Procurement Preference Calculator: try the bid evaluation yourself" />
+  <meta property="og:description" content="Three bids, one 5% preference, a winner, and an audit record. A working rebuild of the calculator behind 1,300+ awards a year." />
+  <meta property="og:url" content="https://sdurio.github.io/case-studies/procurement-preference-calculator.html" />
+  <meta property="og:image" content="https://sdurio.github.io/images/social-share-1200x630.png" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    .calc { background: var(--bg-card); border: 1px solid var(--border-strong); border-radius: var(--radius); padding: 1.5rem; }
+    .calc-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.75rem; margin-bottom: 1.25rem; }
+    .calc-head h3 { font-size: 1.15rem; }
+    .calc-head .sol { font-size: 0.85rem; color: var(--text-secondary); }
+    .calc-btn { font: 700 0.85rem var(--font-main); background: transparent; color: var(--accent); border: 1px solid rgba(52, 211, 153, 0.45); border-radius: 999px; padding: 0.4rem 0.9rem; cursor: pointer; }
+    .calc-btn:hover { background: var(--accent-soft); }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; }
+    table.bids { width: 100%; border-collapse: collapse; min-width: 640px; font-size: 0.9rem; }
+    .bids th, .bids td { padding: 0.6rem 0.7rem; border-bottom: 1px solid var(--border); text-align: right; vertical-align: middle; }
+    .bids th:first-child, .bids td:first-child { text-align: left; }
+    .bids thead th { background: var(--bg-secondary); vertical-align: top; }
+    .bids tbody th { font-weight: 700; color: var(--text-secondary); }
+    .bids tfoot td, .bids tfoot th { font-weight: 700; }
+    .bids tr.eval th, .bids tr.eval td { background: var(--accent-soft); color: var(--text-primary); }
+    .bids select, .bids input { width: 100%; font: 0.9rem var(--font-main); color: var(--text-primary); background: var(--bg-primary); border: 1px solid var(--border-strong); border-radius: 8px; padding: 0.35rem 0.5rem; }
+    .bids input { text-align: right; max-width: 110px; }
+    .bids select { min-width: 150px; }
+    .vname { display: block; font-family: var(--font-heading); font-weight: 800; color: var(--text-primary); margin-top: 0.4rem; font-size: 0.92rem; text-align: left; }
+    .vtype { display: inline-block; margin-top: 0.3rem; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.15rem 0.5rem; border-radius: 999px; background: rgba(238, 242, 246, 0.07); color: var(--text-secondary); }
+    .vtype.sb { background: var(--accent-soft); color: var(--accent); }
+    td.win { color: var(--accent) !important; }
+    .pref { color: var(--accent); }
+    .legend { font-size: 0.82rem; color: var(--text-secondary); margin: 0.75rem 0 0; }
+    .verdict { margin-top: 1.25rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+    .verdict .box { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.1rem; }
+    .verdict .box.winner { border-color: rgba(52, 211, 153, 0.5); }
+    .verdict .lbl { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-secondary); }
+    .verdict .val { font-family: var(--font-heading); font-weight: 900; font-size: 1.3rem; margin-top: 0.2rem; }
+    .verdict .box.winner .val { color: var(--accent); }
+    .verdict .sub { font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.2rem; }
+    .record { margin-top: 1.25rem; }
+    .record pre { white-space: pre-wrap; font: 0.85rem/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: var(--bg-primary); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.1rem; color: var(--text-secondary); }
+    .record-head { display: flex; justify-content: space-between; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+    .record-head h4 { font-size: 0.95rem; }
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; }
+    .why-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem; }
+    .why-card h4 { font-size: 1.02rem; margin-bottom: 0.4rem; }
+    .why-card p { font-size: 0.92rem; color: var(--text-secondary); }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">S<span>.</span>D</a>
+      <ul class="nav-links">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#impact">Impact</a></li>
+        <li><a href="../index.html#capabilities">Capabilities</a></li>
+        <li><a href="../index.html#experience">Experience</a></li>
+        <li><a href="../index.html#projects">Case Studies</a></li>
+        <li><a href="../operating-cadence.html">Operating Cadence</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero" style="padding-bottom: 3rem;">
+    <div class="container">
+      <p style="color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 1rem;">
+        <a href="../index.html" style="color: var(--accent);">Home</a> &rarr;
+        <a href="../index.html#projects" style="color: var(--accent);">Case Studies</a> &rarr;
+        Procurement Preference Calculator
+      </p>
+      <h1 class="hero-name" style="font-size: clamp(2rem, 5vw, 2.8rem);">Procurement Preference Calculator<br/>Try the Bid Evaluation Yourself</h1>
+      <p class="hero-tagline">Three bids come in. One vendor qualifies for a 5% small business preference. The calculator applies it the same way every time, names the winner, and writes the record an auditor will ask for.</p>
+      <div class="hero-stats" style="max-width: 640px;">
+        <div class="stat-card"><span class="stat-number">1,300+</span><span class="stat-label">Awards a Year</span></div>
+        <div class="stat-card"><span class="stat-number">30%</span><span class="stat-label">Faster Processing</span></div>
+        <div class="stat-card"><span class="stat-number">1</span><span class="stat-label">Audit Record per Award</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">The Problem</span>
+        <h2 class="section-title">Challenge</h2>
+      </div>
+      <div class="about-content">
+        <p class="lead-text">The lowest bid doesn't always win. Getting that right by hand, 1,300 times a year, is where compliance quietly slips.</p>
+        <ul class="job-bullets">
+          <li>At the California Department of Corrections and Rehabilitation, most purchases drew three bids: a major vendor, a mid-size vendor that didn't qualify for a preference, and a certified small business or DVBE.</li>
+          <li>State rules gave qualifying vendors a 5% preference during evaluation. Applied by hand, it was easy to miss, apply to the wrong vendor, or calculate inconsistently.</li>
+          <li>When an award was questioned, there was no single document showing how the winner was chosen.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Live Demo &middot; Mock Data</span>
+        <h2 class="section-title">Run an Evaluation</h2>
+        <p class="section-intro">Change a vendor number or any unit price. The subtotals, preference, winner, and award record update instantly.</p>
+      </div>
+
+      <div class="calc" id="calc">
+        <div class="calc-head">
+          <div>
+            <h3>Bid Evaluation: Regional Office Workstations</h3>
+            <span class="sol">Solicitation RFQ-2026-0417 &middot; Fictional vendors and pricing</span>
+          </div>
+          <button type="button" class="calc-btn" id="reset"><i class="fa-solid fa-rotate-left"></i> Reset sample</button>
+        </div>
+
+        <div class="table-wrap">
+          <table class="bids" aria-describedby="legend">
+            <thead id="bid-head"></thead>
+            <tbody id="bid-body"></tbody>
+            <tfoot id="bid-foot"></tfoot>
+          </table>
+        </div>
+        <p class="legend" id="legend">Vendor number = vendor type. <strong>1xxxx</strong> large business &middot; <strong>2xxxx</strong> mid-size, non-small business &middot; <strong>3xxxx</strong> certified small business / DVBE. Preference = 5% of the lowest non-small-business bid, deducted from a qualifying bid for evaluation only. The award is paid at the actual bid price.</p>
+
+        <div class="verdict" id="verdict"></div>
+
+        <div class="record">
+          <div class="record-head">
+            <h4>Award Record (audit file)</h4>
+            <button type="button" class="calc-btn" id="copy"><i class="fa-regular fa-copy"></i> Copy</button>
+          </div>
+          <pre id="record"></pre>
+        </div>
+      </div>
+      <p class="disclaimer">A rebuild for demonstration. Vendors, pricing, and the solicitation number are fictional. The original was built in Excel for internal use.</p>
+    </div>
+  </section>
+
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">How It Works</span>
+        <h2 class="section-title">From Bids to Award</h2>
+      </div>
+      <div class="flow">
+        <div class="flow-step">
+          <span class="num">Step 1 &middot; Identify</span>
+          <h4>Vendor Number In</h4>
+          <p>Enter the vendor number. Name and type fill in automatically, so nobody decides eligibility from memory.</p>
+        </div>
+        <div class="flow-step">
+          <span class="num">Step 2 &middot; Price</span>
+          <h4>Line Items to Subtotals</h4>
+          <p>Unit prices times quantities roll up to a subtotal for each vendor, side by side.</p>
+        </div>
+        <div class="flow-step">
+          <span class="num">Step 3 &middot; Adjust</span>
+          <h4>Apply the 5% Preference</h4>
+          <p>Qualifying vendors get the deduction for evaluation only. Everyone else is evaluated at their bid.</p>
+        </div>
+        <div class="flow-step">
+          <span class="num">Step 4 &middot; Document</span>
+          <h4>Winner + Audit Record</h4>
+          <p>The lowest evaluated price wins, and the full math is written up for the file, including what the preference cost.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Results</span>
+        <h2 class="section-title">Impact</h2>
+      </div>
+      <div class="impact-grid">
+        <div class="impact-card">
+          <i class="fas fa-scale-balanced"></i>
+          <h3>Preference Compliance Restored</h3>
+          <p>DVBE and small business preferences applied the same way on every award, not just when someone remembered.</p>
+        </div>
+        <div class="impact-card">
+          <i class="fas fa-stopwatch"></i>
+          <h3>30% Faster Processing</h3>
+          <p>Across 1,300+ transactions a year, evaluation went from hand math to a fill-in-the-numbers step.</p>
+        </div>
+        <div class="impact-card">
+          <i class="fas fa-file-shield"></i>
+          <h3>The Audit Record</h3>
+          <p>The calculator output became the official record for how each award was structured.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Enterprise Translation</span>
+        <h2 class="section-title">Why This Maps to Tech</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <h4>Vendor ops at scale</h4>
+          <p>Tech companies buy software, contractors, and services constantly. Same problem: consistent rules, many requests, little time.</p>
+        </div>
+        <div class="why-card">
+          <h4>Policy turned into a tool</h4>
+          <p>The rule lives in the system, not in someone's head. That's the same thinking behind my <a href="ai-ops-toolkit.html">Software and Vendor Request SOP</a>.</p>
+        </div>
+        <div class="why-card">
+          <h4>Decisions you can defend</h4>
+          <p>Every award shows its math. When Finance or an auditor asks "why this vendor?", the answer is one click away.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">More Case Studies</span>
+        <h2 class="section-title">Related Work</h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>$5M Portfolio Audit-Readiness</h3>
+          <p>The bigger controls story this calculator was part of, including 3,000+ digitized records.</p>
+          <a href="audit-readiness-procurement-controls.html" class="result-tag">$75K+ misallocations prevented &rarr;</a>
+        </div>
+        <div class="project-card">
+          <h3>AI Ops Toolkit</h3>
+          <p>Includes a Software and Vendor Request SOP with approval thresholds and an expedited path.</p>
+          <a href="ai-ops-toolkit.html" class="result-tag ai">See the toolkit &rarr;</a>
+        </div>
+        <div class="project-card">
+          <h3>How I Work Remotely</h3>
+          <p>The operating habits behind delivering this kind of work without sharing a building.</p>
+          <a href="remote-operating-rhythm.html" class="result-tag">See the rhythm &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Sparkle Durio. <a href="../index.html" style="color: var(--accent);">Executive Operations &amp; Strategic Partnership.</a></p>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    var PREF = 0.05;
+    var TYPES = { "1": { label: "Large business", sb: false }, "2": { label: "Mid-size, non-SB", sb: false }, "3": { label: "Small business / DVBE", sb: true } };
+    var DIRECTORY = [
+      { id: "10482", name: "Summit Office Supply Co." },
+      { id: "11307", name: "Continental Workplace Group" },
+      { id: "20915", name: "Harbor & Pine Workspace" },
+      { id: "22640", name: "Cascade Interiors Inc." },
+      { id: "30276", name: "Redwood Valley Office Solutions" },
+      { id: "31558", name: "Bluefield Veteran Supply" }
+    ];
+    var ITEMS = [
+      { name: "Ergonomic task chair", qty: 40 },
+      { name: "Sit-stand desk", qty: 25 },
+      { name: "Dual monitor arm", qty: 40 }
+    ];
+    var SAMPLE = [
+      { vendor: "10482", prices: [289, 545, 79] },
+      { vendor: "20915", prices: [299, 529, 85] },
+      { vendor: "30276", prices: [309, 559, 82] }
+    ];
+    var state;
+
+    function clone(o) { return JSON.parse(JSON.stringify(o)); }
+    function money(n) { return n.toLocaleString("en-US", { style: "currency", currency: "USD" }); }
+    function vendorInfo(id) {
+      var v = DIRECTORY.filter(function (d) { return d.id === id; })[0];
+      var t = TYPES[id.charAt(0)];
+      return { id: id, name: v ? v.name : "Unknown vendor", type: t ? t.label : "Unknown", sb: t ? t.sb : false };
+    }
+    function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+
+    function buildTable() {
+      var head = '<tr><th scope="col">Line item</th>';
+      state.forEach(function (b, i) {
+        head += '<th scope="col"><label class="sr-only" for="v' + i + '">Bidder ' + (i + 1) + ' vendor number</label><select id="v' + i + '" data-bid="' + i + '">';
+        DIRECTORY.forEach(function (d) { head += '<option value="' + d.id + '"' + (d.id === b.vendor ? " selected" : "") + ">#" + d.id + "</option>"; });
+        head += '</select><span class="vname" id="vn' + i + '"></span><span class="vtype" id="vt' + i + '"></span></th>';
+      });
+      head += "</tr>";
+      document.getElementById("bid-head").innerHTML = head;
+
+      var body = "";
+      ITEMS.forEach(function (it, r) {
+        body += '<tr><th scope="row">' + esc(it.name) + ' <span style="font-weight:400">&times; ' + it.qty + "</span></th>";
+        state.forEach(function (b, i) {
+          body += '<td><input type="number" min="0" step="0.01" inputmode="decimal" aria-label="' + esc(it.name) + ' unit price, bidder ' + (i + 1) + '" data-bid="' + i + '" data-row="' + r + '" value="' + b.prices[r] + '" /></td>';
+        });
+        body += "</tr>";
+      });
+      document.getElementById("bid-body").innerHTML = body;
+
+      document.querySelectorAll("#bid-head select").forEach(function (s) {
+        s.addEventListener("change", function () { state[+s.dataset.bid].vendor = s.value; compute(); });
+      });
+      document.querySelectorAll("#bid-body input").forEach(function (inp) {
+        inp.addEventListener("input", function () {
+          var v = parseFloat(inp.value);
+          state[+inp.dataset.bid].prices[+inp.dataset.row] = isNaN(v) || v < 0 ? 0 : v;
+          compute();
+        });
+      });
+    }
+
+    function compute() {
+      var rows = state.map(function (b) {
+        var info = vendorInfo(b.vendor);
+        var subtotal = ITEMS.reduce(function (sum, it, r) { return sum + it.qty * b.prices[r]; }, 0);
+        return { info: info, subtotal: Math.round(subtotal * 100) / 100 };
+      });
+      var nonSb = rows.filter(function (r) { return !r.info.sb; });
+      var base = nonSb.length ? Math.min.apply(null, nonSb.map(function (r) { return r.subtotal; })) : null;
+      var prefAmt = base === null ? 0 : Math.round(base * PREF * 100) / 100;
+      rows.forEach(function (r) {
+        r.pref = r.info.sb ? prefAmt : 0;
+        r.evaluated = Math.round((r.subtotal - r.pref) * 100) / 100;
+      });
+      var win = 0, lowBid = 0;
+      rows.forEach(function (r, i) {
+        if (r.evaluated < rows[win].evaluated) win = i;
+        if (r.subtotal < rows[lowBid].subtotal) lowBid = i;
+      });
+
+      rows.forEach(function (r, i) {
+        document.getElementById("vn" + i).textContent = r.info.name;
+        var t = document.getElementById("vt" + i);
+        t.textContent = r.info.type;
+        t.className = "vtype" + (r.info.sb ? " sb" : "");
+      });
+
+      var foot = '<tr><th scope="row">Bid subtotal</th>';
+      rows.forEach(function (r) { foot += "<td>" + money(r.subtotal) + "</td>"; });
+      foot += '</tr><tr><th scope="row">5% preference</th>';
+      rows.forEach(function (r) { foot += '<td class="' + (r.pref ? "pref" : "") + '">' + (r.pref ? "&minus;" + money(r.pref) : "Not eligible") + "</td>"; });
+      foot += '</tr><tr class="eval"><th scope="row">Evaluated price</th>';
+      rows.forEach(function (r, i) { foot += '<td class="' + (i === win ? "win" : "") + '">' + money(r.evaluated) + (i === win ? " &#10003;" : "") + "</td>"; });
+      foot += "</tr>";
+      document.getElementById("bid-foot").innerHTML = foot;
+
+      var w = rows[win], changed = win !== lowBid;
+      var premium = Math.round((w.subtotal - rows[lowBid].subtotal) * 100) / 100;
+      var noBase = base === null && rows.some(function (r) { return r.info.sb; });
+      var v = '<div class="box winner"><div class="lbl">Winner</div><div class="val">' + esc(w.info.name) + '</div><div class="sub">Vendor #' + w.info.id + " &middot; " + w.info.type + "</div></div>";
+      v += '<div class="box"><div class="lbl">Award amount</div><div class="val">' + money(w.subtotal) + '</div><div class="sub">Paid at the actual bid price</div></div>';
+      v += '<div class="box"><div class="lbl">Did the preference change the outcome?</div><div class="val">' + (changed ? "Yes" : "No") + '</div><div class="sub">' +
+        (changed ? "Cost of the preference: " + money(premium) + " over the lowest raw bid, from " + esc(rows[lowBid].info.name)
+                 : (noBase ? "No non-small-business bid to base the preference on." : "The lowest evaluated price was also the lowest bid.")) + "</div></div>";
+      document.getElementById("verdict").innerHTML = v;
+
+      var lines = [];
+      lines.push("AWARD RECORD  |  RFQ-2026-0417  |  Regional Office Workstations");
+      lines.push("Rule: 5% preference for certified small business / DVBE, calculated on the lowest non-SB bid" + (base !== null ? " (" + money(base) + " x 5% = " + money(prefAmt) + ")" : " (none received, no preference applied)") + ".");
+      lines.push("");
+      rows.forEach(function (r, i) {
+        lines.push((i + 1) + ". #" + r.info.id + " " + r.info.name + " [" + r.info.type + "]");
+        lines.push("   Bid " + money(r.subtotal) + "  |  Preference " + (r.pref ? "-" + money(r.pref) : "n/a") + "  |  Evaluated " + money(r.evaluated));
+      });
+      lines.push("");
+      lines.push("AWARDED TO: #" + w.info.id + " " + w.info.name + " at " + money(w.subtotal) + " (lowest evaluated price).");
+      if (changed) lines.push("NOTE: Preference changed the outcome. Award exceeds lowest bid by " + money(premium) + ".");
+      document.getElementById("record").textContent = lines.join("\n");
+    }
+
+    function reset() { state = clone(SAMPLE); buildTable(); compute(); }
+    document.getElementById("reset").addEventListener("click", reset);
+    document.getElementById("copy").addEventListener("click", function () {
+      var btn = this, text = document.getElementById("record").textContent;
+      try {
+        navigator.clipboard.writeText(text).then(function () {
+          btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied';
+          setTimeout(function () { btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy'; }, 1800);
+        });
+      } catch (e) {}
+    });
+    reset();
+  })();
+  </script>
+  <style>.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }</style>
+</body>
+</html>
